@@ -9,6 +9,8 @@
 [ext_resource type="Material" path="res://assets/materials/polling_station/metal.tres" id="mat_metal"]
 
 
+[ext_resource type="PackedScene" path="res://scenes/props/chair_hardware.tscn" id="Hardware"]
+
 [sub_resource type="BoxShape3D" id="shape_1"]
 size = Vector3(0.48, 0.08, 0.48)
 
@@ -92,3 +94,5 @@ mesh = SubResource("mesh_3")
 position = Vector3(0.19, 0.56, 0.235)
 scale = Vector3(1, 0.5, 1)
 mesh = SubResource("mesh_3")
+
+[node name="Hardware" parent="." instance=ExtResource("Hardware")]
