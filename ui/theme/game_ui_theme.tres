@@ -1,13 +1,11 @@
-[gd_resource type="Theme" load_steps=11 format=3]
+[gd_resource type="Theme" format=3 uid="uid://4cy1utdoplsw"]
 
-[sub_resource type="StyleBoxFlat" id="StyleButtonNormal"]
-content_margin_left = 18.0
-content_margin_top = 13.0
-content_margin_right = 18.0
-content_margin_bottom = 13.0
-bg_color = Color(0.105, 0.125, 0.145, 0.96)
+[sub_resource type="StyleBoxFlat" id="StyleButtonFocus"]
 border_width_left = 2
-border_color = Color(0.38, 0.43, 0.43, 0.8)
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.73, 0.59, 0.35, 0.85)
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 
@@ -22,6 +20,17 @@ border_color = Color(0.73, 0.59, 0.35, 1)
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleButtonNormal"]
+content_margin_left = 18.0
+content_margin_top = 13.0
+content_margin_right = 18.0
+content_margin_bottom = 13.0
+bg_color = Color(0.105, 0.125, 0.145, 0.96)
+border_width_left = 2
+border_color = Color(0.38, 0.43, 0.43, 0.8)
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleButtonPressed"]
 content_margin_left = 21.0
 content_margin_top = 14.0
@@ -33,14 +42,27 @@ border_color = Color(0.82, 0.68, 0.43, 1)
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleButtonFocus"]
-border_width_left = 2
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.73, 0.59, 0.35, 0.85)
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
+[sub_resource type="StyleBoxFlat" id="StyleSeparator"]
+content_margin_top = 1.0
+bg_color = Color(0.4, 0.42, 0.42, 0.35)
+
+[sub_resource type="StyleBoxFlat" id="StyleSliderFill"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.73, 0.59, 0.35, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleSliderBackground"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.16, 0.18, 0.2, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StylePanel"]
 content_margin_left = 1.0
@@ -60,33 +82,6 @@ corner_radius_bottom_left = 8
 shadow_color = Color(0, 0, 0, 0.4)
 shadow_size = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleSection"]
-bg_color = Color(0.09, 0.105, 0.12, 0.78)
-border_width_top = 1
-border_color = Color(0.3, 0.32, 0.33, 0.45)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleSliderBackground"]
-content_margin_top = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.16, 0.18, 0.2, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleSliderFill"]
-content_margin_top = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.73, 0.59, 0.35, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
 [sub_resource type="StyleBoxFlat" id="StylePopup"]
 content_margin_left = 8.0
 content_margin_top = 8.0
@@ -103,13 +98,9 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleSeparator"]
-content_margin_top = 1.0
-bg_color = Color(0.4, 0.42, 0.42, 0.35)
-
 [resource]
-default_font_size = 17
 default_base_scale = 1.0
+default_font_size = 17
 Button/colors/font_color = Color(0.9, 0.91, 0.9, 1)
 Button/colors/font_focus_color = Color(1, 0.95, 0.85, 1)
 Button/colors/font_hover_color = Color(1, 0.95, 0.85, 1)
@@ -137,4 +128,3 @@ PopupMenu/colors/font_color = Color(0.86, 0.87, 0.86, 1)
 PopupMenu/colors/font_hover_color = Color(1, 0.95, 0.85, 1)
 PopupMenu/styles/panel = SubResource("StylePopup")
 VBoxContainer/constants/separation = 10
-

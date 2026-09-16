@@ -12,6 +12,6 @@ void fragment() {
 	vec3 paint = vec3(0.285, 0.355, 0.335);
 	float dirt = exp(-max(p.y, 0.0) * 9.0) * (0.03 + 0.018 * sin(p.x * 13.0 + p.z * 15.0));
 	ALBEDO = mix(cream, paint, lower) + fine * 0.007 * fade - dirt;
-	ROUGHNESS = mix(0.91, 0.64, lower) + fine * 0.025 * fade;
-	SPECULAR = 0.25;
+	ROUGHNESS = mix(0.93, 0.76, lower) + fine * 0.025 * fade;
+	SPECULAR = 0.2;
 }

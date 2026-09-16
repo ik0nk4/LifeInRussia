@@ -20,6 +20,6 @@ void fragment() {
 	float pores = pow(noise(vec2(p.x * 970.0 + bend * 4.0, p.z * 18.0)), 4.0);
 	float detail = 1.0 - smoothstep(0.001, 0.009, length(fwidth(p)));
 	ALBEDO = vec3(0.40, 0.275, 0.15) + grain * vec3(0.07, 0.047, 0.027) * detail - pores * 0.04 * detail;
-	ROUGHNESS = 0.43 + grain * 0.035 * detail;
-	SPECULAR = 0.35;
+	ROUGHNESS = 0.55 + grain * 0.045 * detail;
+	SPECULAR = 0.28;
 }

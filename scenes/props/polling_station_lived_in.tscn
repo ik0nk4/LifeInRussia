@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://2w5ai6ykvnpg"]
+
+[ext_resource type="Material" path="res://assets/materials/polling_station/burgundy.tres" id="burgundy"]
+[ext_resource type="Material" uid="uid://dlj1vw0qh1fmv" path="res://assets/materials/polling_station/fabric.tres" id="fabric"]
+[ext_resource type="Material" path="res://assets/materials/polling_station/ink.tres" id="ink"]
+[ext_resource type="Material" uid="uid://batwhp8l8b4gg" path="res://assets/materials/polling_station/metal.tres" id="metal"]
+[ext_resource type="Material" path="res://assets/materials/polling_station/paper.tres" id="paper"]
+[ext_resource type="Material" uid="uid://dru02x3v21m4e" path="res://assets/materials/polling_station/teal.tres" id="teal"]
+
+[sub_resource type="StandardMaterial3D" id="cardboard"]
+albedo_color = Color(0.47, 0.34, 0.19, 1)
+roughness = 0.93
+
+[sub_resource type="BoxMesh" id="box_bottom"]
+material = SubResource("cardboard")
+size = Vector3(0.48, 0.06, 0.38)
+
+[sub_resource type="BoxMesh" id="box_long_wall"]
+material = SubResource("cardboard")
+size = Vector3(0.48, 0.25, 0.035)
+
+[sub_resource type="BoxMesh" id="box_short_wall"]
+material = SubResource("cardboard")
+size = Vector3(0.035, 0.25, 0.31)
+
+[sub_resource type="BoxMesh" id="box_flap_long"]
+material = SubResource("cardboard")
+size = Vector3(0.46, 0.025, 0.15)
+
+[sub_resource type="BoxMesh" id="box_flap_short"]
+material = SubResource("cardboard")
+size = Vector3(0.14, 0.025, 0.3)
+
+[sub_resource type="BoxMesh" id="forms_stack"]
+material = ExtResource("paper")
+size = Vector3(0.34, 0.09, 0.25)
+
+[sub_resource type="BoxMesh" id="paper_sheet"]
+material = ExtResource("paper")
+size = Vector3(0.24, 0.006, 0.32)
+
+[sub_resource type="BoxMesh" id="paper_line"]
+material = ExtResource("ink")
+size = Vector3(0.15, 0.001, 0.004)
+
+[sub_resource type="BoxMesh" id="folder"]
+material = ExtResource("burgundy")
+size = Vector3(0.29, 0.022, 0.36)
+
+[sub_resource type="BoxMesh" id="folder_teal"]
+material = ExtResource("teal")
+size = Vector3(0.29, 0.022, 0.36)
+
+[sub_resource type="BoxMesh" id="clipboard"]
+material = ExtResource("burgundy")
+size = Vector3(0.25, 0.018, 0.34)
+
+[sub_resource type="BoxMesh" id="clip"]
+material = ExtResource("metal")
+size = Vector3(0.08, 0.018, 0.035)
+
+[sub_resource type="BoxMesh" id="wall_notice"]
+material = ExtResource("paper")
+size = Vector3(0.012, 0.38, 0.28)
+
+[sub_resource type="BoxMesh" id="wall_notice_small"]
+material = ExtResource("paper")
+size = Vector3(0.012, 0.29, 0.22)
+
+[sub_resource type="StandardMaterial3D" id="tape"]
+albedo_color = Color(0.73, 0.64, 0.39, 1)
+roughness = 0.78
+
+[sub_resource type="BoxMesh" id="tape_strip"]
+material = SubResource("tape")
+size = Vector3(0.008, 0.055, 0.08)
+
+[sub_resource type="SphereMesh" id="crumpled_paper"]
+material = ExtResource("paper")
+radius = 0.05
+height = 0.085
+radial_segments = 8
+rings = 4
+
+[sub_resource type="BoxMesh" id="cloth"]
+material = ExtResource("fabric")
+size = Vector3(0.19, 0.018, 0.34)
+
+[node name="PollingStationLivedIn" type="Node3D" unique_id=779549832]
+
+[node name="BlankFormsBox" type="Node3D" parent="." unique_id=1180844084]
+transform = Transform3D(0.9915619, 0, 0.12963414, 0, 1, 0, -0.12963414, 0, 0.9915619, -3.48, 0, 0.46)
+
+[node name="Bottom" type="MeshInstance3D" parent="BlankFormsBox" unique_id=1934090082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+mesh = SubResource("box_bottom")
+
+[node name="BackWall" type="MeshInstance3D" parent="BlankFormsBox" unique_id=1127354265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17, -0.172)
+mesh = SubResource("box_long_wall")
+
+[node name="FrontWall" type="MeshInstance3D" parent="BlankFormsBox" unique_id=1938874173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17, 0.172)
+mesh = SubResource("box_long_wall")
+
+[node name="LeftWall" type="MeshInstance3D" parent="BlankFormsBox" unique_id=1256654433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.222, 0.17, 0)
+mesh = SubResource("box_short_wall")
+
+[node name="RightWall" type="MeshInstance3D" parent="BlankFormsBox" unique_id=1976637654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.222, 0.17, 0)
+mesh = SubResource("box_short_wall")
+
+[node name="BackFlap" type="MeshInstance3D" parent="BlankFormsBox" unique_id=2083996772]
+transform = Transform3D(1, 0, 0, 0, 0.8869949, 0.46177918, 0, -0.46177918, 0.8869949, 0, 0.37, -0.205)
+mesh = SubResource("box_flap_long")
+
+[node name="SideFlap" type="MeshInstance3D" parent="BlankFormsBox" unique_id=1855646060]
+transform = Transform3D(0.9286646, 0.37092048, 0, -0.37092048, 0.9286646, 0, 0, 0, 1, 0.255, 0.34, 0.015)
+mesh = SubResource("box_flap_short")
+
+[node name="Forms" type="MeshInstance3D" parent="BlankFormsBox" unique_id=937771479]
+transform = Transform3D(0.99938756, 0, -0.034992855, 0, 1, 0, 0.034992855, 0, 0.99938756, -0.025, 0.27, 0.01)
+mesh = SubResource("forms_stack")
+
+[node name="FormsLabel" type="Label3D" parent="BlankFormsBox" unique_id=2117366205]
+transform = Transform3D(0.9915619, 0, 0.12963414, 0, 1, 0, -0.12963414, 0, 0.9915619, -0.02, 0.18, 0.193)
+pixel_size = 0.0021
+modulate = Color(0.15, 0.12, 0.08, 1)
+text = "БЛАНКИ"
+font_size = 22
+outline_size = 0
+
+[node name="LooseDeskPaper" type="MeshInstance3D" parent="." unique_id=563316485]
+transform = Transform3D(0.9944926, 0, 0.10480717, 0, 1, 0, -0.10480717, 0, 0.9944926, -2.79, 0.837, 2.36)
+mesh = SubResource("paper_sheet")
+
+[node name="LooseDeskLine0" type="MeshInstance3D" parent="." unique_id=987242769]
+transform = Transform3D(0.9944926, 0, 0.10480717, 0, 1, 0, -0.10480717, 0, 0.9944926, -2.79, 0.841, 2.31)
+mesh = SubResource("paper_line")
+
+[node name="LooseDeskLine1" type="MeshInstance3D" parent="." unique_id=1039064177]
+transform = Transform3D(0.9944926, 0, 0.10480717, 0, 1, 0, -0.10480717, 0, 0.9944926, -2.79, 0.841, 2.35)
+mesh = SubResource("paper_line")
+
+[node name="WindowFolder0" type="MeshInstance3D" parent="." unique_id=1971078368]
+transform = Transform3D(0.99657845, 0.02113314, 0.0799057, -0.019996416, 0.99968755, -0.014999437, -0.080197714, 0.013350288, 0.9966896, 3.67, 1.125, 2.55)
+mesh = SubResource("folder")
+
+[node name="WindowFolder1" type="MeshInstance3D" parent="." unique_id=1656803824]
+transform = Transform3D(0.9989422, -0.009539891, -0.044982567, 0.009999333, 0.9999, 0.009999833, 0.044882674, -0.010439051, 0.9989377, 3.665, 1.15, 2.57)
+mesh = SubResource("folder_teal")
+
+[node name="WindowPaper" type="MeshInstance3D" parent="." unique_id=420447612]
+transform = Transform3D(0.99280864, 0, 0.119712204, 0, 1, 0, -0.119712204, 0, 0.99280864, 3.65, 1.167, 2.55)
+mesh = SubResource("paper_sheet")
+
+[node name="WaitingClipboard" type="MeshInstance3D" parent="." unique_id=1591320056]
+transform = Transform3D(0.98951197, -0.037439454, -0.1395152, 0.03498586, 0.9991877, -0.019998666, 0.14015062, 0.014907859, 0.990018, 3.31, 0.505, 2.34)
+mesh = SubResource("clipboard")
+
+[node name="WaitingForm" type="MeshInstance3D" parent="." unique_id=1604095952]
+transform = Transform3D(0.8707705, -0.037439454, -0.12277338, 0.030787556, 0.9991877, -0.017598826, 0.123332545, 0.014907859, 0.8712158, 3.31, 0.519, 2.34)
+mesh = SubResource("paper_sheet")
+
+[node name="WaitingClip" type="MeshInstance3D" parent="." unique_id=1612576180]
+transform = Transform3D(0.98951197, -0.037439454, -0.1395152, 0.03498586, 0.9991877, -0.019998666, 0.14015062, 0.014907859, 0.990018, 3.28, 0.534, 2.2)
+mesh = SubResource("clip")
+
+[node name="LooseWallNotice" type="MeshInstance3D" parent="." unique_id=1444514212]
+transform = Transform3D(0.999838, -0.017999027, 0, 0.017988004, 0.9992257, 0.034992855, -0.00062983733, -0.034987185, 0.99938756, -3.8667233, 1.4282396, -2.3371081)
+mesh = SubResource("wall_notice")
+
+[node name="LooseWallNoticeSmall" type="MeshInstance3D" parent="." unique_id=1941660940]
+transform = Transform3D(0.9996875, 0.024997396, 0, -0.02497209, 0.99867547, -0.044984818, -0.0011245033, 0.04497076, 0.9989877, -3.8687232, 1.72, -2.05)
+mesh = SubResource("wall_notice_small")
+
+[node name="NoticeTape0" type="MeshInstance3D" parent="." unique_id=136026886]
+transform = Transform3D(0.999838, -0.017999027, 0, 0.017988004, 0.9992257, 0.034992855, -0.00062983733, -0.034987185, 0.99938756, -3.8567233, 1.5982397, -2.437108)
+mesh = SubResource("tape_strip")
+
+[node name="NoticeTape1" type="MeshInstance3D" parent="." unique_id=1293761711]
+transform = Transform3D(0.9996875, 0.024997396, 0, -0.02497209, 0.99867547, -0.044984818, -0.0011245033, 0.04497076, 0.9989877, -3.8577232, 1.84, -1.98)
+mesh = SubResource("tape_strip")
+
+[node name="NoticeCaption" type="Label3D" parent="." unique_id=1031227157]
+transform = Transform3D(-4.368476e-08, -1.5255054e-09, 1, -0.034899496, 0.99939084, 0, -0.99939084, -0.034899496, -4.371139e-08, -3.8537233, 1.5082396, -2.3371081)
+pixel_size = 0.0018
+modulate = Color(0.15, 0.18, 0.18, 1)
+text = "СПИСОК
+ДОКУМЕНТОВ"
+font_size = 18
+outline_size = 0
+
+[node name="BinPaper0" type="MeshInstance3D" parent="." unique_id=448439608]
+transform = Transform3D(0.989565, 0.08835535, 0.2737102, -0.0829682, 0.70963836, -0.13150556, -0.34114134, 0.083707064, 0.8259474, -3.42, 0.505, 3.51)
+mesh = SubResource("crumpled_paper")
+
+[node name="BinPaper1" type="MeshInstance3D" parent="." unique_id=1170736112]
+transform = Transform3D(0.79269177, -0.0978539, -0.19661275, 0.14574854, 0.6348995, 0.11372659, 0.15098724, -0.09913222, 0.9224477, -3.51, 0.5, 3.56)
+mesh = SubResource("crumpled_paper")
+
+[node name="RadiatorCloth" type="MeshInstance3D" parent="." unique_id=1555958916]
+transform = Transform3D(0.99190426, 0.06398365, 0.10969049, -0.05991604, 0.9974021, -0.039989334, -0.11196418, 0.033093367, 0.993161, 3.69, 0.89, -1.82)
+mesh = SubResource("cloth")

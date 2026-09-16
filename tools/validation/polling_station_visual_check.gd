@@ -77,7 +77,8 @@ func _run() -> void:
 		[Vector3(1.3, 0, -2.6), Vector3(0, 0, -1.2)],
 		[Vector3(-2.0, 0, 1.8), Vector3(-1.0, 0, 0)],
 		[Vector3(-2.65, 0, -3.05), Vector3(0, 0, -1.0)],
-		[Vector3(0, 0, -4.3), Vector3(0, 0, -1.0)],
+		# Keep this sweep clear of the visual-only second booth's back panel.
+		[Vector3(0.55, 0, -4.3), Vector3(0, 0, -1.0)],
 		[Vector3(2.55, 0, 2.35), Vector3(1.1, 0, 0)],
 		[Vector3(0, 0, 5.05), Vector3(0, 0, 1.0)],
 	]:

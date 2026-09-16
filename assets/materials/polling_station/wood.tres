@@ -1,6 +1,7 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://pf5dbeawup4"]
 
-[ext_resource type="Shader" path="res://assets/shaders/polling_station/oak_laminate.gdshader" id="shader"]
+[ext_resource type="Shader" uid="uid://cmi114vfadxwu" path="res://assets/shaders/polling_station/oak_laminate.gdshader" id="shader"]
 
 [resource]
+render_priority = 0
 shader = ExtResource("shader")
