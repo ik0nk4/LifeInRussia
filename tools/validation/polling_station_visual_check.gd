@@ -52,13 +52,19 @@ func _run() -> void:
 	var booth: Area3D = location.get_node("VotingBooth/InteractionArea")
 	var urn: Area3D = location.get_node("BallotBox/InteractionArea")
 	var ui: CanvasLayer = location.get_node("UI")
+	var environment: Node3D = location.get_node("Environment")
+	_check(environment.get_node("Visual").get_child_count() > 100, "Imported Blender environment is missing")
+	_check(environment.get_node("Collision").get_child_count() >= 20, "Simplified environment collision is incomplete")
+	_check(not location.get_node("VotingBooth").has_node("Visual"), "Legacy booth visual is still active")
+	_check(not location.get_node("BallotBox").has_node("Visual"), "Legacy ballot-box visual is still active")
 	await physics_frame
 	urn.request_interaction()
 	_check(controller.state == 0, "Urn accepted an empty ballot")
-	await _walk(Vector3(0, 0, 2.8))
-	await _walk(Vector3(0, 0, -1.5))
-	await _walk(Vector3(-2.65, 0, -1.5))
-	await _walk(Vector3(-2.65, 0, -3.05))
+	await _walk(Vector3(4.25, 0, 2.6))
+	await _walk(Vector3(1.0, 0, 1.8))
+	await _walk(Vector3(1.0, 0, -2.55))
+	await _walk(Vector3(2.45, 0, -2.7))
+	await _walk(Vector3(2.45, 0, -3.25))
 	_aim(booth)
 	booth.request_interaction()
 	_check(ui.ballot_panel.visible and not _player.movement_enabled, "Ballot did not open")
@@ -68,19 +74,20 @@ func _run() -> void:
 	ui.confirm_button.pressed.emit()
 	_check(controller.state == 1 and not controller.selected_party_id.is_empty(), "Party selection failed")
 	_check(_player.movement_enabled and not ui.ballot_panel.visible, "Movement was not restored")
-	await _walk(Vector3(-2.65, 0, -1.5))
-	await _walk(Vector3(1.3, 0, -1.5))
-	await _walk(Vector3(1.3, 0, -2.8))
+	await _walk(Vector3(2.45, 0, -2.55))
+	await _walk(Vector3(1.2, 0, -1.8))
+	await _walk(Vector3(1.2, 0, 0.5))
+	await _walk(Vector3(2.55, 0, 0.5))
 	_aim(urn)
 	# Sweep the actual player capsule against the critical rigid objects.
 	for sweep in [
-		[Vector3(1.3, 0, -2.6), Vector3(0, 0, -1.2)],
-		[Vector3(-2.0, 0, 1.8), Vector3(-1.0, 0, 0)],
-		[Vector3(-2.65, 0, -3.05), Vector3(0, 0, -1.0)],
-		# Keep this sweep clear of the visual-only second booth's back panel.
-		[Vector3(0.55, 0, -4.3), Vector3(0, 0, -1.0)],
-		[Vector3(2.55, 0, 2.35), Vector3(1.1, 0, 0)],
-		[Vector3(0, 0, 5.05), Vector3(0, 0, 1.0)],
+		[Vector3(2.55, 0, 0.7), Vector3(0, 0, -1.5)],
+		[Vector3(-4.65, 0, -1.8), Vector3(0, 0, -1.5)],
+		[Vector3(2.45, 0, -3.25), Vector3(0, 0, -1.2)],
+		[Vector3(4.65, 0, -3.25), Vector3(0, 0, -1.2)],
+		[Vector3(6.3, 0, 2.2), Vector3(1.1, 0, 0)],
+		[Vector3(4.25, 0, 3.75), Vector3(0, 0, 1.5)],
+		[Vector3(-2.15, 0, 2.8), Vector3(0, 0, 1.3)],
 	]:
 		var start := Transform3D(Basis.IDENTITY, sweep[0])
 		_check(_player.test_move(start, sweep[1]), "Missing obstacle collision at %s" % sweep[0])
@@ -103,11 +110,11 @@ func _capture(location: Node, directory: String) -> void:
 	root.size = Vector2i(1600, 1000)
 	location.get_node("UI").hide()
 	var views := [
-		["entrance", Vector3(0.1, 1.65, 4.2), Vector3(-0.1, 1.3, -2)],
-		["commission", Vector3(-1.65, 1.6, 3.3), Vector3(-2.95, 0.91, 1.5)],
-		["ballot", Vector3(-2.64, 1.6, -3.05), Vector3(-2.68, 0.98, -3.93)],
-		["urn", Vector3(0.18, 1.58, -2.2), Vector3(1.3, 0.85, -3.5)],
-		["entry_doors", Vector3(-1.0, 1.6, 1.35), Vector3(.55, 1.3, 5.5)],
+		["entrance", Vector3(4.25, 1.65, 3.75), Vector3(-0.4, 1.25, -2.6)],
+		["commission", Vector3(0.2, 1.6, 0.8), Vector3(-3.5, 1.0, -3.2)],
+		["ballot", Vector3(2.45, 1.6, -3.25), Vector3(2.45, 0.92, -4.2)],
+		["urn", Vector3(2.55, 1.58, 0.6), Vector3(2.55, 0.82, -0.38)],
+		["waiting", Vector3(-0.2, 1.6, 0.6), Vector3(-5.1, 1.1, 1.4)],
 	]
 	for view in views:
 		_camera.global_position = view[1]

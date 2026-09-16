@@ -1,0 +1,13 @@
+{
+  "glb_header_valid": true,
+  "buffer_references_valid": true,
+  "self_contained": true,
+  "unique_named_nodes": 841,
+  "meshes": 841,
+  "triangles": 200772,
+  "embedded_images": 9,
+  "normals_present": true,
+  "finite_bounds": true,
+  "presentation_cameras_excluded": true,
+  "godot_integration_tested": false
+}

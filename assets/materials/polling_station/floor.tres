@@ -1,7 +1,0 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://b3vmgd0evwrfa"]
-
-[ext_resource type="Shader" uid="uid://dg32b2lesm3gq" path="res://assets/shaders/polling_station/terrazzo.gdshader" id="shader"]
-
-[resource]
-render_priority = 0
-shader = ExtResource("shader")

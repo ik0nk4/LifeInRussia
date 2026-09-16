@@ -1,0 +1,328 @@
+[gd_scene load_steps=19 format=3]
+
+[ext_resource type="PackedScene" path="res://art/polling_station_reimagined/polling_station_reimagined.glb" id="1_visual"]
+[ext_resource type="Script" path="res://scripts/locations/polling_station_quality.gd" id="2_quality"]
+
+[sub_resource type="BoxShape3D" id="floor_shape"]
+size = Vector3(14.5, 0.2, 10.5)
+
+[sub_resource type="BoxShape3D" id="north_wall_shape"]
+size = Vector3(14.5, 3.8, 0.3)
+
+[sub_resource type="BoxShape3D" id="side_wall_shape"]
+size = Vector3(0.3, 3.8, 10.3)
+
+[sub_resource type="BoxShape3D" id="south_left_shape"]
+size = Vector3(10.4, 3.8, 0.3)
+
+[sub_resource type="BoxShape3D" id="south_right_shape"]
+size = Vector3(1.8, 3.8, 0.3)
+
+[sub_resource type="BoxShape3D" id="entry_door_shape"]
+size = Vector3(2.35, 2.7, 0.12)
+
+[sub_resource type="BoxShape3D" id="commission_desk_shape"]
+size = Vector3(2.22, 0.8, 0.88)
+
+[sub_resource type="BoxShape3D" id="commission_storage_shape"]
+size = Vector3(3.2, 0.9, 0.64)
+
+[sub_resource type="BoxShape3D" id="info_panel_shape"]
+size = Vector3(2.9, 2.55, 0.16)
+
+[sub_resource type="BoxShape3D" id="booth_side_shape"]
+size = Vector3(0.08, 2.2, 1.8)
+
+[sub_resource type="BoxShape3D" id="booth_back_shape"]
+size = Vector3(1.65, 2.2, 0.08)
+
+[sub_resource type="BoxShape3D" id="booth_shelf_shape"]
+size = Vector3(1.57, 0.08, 0.58)
+
+[sub_resource type="BoxShape3D" id="urn_shape"]
+size = Vector3(0.82, 1.2, 0.73)
+
+[sub_resource type="BoxShape3D" id="waiting_shape"]
+size = Vector3(0.65, 1.0, 2.9)
+
+[sub_resource type="BoxShape3D" id="side_table_shape"]
+size = Vector3(0.68, 0.5, 0.7)
+
+[sub_resource type="BoxShape3D" id="water_station_shape"]
+size = Vector3(1.15, 1.3, 0.65)
+
+[sub_resource type="Environment" id="environment"]
+background_mode = 1
+background_color = Color(0.32, 0.38, 0.4, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.76, 0.84, 0.9, 1)
+ambient_light_energy = 0.48
+reflected_light_source = 1
+tonemap_mode = 2
+ssao_enabled = true
+ssao_radius = 0.45
+ssao_intensity = 1.25
+ssil_enabled = true
+ssil_intensity = 0.48
+sdfgi_enabled = true
+sdfgi_read_sky_light = false
+sdfgi_min_cell_size = 0.2
+sdfgi_energy = 0.62
+glow_enabled = true
+glow_bloom = 0.015
+
+[node name="PollingStationReimaginedEnvironment" type="Node3D"]
+
+[node name="Visual" parent="." instance=ExtResource("1_visual")]
+
+[node name="Collision" type="Node3D" parent="."]
+
+[node name="Floor" type="StaticBody3D" parent="Collision"]
+position = Vector3(0, -0.1, 0)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/Floor"]
+shape = SubResource("floor_shape")
+
+[node name="NorthWall" type="StaticBody3D" parent="Collision"]
+position = Vector3(0, 1.9, -5.15)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/NorthWall"]
+shape = SubResource("north_wall_shape")
+
+[node name="WestWall" type="StaticBody3D" parent="Collision"]
+position = Vector3(-7.15, 1.9, 0)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/WestWall"]
+shape = SubResource("side_wall_shape")
+
+[node name="EastWall" type="StaticBody3D" parent="Collision"]
+position = Vector3(7.15, 1.9, 0)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/EastWall"]
+shape = SubResource("side_wall_shape")
+
+[node name="SouthWallLeft" type="StaticBody3D" parent="Collision"]
+position = Vector3(-2.05, 1.9, 5.15)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/SouthWallLeft"]
+shape = SubResource("south_left_shape")
+
+[node name="SouthWallRight" type="StaticBody3D" parent="Collision"]
+position = Vector3(6.25, 1.9, 5.15)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/SouthWallRight"]
+shape = SubResource("south_right_shape")
+
+[node name="EntryDoors" type="StaticBody3D" parent="Collision"]
+position = Vector3(4.25, 1.35, 5.03)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/EntryDoors"]
+shape = SubResource("entry_door_shape")
+
+[node name="CommissionDeskLeft" type="StaticBody3D" parent="Collision"]
+position = Vector3(-4.65, 0.4, -2.8)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/CommissionDeskLeft"]
+shape = SubResource("commission_desk_shape")
+
+[node name="CommissionDeskRight" type="StaticBody3D" parent="Collision"]
+position = Vector3(-2.35, 0.4, -2.8)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/CommissionDeskRight"]
+shape = SubResource("commission_desk_shape")
+
+[node name="CommissionStorage" type="StaticBody3D" parent="Collision"]
+position = Vector3(-3.88, 0.45, -4.55)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/CommissionStorage"]
+shape = SubResource("commission_storage_shape")
+
+[node name="InformationPanel" type="StaticBody3D" parent="Collision"]
+position = Vector3(-2.15, 1.28, 3.4)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/InformationPanel"]
+shape = SubResource("info_panel_shape")
+
+[node name="Booth1Left" type="StaticBody3D" parent="Collision"]
+position = Vector3(1.625, 1.18, -3.82)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/Booth1Left"]
+shape = SubResource("booth_side_shape")
+
+[node name="Booth1Right" type="StaticBody3D" parent="Collision"]
+position = Vector3(3.275, 1.18, -3.82)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/Booth1Right"]
+shape = SubResource("booth_side_shape")
+
+[node name="Booth1Back" type="StaticBody3D" parent="Collision"]
+position = Vector3(2.45, 1.18, -4.69)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/Booth1Back"]
+shape = SubResource("booth_back_shape")
+
+[node name="Booth1Shelf" type="StaticBody3D" parent="Collision"]
+position = Vector3(2.45, 0.79, -4.22)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/Booth1Shelf"]
+shape = SubResource("booth_shelf_shape")
+
+[node name="Booth2Left" type="StaticBody3D" parent="Collision"]
+position = Vector3(3.825, 1.18, -3.82)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/Booth2Left"]
+shape = SubResource("booth_side_shape")
+
+[node name="Booth2Right" type="StaticBody3D" parent="Collision"]
+position = Vector3(5.475, 1.18, -3.82)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/Booth2Right"]
+shape = SubResource("booth_side_shape")
+
+[node name="Booth2Back" type="StaticBody3D" parent="Collision"]
+position = Vector3(4.65, 1.18, -4.69)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/Booth2Back"]
+shape = SubResource("booth_back_shape")
+
+[node name="Booth2Shelf" type="StaticBody3D" parent="Collision"]
+position = Vector3(4.65, 0.79, -4.22)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/Booth2Shelf"]
+shape = SubResource("booth_shelf_shape")
+
+[node name="BallotBox" type="StaticBody3D" parent="Collision"]
+position = Vector3(2.55, 0.6, -0.38)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/BallotBox"]
+shape = SubResource("urn_shape")
+
+[node name="WaitingFurniture" type="StaticBody3D" parent="Collision"]
+position = Vector3(-5.82, 0.5, 1.82)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/WaitingFurniture"]
+shape = SubResource("waiting_shape")
+
+[node name="WaitingSideTable" type="StaticBody3D" parent="Collision"]
+position = Vector3(-5.8, 0.25, -0.02)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/WaitingSideTable"]
+shape = SubResource("side_table_shape")
+
+[node name="WaterStation" type="StaticBody3D" parent="Collision"]
+position = Vector3(6.15, 0.65, 3.0)
+
+[node name="Shape" type="CollisionShape3D" parent="Collision/WaterStation"]
+shape = SubResource("water_station_shape")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("environment")
+script = ExtResource("2_quality")
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="CeilingLightWestSouth" type="OmniLight3D" parent="Lighting"]
+position = Vector3(-3.6, 3.35, 1.6)
+light_color = Color(1, 0.91, 0.78, 1)
+light_energy = 0.36
+light_indirect_energy = 0.7
+light_specular = 0.18
+light_size = 0.8
+shadow_blur = 1.5
+omni_range = 5.2
+
+[node name="CeilingLightCenterSouth" type="OmniLight3D" parent="Lighting"]
+position = Vector3(0, 3.35, 1.6)
+light_color = Color(1, 0.91, 0.78, 1)
+light_energy = 0.36
+light_indirect_energy = 0.7
+light_specular = 0.18
+light_size = 0.8
+shadow_blur = 1.5
+omni_range = 5.2
+
+[node name="CeilingLightEastSouth" type="OmniLight3D" parent="Lighting"]
+position = Vector3(3.6, 3.35, 1.6)
+light_color = Color(1, 0.91, 0.78, 1)
+light_energy = 0.36
+light_indirect_energy = 0.7
+light_specular = 0.18
+light_size = 0.8
+shadow_blur = 1.5
+omni_range = 5.2
+
+[node name="CeilingLightWestNorth" type="OmniLight3D" parent="Lighting"]
+position = Vector3(-3.6, 3.35, -1.45)
+light_color = Color(1, 0.91, 0.78, 1)
+light_energy = 0.36
+light_indirect_energy = 0.7
+light_specular = 0.18
+light_size = 0.8
+shadow_blur = 1.5
+omni_range = 5.2
+
+[node name="CeilingLightCenterNorth" type="OmniLight3D" parent="Lighting"]
+position = Vector3(0, 3.35, -1.45)
+light_color = Color(1, 0.91, 0.78, 1)
+light_energy = 0.36
+light_indirect_energy = 0.7
+light_specular = 0.18
+light_size = 0.8
+shadow_blur = 1.5
+omni_range = 5.2
+
+[node name="CeilingLightEastNorth" type="OmniLight3D" parent="Lighting"]
+position = Vector3(3.6, 3.35, -1.45)
+light_color = Color(1, 0.91, 0.78, 1)
+light_energy = 0.36
+light_indirect_energy = 0.7
+light_specular = 0.18
+light_size = 0.8
+shadow_blur = 1.5
+omni_range = 5.2
+
+[node name="CommissionAccent" type="OmniLight3D" parent="Lighting"]
+position = Vector3(-3.4, 2.65, -3.2)
+light_color = Color(1, 0.82, 0.61, 1)
+light_energy = 0.28
+light_indirect_energy = 0.55
+light_specular = 0.15
+light_size = 0.7
+shadow_blur = 1.6
+omni_range = 3.8
+
+[node name="WindowDaylight" type="DirectionalLight3D" parent="Lighting"]
+rotation_degrees = Vector3(-48, -68, 0)
+light_color = Color(0.76, 0.86, 1, 1)
+light_energy = 0.5
+light_indirect_energy = 0.85
+light_specular = 0.22
+shadow_enabled = true
+directional_shadow_max_distance = 20.0
+directional_shadow_fade_start = 0.75
+
+[node name="BoothTaskLight1" type="SpotLight3D" parent="Lighting"]
+position = Vector3(2.45, 1.68, -4.22)
+rotation_degrees = Vector3(-90, 0, 0)
+light_color = Color(1, 0.9, 0.73, 1)
+light_energy = 0.8
+light_indirect_energy = 0.45
+light_specular = 0.15
+light_size = 0.35
+spot_range = 1.55
+spot_attenuation = 0.45
+spot_angle = 28.0
+spot_angle_attenuation = 0.6
+
+[node name="BoothTaskLight2" type="SpotLight3D" parent="Lighting"]
+position = Vector3(4.65, 1.68, -4.22)
+rotation_degrees = Vector3(-90, 0, 0)
+light_color = Color(1, 0.9, 0.73, 1)
+light_energy = 0.8
+light_indirect_energy = 0.45
+light_specular = 0.15
+light_size = 0.35
+spot_range = 1.55
+spot_attenuation = 0.45
+spot_angle = 28.0
+spot_angle_attenuation = 0.6
