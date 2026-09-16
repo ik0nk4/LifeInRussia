@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" path="res://scenes/components/interaction_area.tscn" id="scene_5"]
 [ext_resource type="PackedScene" uid="uid://dqyrww4p8wnb" path="res://scenes/characters/player.tscn" id="scene_6"]
 [ext_resource type="PackedScene" path="res://scenes/ui/intro_ui.tscn" id="scene_7"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="scene_8"]
 
 [sub_resource type="Environment" id="environment"]
 background_mode = 1
@@ -116,3 +117,6 @@ omni_range = 5.5
 script = ExtResource("controller")
 
 [node name="UI" parent="." unique_id=798858499 instance=ExtResource("scene_7")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("scene_8")]
+player_path = NodePath("../Player")

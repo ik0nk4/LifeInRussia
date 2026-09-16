@@ -80,6 +80,17 @@ These are expected areas, not implementation requirements yet:
 
 Each should be designed only when its gameplay requirements are understood.
 
+## Shared settings and shell UI
+
+`SettingsManager` is an autoload with project-wide lifetime. It is the only owner
+of user preferences, persists them through `ConfigFile` in `user://settings.cfg`,
+and applies display, audio-bus, and mouse-sensitivity values. UI scenes only call
+its public setters.
+
+`settings_menu.tscn` is shared by the main menu and pause menu. The pause menu is
+instanced by gameplay scenes and restores the player's previous movement and mouse
+state, so pausing does not interfere with modal gameplay UI.
+
 ## Current introductory flow
 
 The polling-station introduction uses a location controller for the local sequence,
