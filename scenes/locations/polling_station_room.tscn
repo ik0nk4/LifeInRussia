@@ -1,0 +1,455 @@
+[gd_scene format=3 uid="uid://ot7m2rvu8fis"]
+
+[ext_resource type="Material" uid="uid://b3vmgd0evwrfa" path="res://assets/materials/polling_station/floor.tres" id="mat_floor"]
+[ext_resource type="Material" path="res://assets/materials/polling_station/glass.tres" id="mat_glass"]
+[ext_resource type="Material" path="res://assets/materials/polling_station/light.tres" id="mat_light"]
+[ext_resource type="Material" uid="uid://bdqy6ip26ewds" path="res://assets/materials/polling_station/mat.tres" id="mat_mat"]
+[ext_resource type="Material" path="res://assets/materials/polling_station/metal.tres" id="mat_metal"]
+[ext_resource type="Material" uid="uid://d0xjdlptvh84u" path="res://assets/materials/polling_station/plaster.tres" id="mat_plaster"]
+[ext_resource type="Material" path="res://assets/materials/polling_station/teal.tres" id="mat_teal"]
+[ext_resource type="Material" path="res://assets/materials/polling_station/white.tres" id="mat_white"]
+[ext_resource type="Material" uid="uid://pf5dbeawup4" path="res://assets/materials/polling_station/wood.tres" id="mat_wood"]
+[ext_resource type="PackedScene" uid="uid://bc8y1pybx0n81" path="res://scenes/props/commission_desk.tscn" id="scene_7"]
+[ext_resource type="PackedScene" path="res://scenes/props/polling_chair.tscn" id="scene_11"]
+[ext_resource type="PackedScene" path="res://scenes/props/polling_station_details.tscn" id="scene_14"]
+
+[sub_resource type="BoxMesh" id="mesh_1"]
+material = ExtResource("mat_floor")
+size = Vector3(8.2, 0.2, 11)
+
+[sub_resource type="BoxShape3D" id="shape_1"]
+size = Vector3(8.2, 0.2, 11)
+
+[sub_resource type="BoxMesh" id="mesh_2"]
+material = ExtResource("mat_plaster")
+size = Vector3(8.2, 0.15, 11)
+
+[sub_resource type="BoxShape3D" id="shape_2"]
+size = Vector3(8.2, 0.15, 11)
+
+[sub_resource type="BoxMesh" id="mesh_3"]
+material = ExtResource("mat_plaster")
+size = Vector3(8.2, 3, 0.2)
+
+[sub_resource type="BoxShape3D" id="shape_3"]
+size = Vector3(8.2, 3, 0.2)
+
+[sub_resource type="BoxMesh" id="mesh_4"]
+material = ExtResource("mat_plaster")
+size = Vector3(0.2, 3, 11)
+
+[sub_resource type="BoxShape3D" id="shape_4"]
+size = Vector3(0.2, 3, 11)
+
+[sub_resource type="BoxMesh" id="mesh_5"]
+material = ExtResource("mat_white")
+size = Vector3(0.035, 0.1, 10.8)
+
+[sub_resource type="BoxMesh" id="mesh_6"]
+material = ExtResource("mat_plaster")
+size = Vector3(0.2, 3, 11)
+
+[sub_resource type="BoxShape3D" id="shape_6"]
+size = Vector3(0.2, 3, 11)
+
+[sub_resource type="BoxMesh" id="mesh_7"]
+material = ExtResource("mat_white")
+size = Vector3(0.035, 0.1, 10.8)
+
+[sub_resource type="BoxMesh" id="mesh_8"]
+material = ExtResource("mat_white")
+size = Vector3(7.8, 0.1, 0.03)
+
+[sub_resource type="BoxMesh" id="mesh_9"]
+material = ExtResource("mat_plaster")
+size = Vector3(3, 3, 0.18)
+
+[sub_resource type="BoxShape3D" id="shape_9"]
+size = Vector3(3, 3, 0.18)
+
+[sub_resource type="BoxMesh" id="mesh_10"]
+material = ExtResource("mat_plaster")
+size = Vector3(3, 3, 0.18)
+
+[sub_resource type="BoxShape3D" id="shape_10"]
+size = Vector3(3, 3, 0.18)
+
+[sub_resource type="BoxMesh" id="mesh_11"]
+material = ExtResource("mat_plaster")
+size = Vector3(2, 0.5, 0.18)
+
+[sub_resource type="BoxShape3D" id="shape_11"]
+size = Vector3(2, 0.5, 0.18)
+
+[sub_resource type="BoxMesh" id="mesh_12"]
+material = ExtResource("mat_plaster")
+size = Vector3(8.2, 3, 0.2)
+
+[sub_resource type="BoxShape3D" id="shape_12"]
+size = Vector3(8.2, 3, 0.2)
+
+[sub_resource type="BoxMesh" id="mesh_13"]
+material = ExtResource("mat_glass")
+size = Vector3(1.85, 2.3, 0.08)
+
+[sub_resource type="BoxMesh" id="mesh_14"]
+material = ExtResource("mat_metal")
+size = Vector3(0.045, 2.4, 0.06)
+
+[sub_resource type="BoxMesh" id="mesh_15"]
+material = ExtResource("mat_metal")
+size = Vector3(0.045, 2.4, 0.06)
+
+[sub_resource type="BoxMesh" id="mesh_16"]
+material = ExtResource("mat_metal")
+size = Vector3(0.045, 2.4, 0.001)
+
+[sub_resource type="BoxMesh" id="mesh_17"]
+material = ExtResource("mat_mat")
+size = Vector3(1.8, 0.015, 1.8)
+
+[sub_resource type="BoxMesh" id="mesh_18"]
+material = ExtResource("mat_teal")
+size = Vector3(4.8, 0.67, 0.04)
+
+[sub_resource type="BoxMesh" id="mesh_19"]
+material = ExtResource("mat_white")
+size = Vector3(0.09, 1.65, 1.85)
+
+[sub_resource type="BoxMesh" id="mesh_20"]
+material = ExtResource("mat_glass")
+size = Vector3(0.018, 1.49, 1.68)
+
+[sub_resource type="BoxMesh" id="mesh_21"]
+material = ExtResource("mat_white")
+size = Vector3(0.04, 1.5, 0.035)
+
+[sub_resource type="BoxMesh" id="mesh_22"]
+material = ExtResource("mat_white")
+size = Vector3(0.34, 0.06, 2)
+
+[sub_resource type="BoxMesh" id="mesh_23"]
+material = ExtResource("mat_white")
+size = Vector3(0.09, 1.65, 1.85)
+
+[sub_resource type="BoxMesh" id="mesh_24"]
+material = ExtResource("mat_glass")
+size = Vector3(0.018, 1.49, 1.68)
+
+[sub_resource type="BoxMesh" id="mesh_25"]
+material = ExtResource("mat_white")
+size = Vector3(0.04, 1.5, 0.035)
+
+[sub_resource type="BoxMesh" id="mesh_26"]
+material = ExtResource("mat_white")
+size = Vector3(0.34, 0.06, 2)
+
+[sub_resource type="BoxMesh" id="mesh_27"]
+material = ExtResource("mat_white")
+size = Vector3(0.09, 1.65, 1.85)
+
+[sub_resource type="BoxMesh" id="mesh_28"]
+material = ExtResource("mat_glass")
+size = Vector3(0.018, 1.49, 1.68)
+
+[sub_resource type="BoxMesh" id="mesh_29"]
+material = ExtResource("mat_white")
+size = Vector3(0.04, 1.5, 0.035)
+
+[sub_resource type="BoxMesh" id="mesh_30"]
+material = ExtResource("mat_white")
+size = Vector3(0.34, 0.06, 2)
+
+[sub_resource type="BoxMesh" id="mesh_31"]
+material = ExtResource("mat_teal")
+size = Vector3(0.035, 0.55, 2.1)
+
+[sub_resource type="BoxMesh" id="mesh_32"]
+material = ExtResource("mat_wood")
+size = Vector3(0.08, 1.15, 1.45)
+
+[sub_resource type="BoxMesh" id="mesh_33"]
+material = ExtResource("mat_teal")
+size = Vector3(0.025, 1.03, 1.33)
+
+[sub_resource type="BoxMesh" id="mesh_34"]
+material = ExtResource("mat_teal")
+size = Vector3(1.6, 0.42, 0.04)
+
+[sub_resource type="BoxMesh" id="mesh_35"]
+material = ExtResource("mat_light")
+size = Vector3(1.2, 0.035, 0.55)
+
+[sub_resource type="BoxMesh" id="mesh_36"]
+material = ExtResource("mat_light")
+size = Vector3(1.2, 0.035, 0.55)
+
+[sub_resource type="BoxMesh" id="mesh_37"]
+material = ExtResource("mat_light")
+size = Vector3(1.2, 0.035, 0.55)
+
+[sub_resource type="BoxMesh" id="mesh_38"]
+material = ExtResource("mat_light")
+size = Vector3(1.2, 0.035, 0.55)
+
+[node name="PollingStationRoom" type="Node3D" unique_id=1643673786]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=636015629]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0.4)
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor" unique_id=1639794064]
+mesh = SubResource("mesh_1")
+
+[node name="Collision" type="CollisionShape3D" parent="Floor" unique_id=1482398780]
+shape = SubResource("shape_1")
+
+[node name="Ceiling" type="StaticBody3D" parent="." unique_id=221820589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.12, 0.4)
+
+[node name="Mesh" type="MeshInstance3D" parent="Ceiling" unique_id=1109376378]
+mesh = SubResource("mesh_2")
+
+[node name="Collision" type="CollisionShape3D" parent="Ceiling" unique_id=1628095445]
+shape = SubResource("shape_2")
+
+[node name="NorthWall" type="StaticBody3D" parent="." unique_id=591311033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -5)
+
+[node name="Mesh" type="MeshInstance3D" parent="NorthWall" unique_id=1563973523]
+mesh = SubResource("mesh_3")
+
+[node name="Collision" type="CollisionShape3D" parent="NorthWall" unique_id=871375728]
+shape = SubResource("shape_3")
+
+[node name="SideWall3" type="StaticBody3D" parent="." unique_id=421245294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 0.4)
+
+[node name="Mesh" type="MeshInstance3D" parent="SideWall3" unique_id=495090876]
+mesh = SubResource("mesh_4")
+
+[node name="Collision" type="CollisionShape3D" parent="SideWall3" unique_id=904138146]
+shape = SubResource("shape_4")
+
+[node name="Skirting4" type="MeshInstance3D" parent="." unique_id=769012335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, 0.08, 0.4)
+mesh = SubResource("mesh_5")
+
+[node name="SideWall5" type="StaticBody3D" parent="." unique_id=1366065057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, 0.4)
+
+[node name="Mesh" type="MeshInstance3D" parent="SideWall5" unique_id=128632610]
+mesh = SubResource("mesh_6")
+
+[node name="Collision" type="CollisionShape3D" parent="SideWall5" unique_id=1867459608]
+shape = SubResource("shape_6")
+
+[node name="Skirting6" type="MeshInstance3D" parent="." unique_id=556620172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, 0.08, 0.4)
+mesh = SubResource("mesh_7")
+
+[node name="BackSkirting" type="MeshInstance3D" parent="." unique_id=906286969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, -4.885)
+mesh = SubResource("mesh_8")
+
+[node name="EntranceWall8" type="StaticBody3D" parent="." unique_id=64535899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1.5, 4.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="EntranceWall8" unique_id=805961361]
+mesh = SubResource("mesh_9")
+
+[node name="Collision" type="CollisionShape3D" parent="EntranceWall8" unique_id=906840602]
+shape = SubResource("shape_9")
+
+[node name="EntranceWall9" type="StaticBody3D" parent="." unique_id=395656051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.5, 4.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="EntranceWall9" unique_id=548376243]
+mesh = SubResource("mesh_10")
+
+[node name="Collision" type="CollisionShape3D" parent="EntranceWall9" unique_id=424593221]
+shape = SubResource("shape_10")
+
+[node name="EntranceLintel" type="StaticBody3D" parent="." unique_id=1546333359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 4.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="EntranceLintel" unique_id=144421969]
+mesh = SubResource("mesh_11")
+
+[node name="Collision" type="CollisionShape3D" parent="EntranceLintel" unique_id=1025869614]
+shape = SubResource("shape_11")
+
+[node name="SouthWall" type="StaticBody3D" parent="." unique_id=32121728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 5.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="SouthWall" unique_id=996709597]
+mesh = SubResource("mesh_12")
+
+[node name="Collision" type="CollisionShape3D" parent="SouthWall" unique_id=158049059]
+shape = SubResource("shape_12")
+
+[node name="EntranceDoors" type="MeshInstance3D" parent="." unique_id=477892916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, 5.67)
+mesh = SubResource("mesh_13")
+
+[node name="DoorFrame13" type="MeshInstance3D" parent="." unique_id=1487325329]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97, 1.2, 5.6)
+mesh = SubResource("mesh_14")
+
+[node name="DoorFrame14" type="MeshInstance3D" parent="." unique_id=1536143967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 5.6)
+mesh = SubResource("mesh_15")
+
+[node name="DoorFrame15" type="MeshInstance3D" parent="." unique_id=441171517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97, 1.2, 5.6)
+mesh = SubResource("mesh_16")
+
+[node name="DoorFrame16" type="MeshInstance3D" parent="." unique_id=1090512408]
+transform = Transform3D(-4.371139e-08, -0.8244718, 0, 1, -3.6038806e-08, 0, 0, 0, 5.3956585, 0.000769034, 2.3724172, 5.599824)
+mesh = SubResource("mesh_16")
+
+[node name="EntryMat" type="MeshInstance3D" parent="." unique_id=2139282609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.009, 4.7)
+mesh = SubResource("mesh_17")
+
+[node name="WelcomePanel" type="MeshInstance3D" parent="." unique_id=489837965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.48, -4.88)
+mesh = SubResource("mesh_18")
+
+[node name="Welcome" type="Label3D" parent="." unique_id=192970002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4.848)
+pixel_size = 0.004
+modulate = Color(0.94, 0.96, 0.93, 1)
+text = "ИЗБИРАТЕЛЬНЫЙ УЧАСТОК"
+font_size = 36
+outline_size = 0
+
+[node name="Subheading" type="Label3D" parent="." unique_id=1206799058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.27, -4.843)
+pixel_size = 0.004
+modulate = Color(0.94, 0.96, 0.93, 1)
+text = "ГОЛОСОВАНИЕ  /  08:00—20:00"
+font_size = 18
+outline_size = 0
+
+[node name="WindowFrame18" type="MeshInstance3D" parent="." unique_id=924957803]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.885, 1.92, -2.2)
+mesh = SubResource("mesh_19")
+
+[node name="WindowGlass19" type="MeshInstance3D" parent="." unique_id=928199918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.83, 1.92, -2.2)
+mesh = SubResource("mesh_20")
+
+[node name="WindowMullion20" type="MeshInstance3D" parent="." unique_id=562053693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8, 1.92, -2.2)
+mesh = SubResource("mesh_21")
+
+[node name="WindowSill21" type="MeshInstance3D" parent="." unique_id=35440631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.76, 1.07, -2.2)
+mesh = SubResource("mesh_22")
+
+[node name="WindowFrame22" type="MeshInstance3D" parent="." unique_id=1288146930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.885, 1.92, 0.25)
+mesh = SubResource("mesh_23")
+
+[node name="WindowGlass23" type="MeshInstance3D" parent="." unique_id=1748080477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.83, 1.92, 0.25)
+mesh = SubResource("mesh_24")
+
+[node name="WindowMullion24" type="MeshInstance3D" parent="." unique_id=413555219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8, 1.92, 0.25)
+mesh = SubResource("mesh_25")
+
+[node name="WindowSill25" type="MeshInstance3D" parent="." unique_id=1948180092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.76, 1.07, 0.25)
+mesh = SubResource("mesh_26")
+
+[node name="WindowFrame26" type="MeshInstance3D" parent="." unique_id=1568830870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.885, 1.92, 2.7)
+mesh = SubResource("mesh_27")
+
+[node name="WindowGlass27" type="MeshInstance3D" parent="." unique_id=1722068604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.83, 1.92, 2.7)
+mesh = SubResource("mesh_28")
+
+[node name="WindowMullion28" type="MeshInstance3D" parent="." unique_id=805446499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8, 1.92, 2.7)
+mesh = SubResource("mesh_29")
+
+[node name="WindowSill29" type="MeshInstance3D" parent="." unique_id=836551502]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.76, 1.07, 2.7)
+mesh = SubResource("mesh_30")
+
+[node name="CommissionDesk" parent="." unique_id=1539497119 instance=ExtResource("scene_7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 0, 1.8)
+
+[node name="CommissionChair" parent="." unique_id=102552815 instance=ExtResource("scene_11")]
+transform = Transform3D(-3.6199901e-06, 0, -1, 0, 1, 0, 1, 0, -3.6199901e-06, -3.6, 0, 1.8)
+
+[node name="CommissionSign" type="MeshInstance3D" parent="." unique_id=27137161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.88, 1.9, 1.8)
+mesh = SubResource("mesh_31")
+
+[node name="CommissionLabel" type="Label3D" parent="." unique_id=598785082]
+transform = Transform3D(-3.6199901e-06, 0, 1, 0, 1, 0, -1, 0, -3.6199901e-06, -3.85, 1.9, 1.8)
+pixel_size = 0.004
+modulate = Color(0.94, 0.96, 0.93, 1)
+text = "КОМИССИЯ"
+font_size = 35
+outline_size = 0
+
+[node name="WaitingChair0" parent="." unique_id=147768661 instance=ExtResource("scene_11")]
+transform = Transform3D(-3.6199901e-06, 0, 1, 0, 1, 0, -1, 0, -3.6199901e-06, 3.35, 0, 1.55)
+
+[node name="WaitingChair1" parent="." unique_id=2086258156 instance=ExtResource("scene_11")]
+transform = Transform3D(-3.6199901e-06, 0, 1, 0, 1, 0, -1, 0, -3.6199901e-06, 3.35, 0, 2.35)
+
+[node name="WaitingChair2" parent="." unique_id=666979553 instance=ExtResource("scene_11")]
+transform = Transform3D(-3.6199901e-06, 0, 1, 0, 1, 0, -1, 0, -3.6199901e-06, 3.35, 0, 3.15)
+
+[node name="NoticeBoard" type="MeshInstance3D" parent="." unique_id=799850960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86, 1.65, -0.55)
+mesh = SubResource("mesh_32")
+
+[node name="NoticeBacking" type="MeshInstance3D" parent="." unique_id=1661011083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.81, 1.65, -0.55)
+mesh = SubResource("mesh_33")
+
+[node name="NoticeText" type="Label3D" parent="." unique_id=1684977390]
+transform = Transform3D(-3.6199901e-06, 0, 1, 0, 1, 0, -1, 0, -3.6199901e-06, -3.78, 1.65, -0.55)
+pixel_size = 0.004
+modulate = Color(0.94, 0.96, 0.93, 1)
+text = "ПОРЯДОК ГОЛОСОВАНИЯ
+
+01   Заполните бюллетень
+02   Опустите его в урну"
+font_size = 18
+outline_size = 0
+
+[node name="BallotSign" type="MeshInstance3D" parent="." unique_id=1904036495]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 1.94, -4.87)
+mesh = SubResource("mesh_34")
+
+[node name="BallotLabel" type="Label3D" parent="." unique_id=750951397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 1.95, -4.84)
+pixel_size = 0.004
+modulate = Color(0.94, 0.96, 0.93, 1)
+text = "02  /  УРНА"
+outline_size = 0
+
+[node name="CeilingPanel34" type="MeshInstance3D" parent="." unique_id=179544714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 3.025, -2.7)
+mesh = SubResource("mesh_35")
+
+[node name="CeilingPanel35" type="MeshInstance3D" parent="." unique_id=980273878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 3.025, -2.7)
+mesh = SubResource("mesh_36")
+
+[node name="CeilingPanel36" type="MeshInstance3D" parent="." unique_id=319752845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 3.025, 1.9)
+mesh = SubResource("mesh_37")
+
+[node name="CeilingPanel37" type="MeshInstance3D" parent="." unique_id=522071500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 3.025, 1.9)
+mesh = SubResource("mesh_38")
+
+[node name="Details" parent="." unique_id=750720771 instance=ExtResource("scene_14")]

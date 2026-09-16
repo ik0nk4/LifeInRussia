@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dqyrww4p8wnb"]
+
+[ext_resource type="Script" uid="uid://bo6x08kq0pdg7" path="res://scripts/characters/player_controller.gd" id="1_player"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_player"]
+radius = 0.3
+height = 1.8
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_player"]
+radius = 0.3
+height = 1.8
+
+[node name="Player" type="CharacterBody3D" unique_id=1171905535]
+script = ExtResource("1_player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=136284192]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_player")
+
+[node name="BodyPreview" type="MeshInstance3D" parent="." unique_id=265492345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_player")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1259526185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+current = true
+
+[node name="InteractionRay" type="RayCast3D" parent="Camera3D" unique_id=381760607]
+target_position = Vector3(0, 0, -1)
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
