@@ -8,10 +8,9 @@ keeps the established Player, UI, IntroController and interaction paths:
 
 `polling_station_reimagined_environment.tscn` is the active presentation layer. It
 instances the Blender-authored GLB at metre scale, adds stable primitive collision,
-and owns location-specific lighting and rendering quality. The old hand-authored
-`polling_station_room.tscn`, voting-booth prop and ballot-box prop remain in the
-repository as inactive fallback assets; they are no longer instanced by the entry
-scene.
+and owns location-specific lighting and rendering quality. The superseded blockout,
+old prop scenes and their dedicated materials, meshes, shaders and light texture
+have been removed from the project.
 
 ## Layout and coordinates
 
