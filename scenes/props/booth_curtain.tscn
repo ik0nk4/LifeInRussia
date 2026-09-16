@@ -1,0 +1,22 @@
+[gd_scene format=3]
+
+[ext_resource type="ArrayMesh" path="res://assets/models/polling_station/curtain.obj" id="curtain"]
+
+[ext_resource type="Material" path="res://assets/materials/polling_station/fabric.tres" id="mat_fabric"]
+
+[ext_resource type="Material" path="res://assets/materials/polling_station/metal.tres" id="mat_metal"]
+
+[sub_resource type="BoxMesh" id="mesh_1"]
+material = ExtResource("mat_metal")
+size = Vector3(1.56, 0.025, 0.025)
+
+[node name="BoothCurtain" type="Node3D"]
+
+[node name="GatheredCurtain" type="MeshInstance3D" parent="."]
+position = Vector3(-0.77, 0.3, 0.69)
+mesh = ExtResource("curtain")
+material_override = ExtResource("mat_fabric")
+
+[node name="Rail" type="MeshInstance3D" parent="."]
+position = Vector3(0, 2.1, 0.69)
+mesh = SubResource("mesh_1")

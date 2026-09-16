@@ -1,0 +1,76 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/materials/polling_station/white.tres" id="mat_white"]
+
+[ext_resource type="Material" path="res://assets/materials/polling_station/metal.tres" id="mat_metal"]
+
+[ext_resource type="Material" path="res://assets/materials/polling_station/teal.tres" id="mat_teal"]
+
+[sub_resource type="BoxMesh" id="mesh_1"]
+material = ExtResource("mat_white")
+size = Vector3(0.64, 1.0, 0.64)
+
+[sub_resource type="BoxShape3D" id="shape_1"]
+size = Vector3(0.64, 1.0, 0.64)
+
+[sub_resource type="BoxMesh" id="mesh_2"]
+material = ExtResource("mat_metal")
+size = Vector3(0.7, 0.14, 0.7)
+
+[sub_resource type="BoxMesh" id="mesh_3"]
+material = ExtResource("mat_teal")
+size = Vector3(0.72, 0.08, 0.72)
+
+[sub_resource type="BoxMesh" id="mesh_4"]
+material = ExtResource("mat_metal")
+size = Vector3(0.36, 0.004, 0.035)
+
+[sub_resource type="BoxMesh" id="mesh_5"]
+material = ExtResource("mat_teal")
+size = Vector3(0.5, 0.39, 0.012)
+
+[node name="BallotBoxVisual" type="Node3D"]
+
+[node name="Body" type="StaticBody3D" parent="."]
+position = Vector3(0, 0.55, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("mesh_1")
+
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+shape = SubResource("shape_1")
+
+[node name="Base" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.07, 0)
+mesh = SubResource("mesh_2")
+
+[node name="Lid" type="MeshInstance3D" parent="."]
+position = Vector3(0, 1.08, 0)
+mesh = SubResource("mesh_3")
+
+[node name="Slot" type="MeshInstance3D" parent="."]
+position = Vector3(0, 1.122, 0)
+mesh = SubResource("mesh_4")
+
+[node name="FrontPanel" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.68, 0.324)
+mesh = SubResource("mesh_5")
+
+[node name="VoteLabel" type="Label3D" parent="."]
+position = Vector3(0, 0.69, 0.335)
+rotation = Vector3(0, 0, 0)
+text = "БЮЛЛЕТЕНИ\n↓"
+font_size = 20
+pixel_size = 0.004
+outline_size = 0
+modulate = Color(0.94, 0.96, 0.93, 1)
+
+[node name="SealLeft" type="MeshInstance3D" parent="."]
+position = Vector3(-0.22, 1.025, 0.328)
+scale = Vector3(0.065, 0.15, 0.035)
+mesh = SubResource("mesh_2")
+
+[node name="SealRight" type="MeshInstance3D" parent="."]
+position = Vector3(0.22, 1.025, 0.328)
+scale = Vector3(0.065, 0.15, 0.035)
+mesh = SubResource("mesh_2")

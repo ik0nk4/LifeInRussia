@@ -1,0 +1,634 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/materials/polling_station/grout.tres" id="mat_floor"]
+
+[ext_resource type="Material" path="res://assets/materials/polling_station/white.tres" id="mat_white"]
+
+[ext_resource type="Material" path="res://assets/materials/polling_station/plaster.tres" id="mat_plaster"]
+
+[ext_resource type="Material" path="res://assets/materials/polling_station/metal.tres" id="mat_metal"]
+
+[ext_resource type="Material" path="res://assets/materials/polling_station/mat.tres" id="mat_mat"]
+
+[ext_resource type="Material" path="res://assets/materials/polling_station/teal.tres" id="mat_teal"]
+
+[ext_resource type="Material" path="res://assets/materials/polling_station/paper.tres" id="mat_paper"]
+
+[ext_resource type="Material" path="res://assets/materials/polling_station/fabric.tres" id="mat_fabric"]
+
+[sub_resource type="BoxMesh" id="mesh_1"]
+material = ExtResource("mat_floor")
+size = Vector3(0.004, 0.002, 10.7)
+
+[sub_resource type="BoxMesh" id="mesh_2"]
+material = ExtResource("mat_floor")
+size = Vector3(0.004, 0.002, 10.7)
+
+[sub_resource type="BoxMesh" id="mesh_3"]
+material = ExtResource("mat_floor")
+size = Vector3(0.004, 0.002, 10.7)
+
+[sub_resource type="BoxMesh" id="mesh_4"]
+material = ExtResource("mat_floor")
+size = Vector3(0.004, 0.002, 10.7)
+
+[sub_resource type="BoxMesh" id="mesh_5"]
+material = ExtResource("mat_floor")
+size = Vector3(0.004, 0.002, 10.7)
+
+[sub_resource type="BoxMesh" id="mesh_6"]
+material = ExtResource("mat_floor")
+size = Vector3(0.004, 0.002, 10.7)
+
+[sub_resource type="BoxMesh" id="mesh_7"]
+material = ExtResource("mat_floor")
+size = Vector3(0.004, 0.002, 10.7)
+
+[sub_resource type="BoxMesh" id="mesh_8"]
+material = ExtResource("mat_floor")
+size = Vector3(7.8, 0.002, 0.004)
+
+[sub_resource type="BoxMesh" id="mesh_9"]
+material = ExtResource("mat_floor")
+size = Vector3(7.8, 0.002, 0.004)
+
+[sub_resource type="BoxMesh" id="mesh_10"]
+material = ExtResource("mat_floor")
+size = Vector3(7.8, 0.002, 0.004)
+
+[sub_resource type="BoxMesh" id="mesh_11"]
+material = ExtResource("mat_floor")
+size = Vector3(7.8, 0.002, 0.004)
+
+[sub_resource type="BoxMesh" id="mesh_12"]
+material = ExtResource("mat_floor")
+size = Vector3(7.8, 0.002, 0.004)
+
+[sub_resource type="BoxMesh" id="mesh_13"]
+material = ExtResource("mat_floor")
+size = Vector3(7.8, 0.002, 0.004)
+
+[sub_resource type="BoxMesh" id="mesh_14"]
+material = ExtResource("mat_floor")
+size = Vector3(7.8, 0.002, 0.004)
+
+[sub_resource type="BoxMesh" id="mesh_15"]
+material = ExtResource("mat_floor")
+size = Vector3(7.8, 0.002, 0.004)
+
+[sub_resource type="BoxMesh" id="mesh_16"]
+material = ExtResource("mat_floor")
+size = Vector3(7.8, 0.002, 0.004)
+
+[sub_resource type="BoxMesh" id="mesh_17"]
+material = ExtResource("mat_floor")
+size = Vector3(7.8, 0.002, 0.004)
+
+[sub_resource type="BoxMesh" id="mesh_18"]
+material = ExtResource("mat_white")
+size = Vector3(0.018, 0.008, 10.7)
+
+[sub_resource type="BoxMesh" id="mesh_19"]
+material = ExtResource("mat_white")
+size = Vector3(0.018, 0.008, 10.7)
+
+[sub_resource type="BoxMesh" id="mesh_20"]
+material = ExtResource("mat_white")
+size = Vector3(0.018, 0.008, 10.7)
+
+[sub_resource type="BoxMesh" id="mesh_21"]
+material = ExtResource("mat_white")
+size = Vector3(0.018, 0.008, 10.7)
+
+[sub_resource type="BoxMesh" id="mesh_22"]
+material = ExtResource("mat_white")
+size = Vector3(7.8, 0.008, 0.018)
+
+[sub_resource type="BoxMesh" id="mesh_23"]
+material = ExtResource("mat_white")
+size = Vector3(7.8, 0.008, 0.018)
+
+[sub_resource type="BoxMesh" id="mesh_24"]
+material = ExtResource("mat_white")
+size = Vector3(7.8, 0.008, 0.018)
+
+[sub_resource type="BoxMesh" id="mesh_25"]
+material = ExtResource("mat_white")
+size = Vector3(7.8, 0.008, 0.018)
+
+[sub_resource type="BoxMesh" id="mesh_26"]
+material = ExtResource("mat_white")
+size = Vector3(7.8, 0.008, 0.018)
+
+[sub_resource type="BoxMesh" id="mesh_27"]
+material = ExtResource("mat_white")
+size = Vector3(0.17, 0.62, 1.2)
+
+[sub_resource type="BoxShape3D" id="shape_27"]
+size = Vector3(0.17, 0.62, 1.2)
+
+[sub_resource type="BoxMesh" id="mesh_28"]
+material = ExtResource("mat_plaster")
+size = Vector3(0.035, 0.53, 0.035)
+
+[sub_resource type="BoxMesh" id="mesh_29"]
+material = ExtResource("mat_plaster")
+size = Vector3(0.035, 0.53, 0.035)
+
+[sub_resource type="BoxMesh" id="mesh_30"]
+material = ExtResource("mat_plaster")
+size = Vector3(0.035, 0.53, 0.035)
+
+[sub_resource type="BoxMesh" id="mesh_31"]
+material = ExtResource("mat_plaster")
+size = Vector3(0.035, 0.53, 0.035)
+
+[sub_resource type="BoxMesh" id="mesh_32"]
+material = ExtResource("mat_plaster")
+size = Vector3(0.035, 0.53, 0.035)
+
+[sub_resource type="BoxMesh" id="mesh_33"]
+material = ExtResource("mat_plaster")
+size = Vector3(0.035, 0.53, 0.035)
+
+[sub_resource type="BoxMesh" id="mesh_34"]
+material = ExtResource("mat_white")
+size = Vector3(0.17, 0.62, 1.2)
+
+[sub_resource type="BoxShape3D" id="shape_34"]
+size = Vector3(0.17, 0.62, 1.2)
+
+[sub_resource type="BoxMesh" id="mesh_35"]
+material = ExtResource("mat_plaster")
+size = Vector3(0.035, 0.53, 0.035)
+
+[sub_resource type="BoxMesh" id="mesh_36"]
+material = ExtResource("mat_plaster")
+size = Vector3(0.035, 0.53, 0.035)
+
+[sub_resource type="BoxMesh" id="mesh_37"]
+material = ExtResource("mat_plaster")
+size = Vector3(0.035, 0.53, 0.035)
+
+[sub_resource type="BoxMesh" id="mesh_38"]
+material = ExtResource("mat_plaster")
+size = Vector3(0.035, 0.53, 0.035)
+
+[sub_resource type="BoxMesh" id="mesh_39"]
+material = ExtResource("mat_plaster")
+size = Vector3(0.035, 0.53, 0.035)
+
+[sub_resource type="BoxMesh" id="mesh_40"]
+material = ExtResource("mat_plaster")
+size = Vector3(0.035, 0.53, 0.035)
+
+[sub_resource type="CylinderMesh" id="cyl_41"]
+material = ExtResource("mat_metal")
+top_radius = 0.19
+bottom_radius = 0.19
+height = 0.48
+radial_segments = 32
+
+[sub_resource type="CylinderShape3D" id="cshape_41"]
+radius = 0.19
+height = 0.48
+
+[sub_resource type="CylinderMesh" id="cyl_42"]
+material = ExtResource("mat_mat")
+top_radius = 0.162
+bottom_radius = 0.162
+height = 0.006
+radial_segments = 32
+
+[sub_resource type="CylinderMesh" id="cyl_43"]
+material = ExtResource("mat_metal")
+top_radius = 0.046
+bottom_radius = 0.046
+height = 0.13
+radial_segments = 32
+
+[sub_resource type="CylinderMesh" id="cyl_44"]
+material = ExtResource("mat_teal")
+top_radius = 0.004
+bottom_radius = 0.004
+height = 0.15
+radial_segments = 32
+
+[sub_resource type="CylinderMesh" id="cyl_45"]
+material = ExtResource("mat_teal")
+top_radius = 0.004
+bottom_radius = 0.004
+height = 0.15
+radial_segments = 32
+
+[sub_resource type="CylinderMesh" id="cyl_46"]
+material = ExtResource("mat_teal")
+top_radius = 0.004
+bottom_radius = 0.004
+height = 0.15
+radial_segments = 32
+
+[sub_resource type="BoxMesh" id="mesh_47"]
+material = ExtResource("mat_metal")
+size = Vector3(0.34, 0.05, 0.46)
+
+[sub_resource type="BoxMesh" id="mesh_48"]
+material = ExtResource("mat_paper")
+size = Vector3(0.3, 0.028, 0.42)
+
+[sub_resource type="BoxMesh" id="mesh_49"]
+material = ExtResource("mat_teal")
+size = Vector3(0.045, 0.2, 0.54)
+
+[sub_resource type="BoxMesh" id="mesh_50"]
+material = ExtResource("mat_white")
+size = Vector3(0.085, 0.085, 0.018)
+
+[sub_resource type="BoxMesh" id="mesh_51"]
+material = ExtResource("mat_white")
+size = Vector3(0.02, 0.085, 0.085)
+
+[sub_resource type="BoxMesh" id="mesh_52"]
+material = ExtResource("mat_metal")
+size = Vector3(1.6, 0.03, 0.04)
+
+[sub_resource type="BoxMesh" id="mesh_53"]
+material = ExtResource("mat_teal")
+size = Vector3(0.7, 0.23, 0.025)
+
+[sub_resource type="BoxMesh" id="mesh_54"]
+material = ExtResource("mat_metal")
+size = Vector3(0.81, 1.05, 0.04)
+
+[sub_resource type="BoxMesh" id="mesh_55"]
+material = ExtResource("mat_paper")
+size = Vector3(0.76, 1, 0.012)
+
+[sub_resource type="BoxMesh" id="mesh_56"]
+material = ExtResource("mat_fabric")
+size = Vector3(0.42, 0.01, 0.002)
+
+[sub_resource type="BoxMesh" id="mesh_57"]
+material = ExtResource("mat_fabric")
+size = Vector3(0.57, 0.01, 0.002)
+
+[sub_resource type="BoxMesh" id="mesh_58"]
+material = ExtResource("mat_fabric")
+size = Vector3(0.57, 0.01, 0.002)
+
+[sub_resource type="BoxMesh" id="mesh_59"]
+material = ExtResource("mat_fabric")
+size = Vector3(0.42, 0.01, 0.002)
+
+[sub_resource type="BoxMesh" id="mesh_60"]
+material = ExtResource("mat_fabric")
+size = Vector3(0.57, 0.01, 0.002)
+
+[sub_resource type="BoxMesh" id="mesh_61"]
+material = ExtResource("mat_fabric")
+size = Vector3(0.57, 0.01, 0.002)
+
+[sub_resource type="BoxMesh" id="mesh_62"]
+material = ExtResource("mat_fabric")
+size = Vector3(0.42, 0.01, 0.002)
+
+[sub_resource type="BoxMesh" id="mesh_63"]
+material = ExtResource("mat_fabric")
+size = Vector3(0.57, 0.01, 0.002)
+
+[sub_resource type="CylinderMesh" id="cyl_64"]
+material = ExtResource("mat_metal")
+top_radius = 0.17
+bottom_radius = 0.17
+height = 0.04
+radial_segments = 32
+
+[sub_resource type="CylinderMesh" id="cyl_65"]
+material = ExtResource("mat_paper")
+top_radius = 0.151
+bottom_radius = 0.151
+height = 0.006
+radial_segments = 32
+
+[sub_resource type="BoxMesh" id="mesh_66"]
+material = ExtResource("mat_metal")
+size = Vector3(0.005, 0.12, 0.009)
+
+[sub_resource type="BoxMesh" id="mesh_67"]
+material = ExtResource("mat_metal")
+size = Vector3(0.005, 0.009, 0.09)
+
+[node name="PollingStationDetails" type="Node3D"]
+
+[node name="FloorJointX-3" type="MeshInstance3D" parent="."]
+position = Vector3(-3, 0.001, 0.4)
+mesh = SubResource("mesh_1")
+
+[node name="FloorJointX-2" type="MeshInstance3D" parent="."]
+position = Vector3(-2, 0.001, 0.4)
+mesh = SubResource("mesh_2")
+
+[node name="FloorJointX-1" type="MeshInstance3D" parent="."]
+position = Vector3(-1, 0.001, 0.4)
+mesh = SubResource("mesh_3")
+
+[node name="FloorJointX0" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.001, 0.4)
+mesh = SubResource("mesh_4")
+
+[node name="FloorJointX1" type="MeshInstance3D" parent="."]
+position = Vector3(1, 0.001, 0.4)
+mesh = SubResource("mesh_5")
+
+[node name="FloorJointX2" type="MeshInstance3D" parent="."]
+position = Vector3(2, 0.001, 0.4)
+mesh = SubResource("mesh_6")
+
+[node name="FloorJointX3" type="MeshInstance3D" parent="."]
+position = Vector3(3, 0.001, 0.4)
+mesh = SubResource("mesh_7")
+
+[node name="FloorJointZ-4" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.001, -4)
+mesh = SubResource("mesh_8")
+
+[node name="FloorJointZ-3" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.001, -3)
+mesh = SubResource("mesh_9")
+
+[node name="FloorJointZ-2" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.001, -2)
+mesh = SubResource("mesh_10")
+
+[node name="FloorJointZ-1" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.001, -1)
+mesh = SubResource("mesh_11")
+
+[node name="FloorJointZ0" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.001, 0)
+mesh = SubResource("mesh_12")
+
+[node name="FloorJointZ1" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.001, 1)
+mesh = SubResource("mesh_13")
+
+[node name="FloorJointZ2" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.001, 2)
+mesh = SubResource("mesh_14")
+
+[node name="FloorJointZ3" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.001, 3)
+mesh = SubResource("mesh_15")
+
+[node name="FloorJointZ4" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.001, 4)
+mesh = SubResource("mesh_16")
+
+[node name="FloorJointZ5" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.001, 5)
+mesh = SubResource("mesh_17")
+
+[node name="CeilingJointX-3" type="MeshInstance3D" parent="."]
+position = Vector3(-3, 3.039, 0.4)
+mesh = SubResource("mesh_18")
+
+[node name="CeilingJointX-1" type="MeshInstance3D" parent="."]
+position = Vector3(-1, 3.039, 0.4)
+mesh = SubResource("mesh_19")
+
+[node name="CeilingJointX1" type="MeshInstance3D" parent="."]
+position = Vector3(1, 3.039, 0.4)
+mesh = SubResource("mesh_20")
+
+[node name="CeilingJointX3" type="MeshInstance3D" parent="."]
+position = Vector3(3, 3.039, 0.4)
+mesh = SubResource("mesh_21")
+
+[node name="CeilingJointZ-4" type="MeshInstance3D" parent="."]
+position = Vector3(0, 3.039, -4)
+mesh = SubResource("mesh_22")
+
+[node name="CeilingJointZ-2" type="MeshInstance3D" parent="."]
+position = Vector3(0, 3.039, -2)
+mesh = SubResource("mesh_23")
+
+[node name="CeilingJointZ0" type="MeshInstance3D" parent="."]
+position = Vector3(0, 3.039, 0)
+mesh = SubResource("mesh_24")
+
+[node name="CeilingJointZ2" type="MeshInstance3D" parent="."]
+position = Vector3(0, 3.039, 2)
+mesh = SubResource("mesh_25")
+
+[node name="CeilingJointZ4" type="MeshInstance3D" parent="."]
+position = Vector3(0, 3.039, 4)
+mesh = SubResource("mesh_26")
+
+[node name="Radiator26" type="StaticBody3D" parent="."]
+position = Vector3(3.79, 0.56, -2.2)
+
+[node name="Mesh" type="MeshInstance3D" parent="Radiator26"]
+mesh = SubResource("mesh_27")
+
+[node name="Collision" type="CollisionShape3D" parent="Radiator26"]
+shape = SubResource("shape_27")
+
+[node name="RadiatorFin27" type="MeshInstance3D" parent="."]
+position = Vector3(3.687, 0.56, -2.7)
+mesh = SubResource("mesh_28")
+
+[node name="RadiatorFin28" type="MeshInstance3D" parent="."]
+position = Vector3(3.687, 0.56, -2.5)
+mesh = SubResource("mesh_29")
+
+[node name="RadiatorFin29" type="MeshInstance3D" parent="."]
+position = Vector3(3.687, 0.56, -2.3000000000000003)
+mesh = SubResource("mesh_30")
+
+[node name="RadiatorFin30" type="MeshInstance3D" parent="."]
+position = Vector3(3.687, 0.56, -2.1)
+mesh = SubResource("mesh_31")
+
+[node name="RadiatorFin31" type="MeshInstance3D" parent="."]
+position = Vector3(3.687, 0.56, -1.9000000000000001)
+mesh = SubResource("mesh_32")
+
+[node name="RadiatorFin32" type="MeshInstance3D" parent="."]
+position = Vector3(3.687, 0.56, -1.7000000000000002)
+mesh = SubResource("mesh_33")
+
+[node name="Radiator33" type="StaticBody3D" parent="."]
+position = Vector3(3.79, 0.56, 0.25)
+
+[node name="Mesh" type="MeshInstance3D" parent="Radiator33"]
+mesh = SubResource("mesh_34")
+
+[node name="Collision" type="CollisionShape3D" parent="Radiator33"]
+shape = SubResource("shape_34")
+
+[node name="RadiatorFin34" type="MeshInstance3D" parent="."]
+position = Vector3(3.687, 0.56, -0.25)
+mesh = SubResource("mesh_35")
+
+[node name="RadiatorFin35" type="MeshInstance3D" parent="."]
+position = Vector3(3.687, 0.56, -0.04999999999999999)
+mesh = SubResource("mesh_36")
+
+[node name="RadiatorFin36" type="MeshInstance3D" parent="."]
+position = Vector3(3.687, 0.56, 0.15)
+mesh = SubResource("mesh_37")
+
+[node name="RadiatorFin37" type="MeshInstance3D" parent="."]
+position = Vector3(3.687, 0.56, 0.35)
+mesh = SubResource("mesh_38")
+
+[node name="RadiatorFin38" type="MeshInstance3D" parent="."]
+position = Vector3(3.687, 0.56, 0.55)
+mesh = SubResource("mesh_39")
+
+[node name="RadiatorFin39" type="MeshInstance3D" parent="."]
+position = Vector3(3.687, 0.56, 0.75)
+mesh = SubResource("mesh_40")
+
+[node name="WasteBin" type="StaticBody3D" parent="."]
+position = Vector3(-3.44, 0.24, 3.53)
+
+[node name="Collision" type="CollisionShape3D" parent="WasteBin"]
+shape = SubResource("cshape_41")
+
+[node name="WasteBinMesh" type="MeshInstance3D" parent="WasteBin"]
+position = Vector3(0, 0, 0)
+mesh = SubResource("cyl_41")
+
+[node name="BinOpeningMesh" type="MeshInstance3D" parent="."]
+position = Vector3(-3.44, 0.482, 3.53)
+mesh = SubResource("cyl_42")
+
+[node name="PenCupMesh" type="MeshInstance3D" parent="."]
+position = Vector3(-2.98, 0.863, 2.7)
+mesh = SubResource("cyl_43")
+
+[node name="DeskPen0Mesh" type="MeshInstance3D" parent="."]
+position = Vector3(-3.0, 0.935, 2.7)
+mesh = SubResource("cyl_44")
+
+[node name="DeskPen1Mesh" type="MeshInstance3D" parent="."]
+position = Vector3(-2.98, 0.935, 2.7)
+mesh = SubResource("cyl_45")
+
+[node name="DeskPen2Mesh" type="MeshInstance3D" parent="."]
+position = Vector3(-2.96, 0.935, 2.7)
+mesh = SubResource("cyl_46")
+
+[node name="PaperTray" type="MeshInstance3D" parent="."]
+position = Vector3(-2.87, 0.812, 0.97)
+mesh = SubResource("mesh_47")
+
+[node name="PaperStack" type="MeshInstance3D" parent="."]
+position = Vector3(-2.87, 0.849, 0.97)
+mesh = SubResource("mesh_48")
+
+[node name="DeskNameplate" type="MeshInstance3D" parent="."]
+position = Vector3(-2.53, 0.9, 1.84)
+mesh = SubResource("mesh_49")
+
+[node name="DeskLabel" type="Label3D" parent="."]
+position = Vector3(-2.5, 0.9, 1.84)
+rotation = Vector3(0, 1.5708, 0)
+text = "КОМИССИЯ"
+font_size = 13
+pixel_size = 0.004
+outline_size = 0
+modulate = Color(0.94, 0.96, 0.93, 1)
+
+[node name="WallSwitch" type="MeshInstance3D" parent="."]
+position = Vector3(-1.18, 1.15, 4.38)
+mesh = SubResource("mesh_50")
+
+[node name="PowerSocket" type="MeshInstance3D" parent="."]
+position = Vector3(-3.884, 0.31, 2.9)
+mesh = SubResource("mesh_51")
+
+[node name="DoorPushBar" type="MeshInstance3D" parent="."]
+position = Vector3(0, 1.05, 5.56)
+mesh = SubResource("mesh_52")
+
+[node name="ExitSign" type="MeshInstance3D" parent="."]
+position = Vector3(0, 2.53, 5.665)
+mesh = SubResource("mesh_53")
+
+[node name="ExitText" type="Label3D" parent="."]
+position = Vector3(0, 2.53, 5.637)
+rotation = Vector3(0, 3.141592653589793, 0)
+text = "ВЫХОД"
+font_size = 22
+pixel_size = 0.004
+outline_size = 0
+modulate = Color(0.94, 0.96, 0.93, 1)
+
+[node name="NoticeFrame" type="MeshInstance3D" parent="."]
+position = Vector3(2.55, 1.68, 4.385)
+mesh = SubResource("mesh_54")
+
+[node name="NoticePaper" type="MeshInstance3D" parent="."]
+position = Vector3(2.55, 1.68, 4.356)
+mesh = SubResource("mesh_55")
+
+[node name="NoticeTitle" type="Label3D" parent="."]
+position = Vector3(2.55, 1.99, 4.343)
+rotation = Vector3(0, 3.141592653589793, 0)
+text = "ИНФОРМАЦИЯ\nДЛЯ ИЗБИРАТЕЛЕЙ"
+font_size = 16
+pixel_size = 0.004
+outline_size = 0
+modulate = Color(0.15, 0.2, 0.21, 1)
+
+[node name="NoticeLine0" type="MeshInstance3D" parent="."]
+position = Vector3(2.55, 1.77, 4.344)
+mesh = SubResource("mesh_56")
+
+[node name="NoticeLine1" type="MeshInstance3D" parent="."]
+position = Vector3(2.55, 1.709, 4.344)
+mesh = SubResource("mesh_57")
+
+[node name="NoticeLine2" type="MeshInstance3D" parent="."]
+position = Vector3(2.55, 1.6480000000000001, 4.344)
+mesh = SubResource("mesh_58")
+
+[node name="NoticeLine3" type="MeshInstance3D" parent="."]
+position = Vector3(2.55, 1.587, 4.344)
+mesh = SubResource("mesh_59")
+
+[node name="NoticeLine4" type="MeshInstance3D" parent="."]
+position = Vector3(2.55, 1.526, 4.344)
+mesh = SubResource("mesh_60")
+
+[node name="NoticeLine5" type="MeshInstance3D" parent="."]
+position = Vector3(2.55, 1.465, 4.344)
+mesh = SubResource("mesh_61")
+
+[node name="NoticeLine6" type="MeshInstance3D" parent="."]
+position = Vector3(2.55, 1.404, 4.344)
+mesh = SubResource("mesh_62")
+
+[node name="NoticeLine7" type="MeshInstance3D" parent="."]
+position = Vector3(2.55, 1.343, 4.344)
+mesh = SubResource("mesh_63")
+
+[node name="ClockRimMesh" type="MeshInstance3D" parent="."]
+position = Vector3(-3.855, 2.52, 1.8)
+mesh = SubResource("cyl_64")
+rotation = Vector3(0, 0, 1.570796)
+
+[node name="ClockFaceMesh" type="MeshInstance3D" parent="."]
+position = Vector3(-3.823, 2.52, 1.8)
+mesh = SubResource("cyl_65")
+rotation = Vector3(0, 0, 1.570796)
+
+[node name="ClockMinute" type="MeshInstance3D" parent="."]
+position = Vector3(-3.815, 2.58, 1.8)
+mesh = SubResource("mesh_66")
+
+[node name="ClockHour" type="MeshInstance3D" parent="."]
+position = Vector3(-3.81, 2.52, 1.755)
+mesh = SubResource("mesh_67")

@@ -79,3 +79,10 @@ These are expected areas, not implementation requirements yet:
 - world-state presentation.
 
 Each should be designed only when its gameplay requirements are understood.
+
+## Current introductory flow
+
+The polling-station introduction uses a location controller for the local sequence,
+a reusable interaction-area component, a player scene, and a dedicated UI scene.
+Party names and identifiers live in `data/intro/parties.json`; the controller keeps
+only the selected identifier and current introduction state.
