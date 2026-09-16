@@ -1,0 +1,117 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/materials/polling_station/ink.tres" id="ink"]
+
+[sub_resource type="BoxMesh" id="mesh_0"]
+material = ExtResource("ink")
+size = Vector3(0.13, 0.0008, 0.001)
+
+[sub_resource type="BoxMesh" id="mesh_1"]
+material = ExtResource("ink")
+size = Vector3(0.014, 0.0008, 0.001)
+
+[sub_resource type="BoxMesh" id="mesh_2"]
+material = ExtResource("ink")
+size = Vector3(0.001, 0.0008, 0.014)
+
+[node name="BallotPrint" type="Node3D"]
+
+[node name="Heading" type="Label3D" parent="."]
+position = Vector3(0, 0.001, -0.111)
+rotation = Vector3(-1.5707963267948966, 0, 0)
+text = "ИЗБИРАТЕЛЬНЫЙ БЮЛЛЕТЕНЬ"
+font_size = 20
+pixel_size = 0.00034
+outline_size = 0
+shaded = true
+modulate = Color(0.08, 0.105, 0.12, 1)
+
+[node name="Instruction" type="Label3D" parent="."]
+position = Vector3(0, 0.001, -0.086)
+rotation = Vector3(-1.5707963267948966, 0, 0)
+text = "Поставьте одну отметку"
+font_size = 16
+pixel_size = 0.00034
+outline_size = 0
+shaded = true
+modulate = Color(0.08, 0.105, 0.12, 1)
+
+[node name="Rule0" type="MeshInstance3D" parent="."]
+position = Vector3(-0.01, 0.001, -0.044)
+mesh = SubResource("mesh_0")
+
+[node name="Check0_0" type="MeshInstance3D" parent="."]
+position = Vector3(0.078, 0.001, -0.051)
+mesh = SubResource("mesh_1")
+
+[node name="Check0_1" type="MeshInstance3D" parent="."]
+position = Vector3(0.078, 0.001, -0.037)
+mesh = SubResource("mesh_1")
+
+[node name="Check0_2" type="MeshInstance3D" parent="."]
+position = Vector3(0.071, 0.001, -0.044)
+mesh = SubResource("mesh_2")
+
+[node name="Check0_3" type="MeshInstance3D" parent="."]
+position = Vector3(0.085, 0.001, -0.044)
+mesh = SubResource("mesh_2")
+
+[node name="Rule1" type="MeshInstance3D" parent="."]
+position = Vector3(-0.01, 0.001, -0.0029999999999999957)
+mesh = SubResource("mesh_0")
+
+[node name="Check1_0" type="MeshInstance3D" parent="."]
+position = Vector3(0.078, 0.001, -0.009999999999999995)
+mesh = SubResource("mesh_1")
+
+[node name="Check1_1" type="MeshInstance3D" parent="."]
+position = Vector3(0.078, 0.001, 0.004000000000000004)
+mesh = SubResource("mesh_1")
+
+[node name="Check1_2" type="MeshInstance3D" parent="."]
+position = Vector3(0.071, 0.001, -0.0029999999999999957)
+mesh = SubResource("mesh_2")
+
+[node name="Check1_3" type="MeshInstance3D" parent="."]
+position = Vector3(0.085, 0.001, -0.0029999999999999957)
+mesh = SubResource("mesh_2")
+
+[node name="Rule2" type="MeshInstance3D" parent="."]
+position = Vector3(-0.01, 0.001, 0.038000000000000006)
+mesh = SubResource("mesh_0")
+
+[node name="Check2_0" type="MeshInstance3D" parent="."]
+position = Vector3(0.078, 0.001, 0.031000000000000007)
+mesh = SubResource("mesh_1")
+
+[node name="Check2_1" type="MeshInstance3D" parent="."]
+position = Vector3(0.078, 0.001, 0.045000000000000005)
+mesh = SubResource("mesh_1")
+
+[node name="Check2_2" type="MeshInstance3D" parent="."]
+position = Vector3(0.071, 0.001, 0.038000000000000006)
+mesh = SubResource("mesh_2")
+
+[node name="Check2_3" type="MeshInstance3D" parent="."]
+position = Vector3(0.085, 0.001, 0.038000000000000006)
+mesh = SubResource("mesh_2")
+
+[node name="Rule3" type="MeshInstance3D" parent="."]
+position = Vector3(-0.01, 0.001, 0.079)
+mesh = SubResource("mesh_0")
+
+[node name="Check3_0" type="MeshInstance3D" parent="."]
+position = Vector3(0.078, 0.001, 0.072)
+mesh = SubResource("mesh_1")
+
+[node name="Check3_1" type="MeshInstance3D" parent="."]
+position = Vector3(0.078, 0.001, 0.08600000000000001)
+mesh = SubResource("mesh_1")
+
+[node name="Check3_2" type="MeshInstance3D" parent="."]
+position = Vector3(0.071, 0.001, 0.079)
+mesh = SubResource("mesh_2")
+
+[node name="Check3_3" type="MeshInstance3D" parent="."]
+position = Vector3(0.085, 0.001, 0.079)
+mesh = SubResource("mesh_2")

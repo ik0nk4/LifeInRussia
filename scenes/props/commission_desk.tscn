@@ -6,9 +6,9 @@
 [ext_resource type="Material" path="res://assets/materials/polling_station/white.tres" id="mat_white"]
 [ext_resource type="Material" path="res://assets/materials/polling_station/wood.tres" id="mat_wood"]
 
-[sub_resource type="BoxMesh" id="mesh_1"]
-material = ExtResource("mat_wood")
-size = Vector3(0.8, 0.065, 2.5)
+[ext_resource type="PackedScene" path="res://scenes/props/desk_accessories.tscn" id="ultra_Accessories"]
+
+[ext_resource type="ArrayMesh" path="res://assets/models/polling_station/desk_top_ultra.obj" id="desk_top_ultra"]
 
 [sub_resource type="BoxShape3D" id="shape_1"]
 size = Vector3(0.8, 0.065, 2.5)
@@ -56,7 +56,8 @@ size = Vector3(0.25, 0.008, 0.33)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76, 0)
 
 [node name="Mesh" type="MeshInstance3D" parent="Top" unique_id=1075498066]
-mesh = SubResource("mesh_1")
+mesh = ExtResource("desk_top_ultra")
+material_override = ExtResource("mat_wood")
 
 [node name="Collision" type="CollisionShape3D" parent="Top" unique_id=1233359299]
 shape = SubResource("shape_1")
@@ -104,3 +105,6 @@ mesh = SubResource("mesh_7")
 [node name="Paper7" type="MeshInstance3D" parent="." unique_id=1850789990]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.824, 0.45)
 mesh = SubResource("mesh_8")
+
+[node name="Accessories" parent="." instance=ExtResource("ultra_Accessories")]
+position = Vector3(0, 0, 0)

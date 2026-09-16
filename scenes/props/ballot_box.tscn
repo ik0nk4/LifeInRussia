@@ -6,9 +6,11 @@
 
 [ext_resource type="Material" path="res://assets/materials/polling_station/teal.tres" id="mat_teal"]
 
-[sub_resource type="BoxMesh" id="mesh_1"]
-material = ExtResource("mat_white")
-size = Vector3(0.64, 1.0, 0.64)
+[ext_resource type="ArrayMesh" path="res://assets/models/polling_station/urn_body_ultra.obj" id="urn_body_ultra"]
+
+[ext_resource type="ArrayMesh" path="res://assets/models/polling_station/urn_lid_ultra.obj" id="urn_lid_ultra"]
+
+[ext_resource type="PackedScene" path="res://scenes/props/urn_hardware.tscn" id="Hardware"]
 
 [sub_resource type="BoxShape3D" id="shape_1"]
 size = Vector3(0.64, 1.0, 0.64)
@@ -16,10 +18,6 @@ size = Vector3(0.64, 1.0, 0.64)
 [sub_resource type="BoxMesh" id="mesh_2"]
 material = ExtResource("mat_metal")
 size = Vector3(0.7, 0.14, 0.7)
-
-[sub_resource type="BoxMesh" id="mesh_3"]
-material = ExtResource("mat_teal")
-size = Vector3(0.72, 0.08, 0.72)
 
 [sub_resource type="BoxMesh" id="mesh_4"]
 material = ExtResource("mat_metal")
@@ -35,7 +33,8 @@ size = Vector3(0.5, 0.39, 0.012)
 position = Vector3(0, 0.55, 0)
 
 [node name="Mesh" type="MeshInstance3D" parent="Body"]
-mesh = SubResource("mesh_1")
+mesh = ExtResource("urn_body_ultra")
+material_override = ExtResource("mat_white")
 
 [node name="Collision" type="CollisionShape3D" parent="Body"]
 shape = SubResource("shape_1")
@@ -46,7 +45,8 @@ mesh = SubResource("mesh_2")
 
 [node name="Lid" type="MeshInstance3D" parent="."]
 position = Vector3(0, 1.08, 0)
-mesh = SubResource("mesh_3")
+mesh = ExtResource("urn_lid_ultra")
+material_override = ExtResource("mat_teal")
 
 [node name="Slot" type="MeshInstance3D" parent="."]
 position = Vector3(0, 1.122, 0)
@@ -74,3 +74,5 @@ mesh = SubResource("mesh_2")
 position = Vector3(0.22, 1.025, 0.328)
 scale = Vector3(0.065, 0.15, 0.035)
 mesh = SubResource("mesh_2")
+
+[node name="Hardware" parent="." instance=ExtResource("Hardware")]
