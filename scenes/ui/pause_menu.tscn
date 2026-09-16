@@ -1,0 +1,121 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/pause_menu.gd" id="1_script"]
+[ext_resource type="Theme" path="res://ui/theme/game_ui_theme.tres" id="2_theme"]
+[ext_resource type="PackedScene" path="res://scenes/ui/settings_menu.tscn" id="3_settings"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 100
+script = ExtResource("1_script")
+
+[node name="PauseContent" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+
+[node name="Dim" type="ColorRect" parent="PauseContent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.015, 0.02, 0.025, 0.84)
+mouse_filter = 2
+
+[node name="Accent" type="ColorRect" parent="PauseContent"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_right = 430.0
+grow_vertical = 0
+color = Color(0.73, 0.59, 0.35, 0.8)
+mouse_filter = 2
+
+[node name="Margin" type="MarginContainer" parent="PauseContent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 84
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 84
+theme_override_constants/margin_bottom = 54
+
+[node name="Row" type="HBoxContainer" parent="PauseContent/Margin"]
+layout_mode = 2
+
+[node name="Column" type="VBoxContainer" parent="PauseContent/Margin/Row"]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Eyebrow" type="Label" parent="PauseContent/Margin/Row/Column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.73, 0.59, 0.35, 1)
+theme_override_font_sizes/font_size = 13
+text = "ИГРА ПРИОСТАНОВЛЕНА"
+
+[node name="Title" type="Label" parent="PauseContent/Margin/Row/Column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.95, 0.91, 1)
+theme_override_font_sizes/font_size = 42
+text = "Пауза"
+
+[node name="Spacer" type="Control" parent="PauseContent/Margin/Row/Column"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="ContinueButton" type="Button" parent="PauseContent/Margin/Row/Column"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+text = "Продолжить"
+alignment = 0
+
+[node name="SettingsButton" type="Button" parent="PauseContent/Margin/Row/Column"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+text = "Настройки"
+alignment = 0
+
+[node name="MainMenuButton" type="Button" parent="PauseContent/Margin/Row/Column"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+text = "В главное меню"
+alignment = 0
+
+[node name="ExitButton" type="Button" parent="PauseContent/Margin/Row/Column"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+text = "Выход"
+alignment = 0
+
+[node name="BottomSpacer" type="Control" parent="PauseContent/Margin/Row/Column"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Hint" type="Label" parent="PauseContent/Margin/Row/Column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.48, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 13
+text = "ESC  —  продолжить"
+
+[node name="SettingsMenu" parent="." instance=ExtResource("3_settings")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="pressed" from="PauseContent/Margin/Row/Column/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="PauseContent/Margin/Row/Column/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="PauseContent/Margin/Row/Column/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="PauseContent/Margin/Row/Column/ExitButton" to="." method="_on_exit_button_pressed"]

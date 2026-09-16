@@ -17,6 +17,8 @@ signal interaction_hint_changed(hint: String)
 
 
 func _ready() -> void:
+	mouse_sensitivity = SettingsManager.mouse_sensitivity
+	SettingsManager.settings_changed.connect(_on_settings_changed)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
@@ -79,3 +81,7 @@ func _set_hint(hint: String) -> void:
 
 	_last_hint = hint
 	interaction_hint_changed.emit(hint)
+
+
+func _on_settings_changed() -> void:
+	mouse_sensitivity = SettingsManager.mouse_sensitivity

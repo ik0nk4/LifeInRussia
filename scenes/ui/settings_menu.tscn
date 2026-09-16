@@ -1,0 +1,288 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/settings_menu.gd" id="1_script"]
+[ext_resource type="Theme" path="res://ui/theme/game_ui_theme.tres" id="2_theme"]
+
+[sub_resource type="StyleBoxFlat" id="SectionPanel"]
+bg_color = Color(0.09, 0.105, 0.12, 0.78)
+border_width_top = 1
+border_color = Color(0.3, 0.32, 0.33, 0.45)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.025, 0.032, 0.039, 0.985)
+mouse_filter = 2
+
+[node name="SafeArea" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 52
+theme_override_constants/margin_top = 38
+theme_override_constants/margin_right = 52
+theme_override_constants/margin_bottom = 38
+
+[node name="Surface" type="PanelContainer" parent="SafeArea"]
+layout_mode = 2
+
+[node name="Padding" type="MarginContainer" parent="SafeArea/Surface"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 26
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 26
+
+[node name="Layout" type="VBoxContainer" parent="SafeArea/Surface/Padding"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Header" type="HBoxContainer" parent="SafeArea/Surface/Padding/Layout"]
+layout_mode = 2
+
+[node name="Heading" type="VBoxContainer" parent="SafeArea/Surface/Padding/Layout/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="Title" type="Label" parent="SafeArea/Surface/Padding/Layout/Header/Heading"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.94, 0.9, 1)
+theme_override_font_sizes/font_size = 29
+text = "Настройки"
+
+[node name="Subtitle" type="Label" parent="SafeArea/Surface/Padding/Layout/Header/Heading"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.58, 0.61, 0.61, 1)
+theme_override_font_sizes/font_size = 14
+text = "Изменения применяются и сохраняются автоматически"
+
+[node name="BackButton" type="Button" parent="SafeArea/Surface/Padding/Layout/Header"]
+custom_minimum_size = Vector2(150, 48)
+layout_mode = 2
+text = "Назад"
+
+[node name="Rule" type="HSeparator" parent="SafeArea/Surface/Padding/Layout"]
+layout_mode = 2
+
+[node name="Columns" type="HBoxContainer" parent="SafeArea/Surface/Padding/Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="VideoPanel" type="PanelContainer" parent="SafeArea/Surface/Padding/Layout/Columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("SectionPanel")
+
+[node name="Margin" type="MarginContainer" parent="SafeArea/Surface/Padding/Layout/Columns/VideoPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 18
+
+[node name="Fields" type="VBoxContainer" parent="SafeArea/Surface/Padding/Layout/Columns/VideoPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="SectionTitle" type="Label" parent="SafeArea/Surface/Padding/Layout/Columns/VideoPanel/Margin/Fields"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.68, 0.43, 1)
+theme_override_font_sizes/font_size = 13
+text = "ВИДЕО"
+
+[node name="ResolutionLabel" type="Label" parent="SafeArea/Surface/Padding/Layout/Columns/VideoPanel/Margin/Fields"]
+layout_mode = 2
+text = "Разрешение"
+
+[node name="ResolutionOption" type="OptionButton" parent="SafeArea/Surface/Padding/Layout/Columns/VideoPanel/Margin/Fields"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="WindowModeLabel" type="Label" parent="SafeArea/Surface/Padding/Layout/Columns/VideoPanel/Margin/Fields"]
+layout_mode = 2
+text = "Режим окна"
+
+[node name="WindowModeOption" type="OptionButton" parent="SafeArea/Surface/Padding/Layout/Columns/VideoPanel/Margin/Fields"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="VsyncCheck" type="CheckButton" parent="SafeArea/Surface/Padding/Layout/Columns/VideoPanel/Margin/Fields"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+text = "Вертикальная синхронизация"
+
+[node name="AudioPanel" type="PanelContainer" parent="SafeArea/Surface/Padding/Layout/Columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("SectionPanel")
+
+[node name="Margin" type="MarginContainer" parent="SafeArea/Surface/Padding/Layout/Columns/AudioPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 18
+
+[node name="Fields" type="VBoxContainer" parent="SafeArea/Surface/Padding/Layout/Columns/AudioPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="SectionTitle" type="Label" parent="SafeArea/Surface/Padding/Layout/Columns/AudioPanel/Margin/Fields"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.68, 0.43, 1)
+theme_override_font_sizes/font_size = 13
+text = "АУДИО"
+
+[node name="MasterHeader" type="HBoxContainer" parent="SafeArea/Surface/Padding/Layout/Columns/AudioPanel/Margin/Fields"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SafeArea/Surface/Padding/Layout/Columns/AudioPanel/Margin/Fields/MasterHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Общая громкость"
+
+[node name="MasterValue" type="Label" parent="SafeArea/Surface/Padding/Layout/Columns/AudioPanel/Margin/Fields/MasterHeader"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "85%"
+
+[node name="MasterSlider" type="HSlider" parent="SafeArea/Surface/Padding/Layout/Columns/AudioPanel/Margin/Fields"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+value = 85.0
+
+[node name="MusicHeader" type="HBoxContainer" parent="SafeArea/Surface/Padding/Layout/Columns/AudioPanel/Margin/Fields"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SafeArea/Surface/Padding/Layout/Columns/AudioPanel/Margin/Fields/MusicHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Музыка"
+
+[node name="MusicValue" type="Label" parent="SafeArea/Surface/Padding/Layout/Columns/AudioPanel/Margin/Fields/MusicHeader"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "75%"
+
+[node name="MusicSlider" type="HSlider" parent="SafeArea/Surface/Padding/Layout/Columns/AudioPanel/Margin/Fields"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+value = 75.0
+
+[node name="SfxHeader" type="HBoxContainer" parent="SafeArea/Surface/Padding/Layout/Columns/AudioPanel/Margin/Fields"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SafeArea/Surface/Padding/Layout/Columns/AudioPanel/Margin/Fields/SfxHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Звуковые эффекты"
+
+[node name="SfxValue" type="Label" parent="SafeArea/Surface/Padding/Layout/Columns/AudioPanel/Margin/Fields/SfxHeader"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "85%"
+
+[node name="SfxSlider" type="HSlider" parent="SafeArea/Surface/Padding/Layout/Columns/AudioPanel/Margin/Fields"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+value = 85.0
+
+[node name="ControlsPanel" type="PanelContainer" parent="SafeArea/Surface/Padding/Layout/Columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("SectionPanel")
+
+[node name="Margin" type="MarginContainer" parent="SafeArea/Surface/Padding/Layout/Columns/ControlsPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 18
+
+[node name="Fields" type="VBoxContainer" parent="SafeArea/Surface/Padding/Layout/Columns/ControlsPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="SectionTitle" type="Label" parent="SafeArea/Surface/Padding/Layout/Columns/ControlsPanel/Margin/Fields"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.68, 0.43, 1)
+theme_override_font_sizes/font_size = 13
+text = "УПРАВЛЕНИЕ"
+
+[node name="SensitivityHeader" type="HBoxContainer" parent="SafeArea/Surface/Padding/Layout/Columns/ControlsPanel/Margin/Fields"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SafeArea/Surface/Padding/Layout/Columns/ControlsPanel/Margin/Fields/SensitivityHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Чувствительность мыши"
+
+[node name="SensitivityValue" type="Label" parent="SafeArea/Surface/Padding/Layout/Columns/ControlsPanel/Margin/Fields/SensitivityHeader"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1.00×"
+
+[node name="SensitivitySlider" type="HSlider" parent="SafeArea/Surface/Padding/Layout/Columns/ControlsPanel/Margin/Fields"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+min_value = 25.0
+max_value = 250.0
+step = 5.0
+value = 100.0
+
+[node name="SensitivityHint" type="Label" parent="SafeArea/Surface/Padding/Layout/Columns/ControlsPanel/Margin/Fields"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.58, 0.58, 1)
+theme_override_font_sizes/font_size = 13
+text = "Влияет на обзор от первого лица"
+autowrap_mode = 2
+
+[node name="Spacer" type="Control" parent="SafeArea/Surface/Padding/Layout/Columns/ControlsPanel/Margin/Fields"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DefaultsButton" type="Button" parent="SafeArea/Surface/Padding/Layout/Columns/ControlsPanel/Margin/Fields"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+text = "Сбросить настройки"
+
+[connection signal="pressed" from="SafeArea/Surface/Padding/Layout/Header/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="item_selected" from="SafeArea/Surface/Padding/Layout/Columns/VideoPanel/Margin/Fields/ResolutionOption" to="." method="_on_resolution_option_item_selected"]
+[connection signal="item_selected" from="SafeArea/Surface/Padding/Layout/Columns/VideoPanel/Margin/Fields/WindowModeOption" to="." method="_on_window_mode_option_item_selected"]
+[connection signal="toggled" from="SafeArea/Surface/Padding/Layout/Columns/VideoPanel/Margin/Fields/VsyncCheck" to="." method="_on_vsync_check_toggled"]
+[connection signal="value_changed" from="SafeArea/Surface/Padding/Layout/Columns/AudioPanel/Margin/Fields/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="SafeArea/Surface/Padding/Layout/Columns/AudioPanel/Margin/Fields/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SafeArea/Surface/Padding/Layout/Columns/AudioPanel/Margin/Fields/SfxSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="SafeArea/Surface/Padding/Layout/Columns/ControlsPanel/Margin/Fields/SensitivitySlider" to="." method="_on_sensitivity_slider_value_changed"]
+[connection signal="pressed" from="SafeArea/Surface/Padding/Layout/Columns/ControlsPanel/Margin/Fields/DefaultsButton" to="." method="_on_defaults_button_pressed"]
