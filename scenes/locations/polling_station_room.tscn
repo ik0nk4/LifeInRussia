@@ -1,17 +1,20 @@
 [gd_scene format=3 uid="uid://ot7m2rvu8fis"]
 
+[ext_resource type="Material" path="res://assets/materials/polling_station/ceiling.tres" id="ceiling"]
 [ext_resource type="Material" uid="uid://b3vmgd0evwrfa" path="res://assets/materials/polling_station/floor.tres" id="mat_floor"]
 [ext_resource type="Material" path="res://assets/materials/polling_station/glass.tres" id="mat_glass"]
-[ext_resource type="Material" path="res://assets/materials/polling_station/light.tres" id="mat_light"]
 [ext_resource type="Material" uid="uid://bdqy6ip26ewds" path="res://assets/materials/polling_station/mat.tres" id="mat_mat"]
 [ext_resource type="Material" path="res://assets/materials/polling_station/metal.tres" id="mat_metal"]
-[ext_resource type="Material" uid="uid://d0xjdlptvh84u" path="res://assets/materials/polling_station/plaster.tres" id="mat_plaster"]
 [ext_resource type="Material" path="res://assets/materials/polling_station/teal.tres" id="mat_teal"]
 [ext_resource type="Material" path="res://assets/materials/polling_station/white.tres" id="mat_white"]
 [ext_resource type="Material" uid="uid://pf5dbeawup4" path="res://assets/materials/polling_station/wood.tres" id="mat_wood"]
 [ext_resource type="PackedScene" uid="uid://bc8y1pybx0n81" path="res://scenes/props/commission_desk.tscn" id="scene_7"]
 [ext_resource type="PackedScene" path="res://scenes/props/polling_chair.tscn" id="scene_11"]
 [ext_resource type="PackedScene" path="res://scenes/props/polling_station_details.tscn" id="scene_14"]
+[ext_resource type="PackedScene" path="res://scenes/props/window_blinds.tscn" id="ultra_Blinds2"]
+[ext_resource type="PackedScene" path="res://scenes/props/civic_notices.tscn" id="ultra_CivicNotices"]
+[ext_resource type="PackedScene" path="res://scenes/props/polling_station_finish.tscn" id="ultra_InteriorFinish"]
+[ext_resource type="Material" path="res://assets/materials/polling_station/wall_paint.tres" id="wall_paint"]
 
 [sub_resource type="BoxMesh" id="mesh_1"]
 material = ExtResource("mat_floor")
@@ -21,21 +24,21 @@ size = Vector3(8.2, 0.2, 11)
 size = Vector3(8.2, 0.2, 11)
 
 [sub_resource type="BoxMesh" id="mesh_2"]
-material = ExtResource("mat_plaster")
+material = ExtResource("ceiling")
 size = Vector3(8.2, 0.15, 11)
 
 [sub_resource type="BoxShape3D" id="shape_2"]
 size = Vector3(8.2, 0.15, 11)
 
 [sub_resource type="BoxMesh" id="mesh_3"]
-material = ExtResource("mat_plaster")
+material = ExtResource("wall_paint")
 size = Vector3(8.2, 3, 0.2)
 
 [sub_resource type="BoxShape3D" id="shape_3"]
 size = Vector3(8.2, 3, 0.2)
 
 [sub_resource type="BoxMesh" id="mesh_4"]
-material = ExtResource("mat_plaster")
+material = ExtResource("wall_paint")
 size = Vector3(0.2, 3, 11)
 
 [sub_resource type="BoxShape3D" id="shape_4"]
@@ -46,7 +49,7 @@ material = ExtResource("mat_white")
 size = Vector3(0.035, 0.1, 10.8)
 
 [sub_resource type="BoxMesh" id="mesh_6"]
-material = ExtResource("mat_plaster")
+material = ExtResource("wall_paint")
 size = Vector3(0.2, 3, 11)
 
 [sub_resource type="BoxShape3D" id="shape_6"]
@@ -61,28 +64,28 @@ material = ExtResource("mat_white")
 size = Vector3(7.8, 0.1, 0.03)
 
 [sub_resource type="BoxMesh" id="mesh_9"]
-material = ExtResource("mat_plaster")
+material = ExtResource("wall_paint")
 size = Vector3(3, 3, 0.18)
 
 [sub_resource type="BoxShape3D" id="shape_9"]
 size = Vector3(3, 3, 0.18)
 
 [sub_resource type="BoxMesh" id="mesh_10"]
-material = ExtResource("mat_plaster")
+material = ExtResource("wall_paint")
 size = Vector3(3, 3, 0.18)
 
 [sub_resource type="BoxShape3D" id="shape_10"]
 size = Vector3(3, 3, 0.18)
 
 [sub_resource type="BoxMesh" id="mesh_11"]
-material = ExtResource("mat_plaster")
+material = ExtResource("wall_paint")
 size = Vector3(2, 0.5, 0.18)
 
 [sub_resource type="BoxShape3D" id="shape_11"]
 size = Vector3(2, 0.5, 0.18)
 
 [sub_resource type="BoxMesh" id="mesh_12"]
-material = ExtResource("mat_plaster")
+material = ExtResource("wall_paint")
 size = Vector3(8.2, 3, 0.2)
 
 [sub_resource type="BoxShape3D" id="shape_12"]
@@ -175,22 +178,6 @@ size = Vector3(0.025, 1.03, 1.33)
 [sub_resource type="BoxMesh" id="mesh_34"]
 material = ExtResource("mat_teal")
 size = Vector3(1.6, 0.42, 0.04)
-
-[sub_resource type="BoxMesh" id="mesh_35"]
-material = ExtResource("mat_light")
-size = Vector3(1.2, 0.035, 0.55)
-
-[sub_resource type="BoxMesh" id="mesh_36"]
-material = ExtResource("mat_light")
-size = Vector3(1.2, 0.035, 0.55)
-
-[sub_resource type="BoxMesh" id="mesh_37"]
-material = ExtResource("mat_light")
-size = Vector3(1.2, 0.035, 0.55)
-
-[sub_resource type="BoxMesh" id="mesh_38"]
-material = ExtResource("mat_light")
-size = Vector3(1.2, 0.035, 0.55)
 
 [node name="PollingStationRoom" type="Node3D" unique_id=1643673786]
 
@@ -420,36 +407,33 @@ pixel_size = 0.004
 modulate = Color(0.94, 0.96, 0.93, 1)
 text = "ПОРЯДОК ГОЛОСОВАНИЯ
 
-01   Заполните бюллетень
-02   Опустите его в урну"
+1  -  Заполните бюллетень
+2  -   Опустите его в урну"
 font_size = 18
 outline_size = 0
 
 [node name="BallotSign" type="MeshInstance3D" parent="." unique_id=1904036495]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 1.94, -4.87)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 1.7734406, -4.87)
 mesh = SubResource("mesh_34")
 
 [node name="BallotLabel" type="Label3D" parent="." unique_id=750951397]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 1.95, -4.84)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 1.7834406, -4.84)
 pixel_size = 0.004
 modulate = Color(0.94, 0.96, 0.93, 1)
 text = "02  /  УРНА"
 outline_size = 0
 
-[node name="CeilingPanel34" type="MeshInstance3D" parent="." unique_id=179544714]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 3.025, -2.7)
-mesh = SubResource("mesh_35")
-
-[node name="CeilingPanel35" type="MeshInstance3D" parent="." unique_id=980273878]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 3.025, -2.7)
-mesh = SubResource("mesh_36")
-
-[node name="CeilingPanel36" type="MeshInstance3D" parent="." unique_id=319752845]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 3.025, 1.9)
-mesh = SubResource("mesh_37")
-
-[node name="CeilingPanel37" type="MeshInstance3D" parent="." unique_id=522071500]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 3.025, 1.9)
-mesh = SubResource("mesh_38")
-
 [node name="Details" parent="." unique_id=750720771 instance=ExtResource("scene_14")]
+
+[node name="InteriorFinish" parent="." unique_id=1980790795 instance=ExtResource("ultra_InteriorFinish")]
+
+[node name="CivicNotices" parent="." unique_id=366353254 instance=ExtResource("ultra_CivicNotices")]
+
+[node name="Blinds0" parent="." unique_id=1071667986 instance=ExtResource("ultra_Blinds2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.73, 0, -2.2)
+
+[node name="Blinds1" parent="." unique_id=1877088367 instance=ExtResource("ultra_Blinds2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.73, 0, 0.25)
+
+[node name="Blinds2" parent="." unique_id=356639405 instance=ExtResource("ultra_Blinds2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.73, 0, 2.7)

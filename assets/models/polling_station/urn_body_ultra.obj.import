@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c8qfjqvudksce"
+path="res://.godot/imported/urn_body_ultra.obj-04e8287e4a822eb6ac79752677a41127.mesh"
+
+[deps]
+
+files=["res://.godot/imported/urn_body_ultra.obj-04e8287e4a822eb6ac79752677a41127.mesh"]
+
+source_file="res://assets/models/polling_station/urn_body_ultra.obj"
+dest_files=["res://.godot/imported/urn_body_ultra.obj-04e8287e4a822eb6ac79752677a41127.mesh", "res://.godot/imported/urn_body_ultra.obj-04e8287e4a822eb6ac79752677a41127.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
