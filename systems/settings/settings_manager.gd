@@ -167,7 +167,12 @@ func _apply_windowed_resolution() -> void:
 	)
 	DisplayServer.window_set_size(target_size)
 	var screen_origin := DisplayServer.screen_get_position(screen)
-	DisplayServer.window_set_position(screen_origin + (screen_size - target_size) / 2)
+	var available_space := screen_size - target_size
+	var centered_offset := Vector2i(
+		floori(available_space.x / 2.0),
+		floori(available_space.y / 2.0)
+	)
+	DisplayServer.window_set_position(screen_origin + centered_offset)
 
 
 func _apply_audio() -> void:

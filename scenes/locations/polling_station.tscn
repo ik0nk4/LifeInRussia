@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://blu5anq5a3vmq"]
 
+[ext_resource type="PackedScene" uid="uid://ck80vweowqci7" path="res://scenes/props/voting_booth_close.tscn" id="5_7sbdy"]
 [ext_resource type="Script" uid="uid://bgel538v313yb" path="res://scripts/locations/polling_station_intro.gd" id="controller"]
 [ext_resource type="PackedScene" uid="uid://ot7m2rvu8fis" path="res://scenes/locations/polling_station_room.tscn" id="scene_1"]
-[ext_resource type="PackedScene" path="res://scenes/props/voting_booth.tscn" id="scene_2"]
+[ext_resource type="PackedScene" uid="uid://bvevxr87mroly" path="res://scenes/props/voting_booth.tscn" id="scene_2"]
 [ext_resource type="PackedScene" path="res://scenes/props/ballot_box.tscn" id="scene_4"]
 [ext_resource type="PackedScene" path="res://scenes/components/interaction_area.tscn" id="scene_5"]
 [ext_resource type="PackedScene" uid="uid://dqyrww4p8wnb" path="res://scenes/characters/player.tscn" id="scene_6"]
@@ -16,7 +17,7 @@ background_mode = 1
 background_color = Color(0.65, 0.72, 0.75, 1)
 ambient_light_source = 2
 ambient_light_color = Color(0.78, 0.85, 0.94, 1)
-ambient_light_energy = 0.22
+ambient_light_energy = 0.28
 reflected_light_source = 1
 tonemap_mode = 2
 ssao_enabled = true
@@ -27,7 +28,7 @@ ssil_intensity = 0.65
 sdfgi_enabled = true
 sdfgi_read_sky_light = false
 sdfgi_min_cell_size = 0.15
-sdfgi_energy = 0.65
+sdfgi_energy = 0.72
 glow_enabled = true
 glow_bloom = 0.02
 
@@ -40,7 +41,7 @@ script = ExtResource("ultra_quality")
 [node name="Environment" parent="." unique_id=1599399454 instance=ExtResource("scene_1")]
 
 [node name="VotingBooth" type="Node3D" parent="." unique_id=1759536119]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.65, 0, -3.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.65, 0, -3.9931798)
 
 [node name="Visual" parent="VotingBooth" unique_id=1193186726 instance=ExtResource("scene_2")]
 
@@ -48,10 +49,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.65, 0, -3.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, -0.36)
 interaction_hint = "Заполнить бюллетень (E)"
 
+[node name="VotingBooth2" type="Node3D" parent="." unique_id=1160446392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71877575, 0, -3.9931798)
+
+[node name="Visual" parent="VotingBooth2" unique_id=2076159808 instance=ExtResource("5_7sbdy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0042182803, 0, -0.0018205643)
+
 [node name="BallotBox" type="Node3D" parent="." unique_id=1425818291]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 0, -3.5)
 
 [node name="Visual" parent="BallotBox" unique_id=338558640 instance=ExtResource("scene_4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.7402024)
 
 [node name="InteractionArea" parent="BallotBox" unique_id=1522604908 instance=ExtResource("scene_5")]
 transform = Transform3D(1, 0, 0, 0, 1.8, 0, 0, 0, 1.2, 0, 1.15, 0)
@@ -67,7 +75,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.05)
 [node name="CeilingLight0" type="OmniLight3D" parent="Lighting" unique_id=1668840780]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 2.89, -2.7)
 light_color = Color(1, 0.88, 0.72, 1)
-light_energy = 0.48
+light_energy = 0.54
 light_size = 0.5
 shadow_enabled = true
 shadow_blur = 1.5
@@ -76,7 +84,7 @@ omni_range = 5.5
 [node name="CeilingLight1" type="OmniLight3D" parent="Lighting" unique_id=665244856]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 2.89, -2.7)
 light_color = Color(1, 0.88, 0.72, 1)
-light_energy = 0.48
+light_energy = 0.54
 light_size = 0.5
 shadow_enabled = true
 shadow_blur = 1.5
@@ -85,7 +93,7 @@ omni_range = 5.5
 [node name="CeilingLight2" type="OmniLight3D" parent="Lighting" unique_id=1016740272]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 2.89, 1.9)
 light_color = Color(1, 0.88, 0.72, 1)
-light_energy = 0.48
+light_energy = 0.54
 light_size = 0.5
 shadow_enabled = true
 shadow_blur = 1.5
@@ -94,7 +102,7 @@ omni_range = 5.5
 [node name="CeilingLight3" type="OmniLight3D" parent="Lighting" unique_id=625432152]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 2.89, 1.9)
 light_color = Color(1, 0.88, 0.72, 1)
-light_energy = 0.48
+light_energy = 0.54
 light_size = 0.5
 shadow_enabled = true
 shadow_blur = 1.5
@@ -103,7 +111,7 @@ omni_range = 5.5
 [node name="WindowFill0" type="OmniLight3D" parent="Lighting" unique_id=618236341]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.55, 2, -2.2)
 light_color = Color(0.87, 0.94, 1, 1)
-light_energy = 0.75
+light_energy = 0.48
 light_size = 0.8
 shadow_enabled = true
 omni_range = 5.5
@@ -111,7 +119,7 @@ omni_range = 5.5
 [node name="WindowFill1" type="OmniLight3D" parent="Lighting" unique_id=2079364004]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.55, 2, 0.25)
 light_color = Color(0.87, 0.94, 1, 1)
-light_energy = 0.75
+light_energy = 0.48
 light_size = 0.8
 shadow_enabled = true
 omni_range = 5.5
@@ -119,7 +127,7 @@ omni_range = 5.5
 [node name="WindowFill2" type="OmniLight3D" parent="Lighting" unique_id=1545250847]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.55, 2, 2.7)
 light_color = Color(0.87, 0.94, 1, 1)
-light_energy = 0.75
+light_energy = 0.48
 light_size = 0.8
 shadow_enabled = true
 omni_range = 5.5
@@ -127,12 +135,13 @@ omni_range = 5.5
 [node name="AfternoonWindow0" type="SpotLight3D" parent="Lighting" unique_id=2046489420]
 transform = Transform3D(0.30901697, -0.61132735, 0.72855157, 0, 0.76604444, 0.6427876, -0.95105654, -0.19863227, 0.23672073, 3.65, 2.35, -2.2)
 light_color = Color(1, 0.88, 0.68, 1)
-light_energy = 2.0
-light_indirect_energy = 0.7
+light_energy = 0.62
+light_indirect_energy = 0.35
 light_projector = ExtResource("window_projector")
-light_size = 0.025
+light_size = 0.12
 shadow_enabled = true
 shadow_bias = 0.025
+shadow_opacity = 0.58
 spot_range = 11.0
 spot_attenuation = 0.35
 spot_angle = 32.0
@@ -141,12 +150,13 @@ spot_angle_attenuation = 0.15
 [node name="AfternoonWindow1" type="SpotLight3D" parent="Lighting" unique_id=9256284]
 transform = Transform3D(0.30901697, -0.61132735, 0.72855157, 0, 0.76604444, 0.6427876, -0.95105654, -0.19863227, 0.23672073, 3.65, 2.35, 0.25)
 light_color = Color(1, 0.88, 0.68, 1)
-light_energy = 2.0
-light_indirect_energy = 0.7
+light_energy = 0.62
+light_indirect_energy = 0.35
 light_projector = ExtResource("window_projector")
-light_size = 0.025
+light_size = 0.12
 shadow_enabled = true
 shadow_bias = 0.025
+shadow_opacity = 0.58
 spot_range = 11.0
 spot_attenuation = 0.35
 spot_angle = 32.0
@@ -155,12 +165,13 @@ spot_angle_attenuation = 0.15
 [node name="AfternoonWindow2" type="SpotLight3D" parent="Lighting" unique_id=1273033612]
 transform = Transform3D(0.30901697, -0.61132735, 0.72855157, 0, 0.76604444, 0.6427876, -0.95105654, -0.19863227, 0.23672073, 3.65, 2.35, 2.7)
 light_color = Color(1, 0.88, 0.68, 1)
-light_energy = 2.0
-light_indirect_energy = 0.7
+light_energy = 0.62
+light_indirect_energy = 0.35
 light_projector = ExtResource("window_projector")
-light_size = 0.025
+light_size = 0.12
 shadow_enabled = true
 shadow_bias = 0.025
+shadow_opacity = 0.58
 spot_range = 11.0
 spot_attenuation = 0.35
 spot_angle = 32.0
@@ -174,10 +185,18 @@ light_size = 0.12
 shadow_enabled = true
 omni_range = 1.5
 
+[node name="BoothTaskLight2" type="OmniLight3D" parent="Lighting" unique_id=2132559281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7392161, 1.88, -3.87)
+light_color = Color(1, 0.92, 0.79, 1)
+light_energy = 0.3
+light_size = 0.12
+shadow_enabled = true
+omni_range = 1.5
+
 [node name="IntroController" type="Node" parent="." unique_id=1825314323]
 script = ExtResource("controller")
 
 [node name="UI" parent="." unique_id=798858499 instance=ExtResource("scene_7")]
 
-[node name="PauseMenu" parent="." instance=ExtResource("scene_8")]
+[node name="PauseMenu" parent="." unique_id=1015764182 instance=ExtResource("scene_8")]
 player_path = NodePath("../Player")

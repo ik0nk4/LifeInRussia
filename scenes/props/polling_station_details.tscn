@@ -1,19 +1,12 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://clv1jegot3c8l"]
 
-
-[ext_resource type="Material" path="res://assets/materials/polling_station/white.tres" id="mat_white"]
-
-[ext_resource type="Material" path="res://assets/materials/polling_station/plaster.tres" id="mat_plaster"]
-
-[ext_resource type="Material" path="res://assets/materials/polling_station/metal.tres" id="mat_metal"]
-
-[ext_resource type="Material" path="res://assets/materials/polling_station/mat.tres" id="mat_mat"]
-
-[ext_resource type="Material" path="res://assets/materials/polling_station/teal.tres" id="mat_teal"]
-
+[ext_resource type="Material" uid="uid://dlj1vw0qh1fmv" path="res://assets/materials/polling_station/fabric.tres" id="mat_fabric"]
+[ext_resource type="Material" uid="uid://bdqy6ip26ewds" path="res://assets/materials/polling_station/mat.tres" id="mat_mat"]
+[ext_resource type="Material" uid="uid://batwhp8l8b4gg" path="res://assets/materials/polling_station/metal.tres" id="mat_metal"]
 [ext_resource type="Material" path="res://assets/materials/polling_station/paper.tres" id="mat_paper"]
-
-[ext_resource type="Material" path="res://assets/materials/polling_station/fabric.tres" id="mat_fabric"]
+[ext_resource type="Material" uid="uid://d0xjdlptvh84u" path="res://assets/materials/polling_station/plaster.tres" id="mat_plaster"]
+[ext_resource type="Material" uid="uid://dru02x3v21m4e" path="res://assets/materials/polling_station/teal.tres" id="mat_teal"]
+[ext_resource type="Material" uid="uid://bwuojn1fxrufp" path="res://assets/materials/polling_station/white.tres" id="mat_white"]
 
 [sub_resource type="BoxMesh" id="mesh_27"]
 material = ExtResource("mat_white")
@@ -77,16 +70,16 @@ size = Vector3(0.035, 0.53, 0.035)
 material = ExtResource("mat_plaster")
 size = Vector3(0.035, 0.53, 0.035)
 
+[sub_resource type="CylinderShape3D" id="cshape_41"]
+height = 0.48
+radius = 0.19
+
 [sub_resource type="CylinderMesh" id="cyl_41"]
 material = ExtResource("mat_metal")
 top_radius = 0.19
 bottom_radius = 0.19
 height = 0.48
 radial_segments = 32
-
-[sub_resource type="CylinderShape3D" id="cshape_41"]
-radius = 0.19
-height = 0.48
 
 [sub_resource type="CylinderMesh" id="cyl_42"]
 material = ExtResource("mat_mat")
@@ -213,213 +206,208 @@ size = Vector3(0.005, 0.12, 0.009)
 material = ExtResource("mat_metal")
 size = Vector3(0.005, 0.009, 0.09)
 
-[node name="PollingStationDetails" type="Node3D"]
+[node name="PollingStationDetails" type="Node3D" unique_id=490601743]
 
-[node name="Radiator26" type="StaticBody3D" parent="."]
-position = Vector3(3.79, 0.56, -2.2)
+[node name="Radiator26" type="StaticBody3D" parent="." unique_id=1537905086]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.79, 0.56, -2.2)
 
-[node name="Mesh" type="MeshInstance3D" parent="Radiator26"]
+[node name="Mesh" type="MeshInstance3D" parent="Radiator26" unique_id=1565497470]
 mesh = SubResource("mesh_27")
 
-[node name="Collision" type="CollisionShape3D" parent="Radiator26"]
+[node name="Collision" type="CollisionShape3D" parent="Radiator26" unique_id=1889119448]
 shape = SubResource("shape_27")
 
-[node name="RadiatorFin27" type="MeshInstance3D" parent="."]
-position = Vector3(3.687, 0.56, -2.7)
+[node name="RadiatorFin27" type="MeshInstance3D" parent="." unique_id=815759456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.687, 0.56, -2.7)
 mesh = SubResource("mesh_28")
 
-[node name="RadiatorFin28" type="MeshInstance3D" parent="."]
-position = Vector3(3.687, 0.56, -2.5)
+[node name="RadiatorFin28" type="MeshInstance3D" parent="." unique_id=144622764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.687, 0.56, -2.5)
 mesh = SubResource("mesh_29")
 
-[node name="RadiatorFin29" type="MeshInstance3D" parent="."]
-position = Vector3(3.687, 0.56, -2.3000000000000003)
+[node name="RadiatorFin29" type="MeshInstance3D" parent="." unique_id=962654273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.687, 0.56, -2.3)
 mesh = SubResource("mesh_30")
 
-[node name="RadiatorFin30" type="MeshInstance3D" parent="."]
-position = Vector3(3.687, 0.56, -2.1)
+[node name="RadiatorFin30" type="MeshInstance3D" parent="." unique_id=611377878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.687, 0.56, -2.1)
 mesh = SubResource("mesh_31")
 
-[node name="RadiatorFin31" type="MeshInstance3D" parent="."]
-position = Vector3(3.687, 0.56, -1.9000000000000001)
+[node name="RadiatorFin31" type="MeshInstance3D" parent="." unique_id=118911257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.687, 0.56, -1.9)
 mesh = SubResource("mesh_32")
 
-[node name="RadiatorFin32" type="MeshInstance3D" parent="."]
-position = Vector3(3.687, 0.56, -1.7000000000000002)
+[node name="RadiatorFin32" type="MeshInstance3D" parent="." unique_id=1548149410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.687, 0.56, -1.7)
 mesh = SubResource("mesh_33")
 
-[node name="Radiator33" type="StaticBody3D" parent="."]
-position = Vector3(3.79, 0.56, 0.25)
+[node name="Radiator33" type="StaticBody3D" parent="." unique_id=360088112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.79, 0.56, 0.25)
 
-[node name="Mesh" type="MeshInstance3D" parent="Radiator33"]
+[node name="Mesh" type="MeshInstance3D" parent="Radiator33" unique_id=1020416247]
 mesh = SubResource("mesh_34")
 
-[node name="Collision" type="CollisionShape3D" parent="Radiator33"]
+[node name="Collision" type="CollisionShape3D" parent="Radiator33" unique_id=636410672]
 shape = SubResource("shape_34")
 
-[node name="RadiatorFin34" type="MeshInstance3D" parent="."]
-position = Vector3(3.687, 0.56, -0.25)
+[node name="RadiatorFin34" type="MeshInstance3D" parent="." unique_id=1671725068]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.687, 0.56, -0.25)
 mesh = SubResource("mesh_35")
 
-[node name="RadiatorFin35" type="MeshInstance3D" parent="."]
-position = Vector3(3.687, 0.56, -0.04999999999999999)
+[node name="RadiatorFin35" type="MeshInstance3D" parent="." unique_id=805716078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.687, 0.56, -0.05)
 mesh = SubResource("mesh_36")
 
-[node name="RadiatorFin36" type="MeshInstance3D" parent="."]
-position = Vector3(3.687, 0.56, 0.15)
+[node name="RadiatorFin36" type="MeshInstance3D" parent="." unique_id=588847790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.687, 0.56, 0.15)
 mesh = SubResource("mesh_37")
 
-[node name="RadiatorFin37" type="MeshInstance3D" parent="."]
-position = Vector3(3.687, 0.56, 0.35)
+[node name="RadiatorFin37" type="MeshInstance3D" parent="." unique_id=2065456252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.687, 0.56, 0.35)
 mesh = SubResource("mesh_38")
 
-[node name="RadiatorFin38" type="MeshInstance3D" parent="."]
-position = Vector3(3.687, 0.56, 0.55)
+[node name="RadiatorFin38" type="MeshInstance3D" parent="." unique_id=2028748143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.687, 0.56, 0.55)
 mesh = SubResource("mesh_39")
 
-[node name="RadiatorFin39" type="MeshInstance3D" parent="."]
-position = Vector3(3.687, 0.56, 0.75)
+[node name="RadiatorFin39" type="MeshInstance3D" parent="." unique_id=564149519]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.687, 0.56, 0.75)
 mesh = SubResource("mesh_40")
 
-[node name="WasteBin" type="StaticBody3D" parent="."]
-position = Vector3(-3.44, 0.24, 3.53)
+[node name="WasteBin" type="StaticBody3D" parent="." unique_id=68526372]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.44, 0.24, 3.53)
 
-[node name="Collision" type="CollisionShape3D" parent="WasteBin"]
+[node name="Collision" type="CollisionShape3D" parent="WasteBin" unique_id=1188456324]
 shape = SubResource("cshape_41")
 
-[node name="WasteBinMesh" type="MeshInstance3D" parent="WasteBin"]
-position = Vector3(0, 0, 0)
+[node name="WasteBinMesh" type="MeshInstance3D" parent="WasteBin" unique_id=1936457503]
 mesh = SubResource("cyl_41")
 
-[node name="BinOpeningMesh" type="MeshInstance3D" parent="."]
-position = Vector3(-3.44, 0.482, 3.53)
+[node name="BinOpeningMesh" type="MeshInstance3D" parent="." unique_id=618310307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.44, 0.482, 3.53)
 mesh = SubResource("cyl_42")
 
-[node name="PenCupMesh" type="MeshInstance3D" parent="."]
-position = Vector3(-2.98, 0.863, 2.7)
+[node name="PenCupMesh" type="MeshInstance3D" parent="." unique_id=92411797]
+transform = Transform3D(0.99938756, 0.034992855, 0, -0.034988917, 0.99927515, -0.014999437, -0.00052487315, 0.014990251, 0.9998875, -2.96, 0.863, 2.69)
 mesh = SubResource("cyl_43")
 
-[node name="DeskPen0Mesh" type="MeshInstance3D" parent="."]
-position = Vector3(-3.0, 0.935, 2.7)
+[node name="DeskPen0Mesh" type="MeshInstance3D" parent="." unique_id=244055325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.935, 2.7)
 mesh = SubResource("cyl_44")
 
-[node name="DeskPen1Mesh" type="MeshInstance3D" parent="."]
-position = Vector3(-2.98, 0.935, 2.7)
+[node name="DeskPen1Mesh" type="MeshInstance3D" parent="." unique_id=58045628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98, 0.935, 2.7)
 mesh = SubResource("cyl_45")
 
-[node name="DeskPen2Mesh" type="MeshInstance3D" parent="."]
-position = Vector3(-2.96, 0.935, 2.7)
+[node name="DeskPen2Mesh" type="MeshInstance3D" parent="." unique_id=623115876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.96, 0.935, 2.7)
 mesh = SubResource("cyl_46")
 
-[node name="PaperTray" type="MeshInstance3D" parent="."]
-position = Vector3(-2.87, 0.812, 0.97)
+[node name="PaperTray" type="MeshInstance3D" parent="." unique_id=639811336]
+transform = Transform3D(0.997551, 0, -0.06994285, 0, 1, 0, 0.06994285, 0, 0.997551, -2.87, 0.812, 0.97)
 mesh = SubResource("mesh_47")
 
-[node name="PaperStack" type="MeshInstance3D" parent="."]
-position = Vector3(-2.87, 0.849, 0.97)
+[node name="PaperStack" type="MeshInstance3D" parent="." unique_id=830914192]
+transform = Transform3D(0.9989877, 0, -0.044984818, 0, 1, 0, 0.044984818, 0, 0.9989877, -2.87, 0.849, 0.97)
 mesh = SubResource("mesh_48")
 
-[node name="DeskNameplate" type="MeshInstance3D" parent="."]
-position = Vector3(-2.53, 0.9, 1.84)
+[node name="DeskNameplate" type="MeshInstance3D" parent="." unique_id=309392072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53, 0.9, 1.84)
 mesh = SubResource("mesh_49")
 
-[node name="DeskLabel" type="Label3D" parent="."]
-position = Vector3(-2.5, 0.9, 1.84)
-rotation = Vector3(0, 1.5708, 0)
+[node name="DeskLabel" type="Label3D" parent="." unique_id=570729585]
+transform = Transform3D(-3.6199901e-06, 0, 1, 0, 1, 0, -1, 0, -3.6199901e-06, -2.5, 0.9, 1.84)
+pixel_size = 0.004
+modulate = Color(0.94, 0.96, 0.93, 1)
 text = "КОМИССИЯ"
 font_size = 13
-pixel_size = 0.004
 outline_size = 0
-modulate = Color(0.94, 0.96, 0.93, 1)
 
-[node name="WallSwitch" type="MeshInstance3D" parent="."]
-position = Vector3(-1.18, 1.15, 4.38)
+[node name="WallSwitch" type="MeshInstance3D" parent="." unique_id=1907368625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18, 1.2336595, 4.406671)
 mesh = SubResource("mesh_50")
 
-[node name="PowerSocket" type="MeshInstance3D" parent="."]
-position = Vector3(-3.884, 0.31, 2.9)
+[node name="PowerSocket" type="MeshInstance3D" parent="." unique_id=1704249475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.884, 0.31, 2.9)
 mesh = SubResource("mesh_51")
 
-[node name="DoorPushBar" type="MeshInstance3D" parent="."]
-position = Vector3(0, 1.05, 5.56)
+[node name="DoorPushBar" type="MeshInstance3D" parent="." unique_id=1832177725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 5.56)
 mesh = SubResource("mesh_52")
 
-[node name="ExitSign" type="MeshInstance3D" parent="."]
-position = Vector3(0, 2.53, 5.665)
+[node name="ExitSign" type="MeshInstance3D" parent="." unique_id=1513531025]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.53, 5.665)
 mesh = SubResource("mesh_53")
 
-[node name="ExitText" type="Label3D" parent="."]
-position = Vector3(0, 2.53, 5.637)
-rotation = Vector3(0, 3.141592653589793, 0)
+[node name="ExitText" type="Label3D" parent="." unique_id=878858820]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.53, 5.637)
+pixel_size = 0.004
+modulate = Color(0.94, 0.96, 0.93, 1)
 text = "ВЫХОД"
 font_size = 22
-pixel_size = 0.004
 outline_size = 0
-modulate = Color(0.94, 0.96, 0.93, 1)
 
-[node name="NoticeFrame" type="MeshInstance3D" parent="."]
-position = Vector3(2.55, 1.68, 4.385)
+[node name="NoticeFrame" type="MeshInstance3D" parent="." unique_id=1920017480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55, 1.68, 4.385)
 mesh = SubResource("mesh_54")
 
-[node name="NoticePaper" type="MeshInstance3D" parent="."]
-position = Vector3(2.55, 1.68, 4.356)
+[node name="NoticePaper" type="MeshInstance3D" parent="." unique_id=111329939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55, 1.68, 4.356)
 mesh = SubResource("mesh_55")
 
-[node name="NoticeTitle" type="Label3D" parent="."]
-position = Vector3(2.55, 1.99, 4.343)
-rotation = Vector3(0, 3.141592653589793, 0)
-text = "ИНФОРМАЦИЯ\nДЛЯ ИЗБИРАТЕЛЕЙ"
-font_size = 16
+[node name="NoticeTitle" type="Label3D" parent="." unique_id=1205263306]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.55, 1.99, 4.343)
 pixel_size = 0.004
-outline_size = 0
 modulate = Color(0.15, 0.2, 0.21, 1)
+text = "ИНФОРМАЦИЯ
+ДЛЯ ИЗБИРАТЕЛЕЙ"
+font_size = 16
+outline_size = 0
 
-[node name="NoticeLine0" type="MeshInstance3D" parent="."]
-position = Vector3(2.55, 1.77, 4.344)
+[node name="NoticeLine0" type="MeshInstance3D" parent="." unique_id=2127816167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55, 1.77, 4.344)
 mesh = SubResource("mesh_56")
 
-[node name="NoticeLine1" type="MeshInstance3D" parent="."]
-position = Vector3(2.55, 1.709, 4.344)
+[node name="NoticeLine1" type="MeshInstance3D" parent="." unique_id=871850055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55, 1.709, 4.344)
 mesh = SubResource("mesh_57")
 
-[node name="NoticeLine2" type="MeshInstance3D" parent="."]
-position = Vector3(2.55, 1.6480000000000001, 4.344)
+[node name="NoticeLine2" type="MeshInstance3D" parent="." unique_id=1932842128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55, 1.648, 4.344)
 mesh = SubResource("mesh_58")
 
-[node name="NoticeLine3" type="MeshInstance3D" parent="."]
-position = Vector3(2.55, 1.587, 4.344)
+[node name="NoticeLine3" type="MeshInstance3D" parent="." unique_id=67669464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55, 1.587, 4.344)
 mesh = SubResource("mesh_59")
 
-[node name="NoticeLine4" type="MeshInstance3D" parent="."]
-position = Vector3(2.55, 1.526, 4.344)
+[node name="NoticeLine4" type="MeshInstance3D" parent="." unique_id=2020437466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55, 1.526, 4.344)
 mesh = SubResource("mesh_60")
 
-[node name="NoticeLine5" type="MeshInstance3D" parent="."]
-position = Vector3(2.55, 1.465, 4.344)
+[node name="NoticeLine5" type="MeshInstance3D" parent="." unique_id=592736929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55, 1.465, 4.344)
 mesh = SubResource("mesh_61")
 
-[node name="NoticeLine6" type="MeshInstance3D" parent="."]
-position = Vector3(2.55, 1.404, 4.344)
+[node name="NoticeLine6" type="MeshInstance3D" parent="." unique_id=347854778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55, 1.404, 4.344)
 mesh = SubResource("mesh_62")
 
-[node name="NoticeLine7" type="MeshInstance3D" parent="."]
-position = Vector3(2.55, 1.343, 4.344)
+[node name="NoticeLine7" type="MeshInstance3D" parent="." unique_id=1249249329]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55, 1.343, 4.344)
 mesh = SubResource("mesh_63")
 
-[node name="ClockRimMesh" type="MeshInstance3D" parent="."]
-position = Vector3(-3.855, 2.52, 1.8)
+[node name="ClockRimMesh" type="MeshInstance3D" parent="." unique_id=642368257]
+transform = Transform3D(3.1391647e-07, -1, 0, 1, 3.1391647e-07, 0, 0, 0, 1, -3.855, 2.52, 1.8)
 mesh = SubResource("cyl_64")
-rotation = Vector3(0, 0, 1.570796)
 
-[node name="ClockFaceMesh" type="MeshInstance3D" parent="."]
-position = Vector3(-3.823, 2.52, 1.8)
+[node name="ClockFaceMesh" type="MeshInstance3D" parent="." unique_id=948838482]
+transform = Transform3D(3.1391647e-07, -1, 0, 1, 3.1391647e-07, 0, 0, 0, 1, -3.823, 2.52, 1.8)
 mesh = SubResource("cyl_65")
-rotation = Vector3(0, 0, 1.570796)
 
-[node name="ClockMinute" type="MeshInstance3D" parent="."]
-position = Vector3(-3.815, 2.58, 1.8)
+[node name="ClockMinute" type="MeshInstance3D" parent="." unique_id=353553582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.815, 2.58, 1.8)
 mesh = SubResource("mesh_66")
 
-[node name="ClockHour" type="MeshInstance3D" parent="."]
-position = Vector3(-3.81, 2.52, 1.755)
+[node name="ClockHour" type="MeshInstance3D" parent="." unique_id=1651887868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.81, 2.52, 1.755)
 mesh = SubResource("mesh_67")

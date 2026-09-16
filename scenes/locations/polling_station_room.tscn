@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://ot7m2rvu8fis"]
 
 [ext_resource type="Material" path="res://assets/materials/polling_station/ceiling.tres" id="ceiling"]
+[ext_resource type="PackedScene" uid="uid://2w5ai6ykvnpg" path="res://scenes/props/polling_station_lived_in.tscn" id="lived_in"]
 [ext_resource type="Material" uid="uid://b3vmgd0evwrfa" path="res://assets/materials/polling_station/floor.tres" id="mat_floor"]
-[ext_resource type="Material" path="res://assets/materials/polling_station/glass.tres" id="mat_glass"]
+[ext_resource type="Material" uid="uid://dmsxoy4e3aion" path="res://assets/materials/polling_station/glass.tres" id="mat_glass"]
 [ext_resource type="Material" uid="uid://bdqy6ip26ewds" path="res://assets/materials/polling_station/mat.tres" id="mat_mat"]
-[ext_resource type="Material" path="res://assets/materials/polling_station/metal.tres" id="mat_metal"]
-[ext_resource type="Material" path="res://assets/materials/polling_station/teal.tres" id="mat_teal"]
-[ext_resource type="Material" path="res://assets/materials/polling_station/white.tres" id="mat_white"]
+[ext_resource type="Material" uid="uid://batwhp8l8b4gg" path="res://assets/materials/polling_station/metal.tres" id="mat_metal"]
+[ext_resource type="Material" uid="uid://dru02x3v21m4e" path="res://assets/materials/polling_station/teal.tres" id="mat_teal"]
+[ext_resource type="Material" uid="uid://bwuojn1fxrufp" path="res://assets/materials/polling_station/white.tres" id="mat_white"]
 [ext_resource type="Material" uid="uid://pf5dbeawup4" path="res://assets/materials/polling_station/wood.tres" id="mat_wood"]
 [ext_resource type="PackedScene" uid="uid://bc8y1pybx0n81" path="res://scenes/props/commission_desk.tscn" id="scene_7"]
 [ext_resource type="PackedScene" path="res://scenes/props/polling_chair.tscn" id="scene_11"]
-[ext_resource type="PackedScene" path="res://scenes/props/polling_station_details.tscn" id="scene_14"]
+[ext_resource type="PackedScene" uid="uid://clv1jegot3c8l" path="res://scenes/props/polling_station_details.tscn" id="scene_14"]
 [ext_resource type="PackedScene" path="res://scenes/props/window_blinds.tscn" id="ultra_Blinds2"]
 [ext_resource type="PackedScene" path="res://scenes/props/civic_notices.tscn" id="ultra_CivicNotices"]
 [ext_resource type="PackedScene" path="res://scenes/props/polling_station_finish.tscn" id="ultra_InteriorFinish"]
@@ -203,6 +204,7 @@ shape = SubResource("shape_2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -5)
 
 [node name="Mesh" type="MeshInstance3D" parent="NorthWall" unique_id=1563973523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.026572227)
 mesh = SubResource("mesh_3")
 
 [node name="Collision" type="CollisionShape3D" parent="NorthWall" unique_id=871375728]
@@ -212,6 +214,7 @@ shape = SubResource("shape_3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 0.4)
 
 [node name="Mesh" type="MeshInstance3D" parent="SideWall3" unique_id=495090876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.018928766, 0, 0)
 mesh = SubResource("mesh_4")
 
 [node name="Collision" type="CollisionShape3D" parent="SideWall3" unique_id=904138146]
@@ -225,6 +228,7 @@ mesh = SubResource("mesh_5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, 0.4)
 
 [node name="Mesh" type="MeshInstance3D" parent="SideWall5" unique_id=128632610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022315025, 0, 0)
 mesh = SubResource("mesh_6")
 
 [node name="Collision" type="CollisionShape3D" parent="SideWall5" unique_id=1867459608]
@@ -299,11 +303,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.009, 4.7)
 mesh = SubResource("mesh_17")
 
 [node name="WelcomePanel" type="MeshInstance3D" parent="." unique_id=489837965]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.48, -4.88)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6258473, -4.88)
+visible = false
 mesh = SubResource("mesh_18")
 
 [node name="Welcome" type="Label3D" parent="." unique_id=192970002]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4.848)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6458473, -4.848)
+visible = false
 pixel_size = 0.004
 modulate = Color(0.94, 0.96, 0.93, 1)
 text = "ИЗБИРАТЕЛЬНЫЙ УЧАСТОК"
@@ -311,7 +317,8 @@ font_size = 36
 outline_size = 0
 
 [node name="Subheading" type="Label3D" parent="." unique_id=1206799058]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.27, -4.843)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4158473, -4.843)
+visible = false
 pixel_size = 0.004
 modulate = Color(0.94, 0.96, 0.93, 1)
 text = "ГОЛОСОВАНИЕ  /  08:00—20:00"
@@ -370,7 +377,7 @@ mesh = SubResource("mesh_30")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 0, 1.8)
 
 [node name="CommissionChair" parent="." unique_id=102552815 instance=ExtResource("scene_11")]
-transform = Transform3D(-3.6199901e-06, 0, -1, 0, 1, 0, 1, 0, -3.6199901e-06, -3.6, 0, 1.8)
+transform = Transform3D(-0.0392, 0, -0.9992, 0, 1, 0, 0.9992, 0, -0.0392, -3.57, 0, 1.77)
 
 [node name="CommissionSign" type="MeshInstance3D" parent="." unique_id=27137161]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.88, 1.9, 1.8)
@@ -385,13 +392,13 @@ font_size = 35
 outline_size = 0
 
 [node name="WaitingChair0" parent="." unique_id=147768661 instance=ExtResource("scene_11")]
-transform = Transform3D(-3.6199901e-06, 0, 1, 0, 1, 0, -1, 0, -3.6199901e-06, 3.35, 0, 1.55)
+transform = Transform3D(0.0408, 0, 0.9992, 0, 1, 0, -0.9992, 0, 0.0408, 3.34, 0, 1.52)
 
 [node name="WaitingChair1" parent="." unique_id=2086258156 instance=ExtResource("scene_11")]
-transform = Transform3D(-3.6199901e-06, 0, 1, 0, 1, 0, -1, 0, -3.6199901e-06, 3.35, 0, 2.35)
+transform = Transform3D(-0.0292, 0, 0.9996, 0, 1, 0, -0.9996, 0, -0.0292, 3.37, 0, 2.35)
 
 [node name="WaitingChair2" parent="." unique_id=666979553 instance=ExtResource("scene_11")]
-transform = Transform3D(-3.6199901e-06, 0, 1, 0, 1, 0, -1, 0, -3.6199901e-06, 3.35, 0, 3.15)
+transform = Transform3D(0.0242, 0, 0.9997, 0, 1, 0, -0.9997, 0, 0.0242, 3.32, 0, 3.18)
 
 [node name="NoticeBoard" type="MeshInstance3D" parent="." unique_id=799850960]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86, 1.65, -0.55)
@@ -428,6 +435,8 @@ outline_size = 0
 [node name="InteriorFinish" parent="." unique_id=1980790795 instance=ExtResource("ultra_InteriorFinish")]
 
 [node name="CivicNotices" parent="." unique_id=366353254 instance=ExtResource("ultra_CivicNotices")]
+
+[node name="LivedInDetails" parent="." unique_id=888362787 instance=ExtResource("lived_in")]
 
 [node name="Blinds0" parent="." unique_id=1071667986 instance=ExtResource("ultra_Blinds2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.73, 0, -2.2)

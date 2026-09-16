@@ -25,6 +25,8 @@ void fragment() {
 	stone = mix(stone, stone * vec3(0.52, 0.60, 0.61), border);
 	ALBEDO = mix(stone, vec3(0.18, 0.175, 0.16), joint);
 	float wear = exp(-p.x * p.x * 0.7);
-	ROUGHNESS = mix(0.48 + variation * 0.1 - wear * 0.1, 0.88, joint);
-	SPECULAR = 0.38;
+	stone *= 1.0 - wear * 0.018;
+	ALBEDO = mix(stone, vec3(0.18, 0.175, 0.16), joint);
+	ROUGHNESS = mix(0.58 + variation * 0.1 - wear * 0.035, 0.9, joint);
+	SPECULAR = 0.3;
 }
