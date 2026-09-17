@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://blu5anq5a3vmq"]
+[gd_scene format=3 uid="uid://blu5anq5a3vmq"]
 
 [ext_resource type="PackedScene" path="res://scenes/locations/polling_station_reimagined_environment.tscn" id="1_environment"]
 [ext_resource type="Script" uid="uid://bgel538v313yb" path="res://scripts/locations/polling_station_intro.gd" id="2_controller"]
@@ -6,34 +6,47 @@
 [ext_resource type="PackedScene" uid="uid://dqyrww4p8wnb" path="res://scenes/characters/player.tscn" id="4_player"]
 [ext_resource type="PackedScene" path="res://scenes/ui/intro_ui.tscn" id="5_ui"]
 [ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="6_pause"]
+[ext_resource type="PackedScene" path="res://scenes/locations/polling_station_street.tscn" id="7_street"]
+[ext_resource type="Script" path="res://scripts/locations/polling_station_transition.gd" id="8_transition"]
+[ext_resource type="PackedScene" path="res://scenes/ui/location_fade.tscn" id="9_fade"]
 
-[node name="PollingStationIntro" type="Node3D"]
+[node name="PollingStationIntro" type="Node3D" unique_id=683496599]
 
-[node name="Environment" parent="." instance=ExtResource("1_environment")]
+[node name="Environment" parent="." unique_id=842166909 instance=ExtResource("1_environment")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03229761, 0.14624405, -0.108682156)
 
-[node name="VotingBooth" type="Node3D" parent="."]
-position = Vector3(2.45, 0, -3.82)
+[node name="VotingBooth" type="Node3D" parent="." unique_id=1517631800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.45, 0, -3.82)
 
-[node name="InteractionArea" parent="VotingBooth" instance=ExtResource("3_interaction")]
-position = Vector3(0, 1.12, -0.3)
+[node name="InteractionArea" parent="VotingBooth" unique_id=1999881390 instance=ExtResource("3_interaction")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12, -0.3)
 interaction_hint = "Заполнить бюллетень (E)"
 
-[node name="BallotBox" type="Node3D" parent="."]
-position = Vector3(2.55, 0, -0.38)
+[node name="BallotBox" type="Node3D" parent="." unique_id=633661234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55, 0, -0.38)
 
-[node name="InteractionArea" parent="BallotBox" instance=ExtResource("3_interaction")]
-transform = Transform3D(1, 0, 0, 0, 1.8, 0, 0, 0, 1.2, 0, 1.0, 0)
+[node name="InteractionArea" parent="BallotBox" unique_id=1849663895 instance=ExtResource("3_interaction")]
+transform = Transform3D(1, 0, 0, 0, 1.8, 0, 0, 0, 1.2, 0, 1, 0)
 
-[node name="PlayerSpawn" type="Marker3D" parent="."]
-position = Vector3(4.25, 0, 3.75)
+[node name="PlayerSpawn" type="Marker3D" parent="." unique_id=427783311]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 0, 3.75)
 
-[node name="Player" parent="." instance=ExtResource("4_player")]
-position = Vector3(4.25, 0, 3.75)
+[node name="Player" parent="." unique_id=901934765 instance=ExtResource("4_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 0, 3.75)
 
-[node name="IntroController" type="Node" parent="."]
+[node name="IntroController" type="Node" parent="." unique_id=2082971085]
 script = ExtResource("2_controller")
 
-[node name="UI" parent="." instance=ExtResource("5_ui")]
+[node name="UI" parent="." unique_id=2076748636 instance=ExtResource("5_ui")]
 
-[node name="PauseMenu" parent="." instance=ExtResource("6_pause")]
+[node name="PauseMenu" parent="." unique_id=564887234 instance=ExtResource("6_pause")]
 player_path = NodePath("../Player")
+
+[node name="Street" parent="." instance=ExtResource("7_street")]
+position = Vector3(100, 0, 0)
+visible = false
+
+[node name="LocationTransition" type="Node" parent="."]
+script = ExtResource("8_transition")
+
+[node name="LocationFade" parent="." instance=ExtResource("9_fade")]

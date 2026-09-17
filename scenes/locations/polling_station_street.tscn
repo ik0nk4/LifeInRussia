@@ -1,0 +1,454 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/props/street/station_facade.tscn" id="scene_station_facade"]
+
+[ext_resource type="PackedScene" path="res://scenes/props/street/apartment_block.tscn" id="scene_apartment_block"]
+
+[ext_resource type="PackedScene" path="res://scenes/props/street/linden_tree.tscn" id="scene_linden_tree"]
+
+[ext_resource type="PackedScene" path="res://scenes/props/street/bench.tscn" id="scene_bench"]
+
+[ext_resource type="PackedScene" path="res://scenes/props/street/street_lamp.tscn" id="scene_street_lamp"]
+
+[ext_resource type="PackedScene" path="res://scenes/components/interaction_area.tscn" id="scene_interaction_area"]
+
+[ext_resource type="Material" path="res://art/street/materials/soil.tres" id="soil"]
+
+[ext_resource type="Material" path="res://art/street/materials/paving.tres" id="paving"]
+
+[ext_resource type="Material" path="res://art/street/materials/asphalt.tres" id="asphalt"]
+
+[ext_resource type="Material" path="res://art/street/materials/curb.tres" id="curb"]
+
+[ext_resource type="Material" path="res://art/street/materials/metal.tres" id="metal"]
+
+[ext_resource type="Material" path="res://art/street/materials/plinth.tres" id="plinth"]
+
+[ext_resource type="Material" path="res://art/street/materials/paint.tres" id="paint"]
+
+[ext_resource type="Material" path="res://art/street/materials/sage.tres" id="sage"]
+
+[ext_resource type="Material" path="res://art/street/materials/ivory.tres" id="ivory"]
+
+[ext_resource type="Material" path="res://art/street/materials/leaf_dark.tres" id="leaf_dark"]
+
+[sub_resource type="BoxMesh" id="mesh_soil_box"]
+size = Vector3(1, 1, 1)
+material = ExtResource("soil")
+
+[sub_resource type="MultiMesh" id="batch_soil_box"]
+transform_format = 1
+instance_count = 7
+mesh = SubResource("mesh_soil_box")
+buffer = PackedFloat32Array(150, 0, 0, 0, 0, 0.1, 0, -0.4, 0, 0, 120, 4, 42, 0, 0, 0, 0, 0.3, 0, -0.15, 0, 0, 6, 12, 1.94, 0, 0, -16, 0, 0.05, 0, 0.25, 0, 0, 1.84, -1.6, 1.94, 0, 0, -10, 0, 0.05, 0, 0.25, 0, 0, 1.84, -1.6, 1.94, 0, 0, -3, 0, 0.05, 0, 0.25, 0, 0, 1.84, -1.6, 1.94, 0, 0, 12, 0, 0.05, 0, 0.25, 0, 0, 1.84, -1.6, 1.94, 0, 0, 18, 0, 0.05, 0, 0.25, 0, 0, 1.84, -1.6)
+
+[sub_resource type="BoxMesh" id="mesh_paving_box"]
+size = Vector3(1, 1, 1)
+material = ExtResource("paving")
+
+[sub_resource type="MultiMesh" id="batch_paving_box"]
+transform_format = 1
+instance_count = 2
+mesh = SubResource("mesh_paving_box")
+buffer = PackedFloat32Array(42, 0, 0, 0, 0, 0.3, 0, -0.15, 0, 0, 5, -2.5, 42, 0, 0, 0, 0, 0.3, 0, -0.15, 0, 0, 3, 7.5)
+
+[sub_resource type="BoxMesh" id="mesh_asphalt_box"]
+size = Vector3(1, 1, 1)
+material = ExtResource("asphalt")
+
+[sub_resource type="MultiMesh" id="batch_asphalt_box"]
+transform_format = 1
+instance_count = 1
+mesh = SubResource("mesh_asphalt_box")
+buffer = PackedFloat32Array(42, 0, 0, 0, 0, 0.3, 0, -0.15, 0, 0, 6, 3)
+
+[sub_resource type="BoxMesh" id="mesh_curb_box"]
+size = Vector3(1, 1, 1)
+material = ExtResource("curb")
+
+[sub_resource type="MultiMesh" id="batch_curb_box"]
+transform_format = 1
+instance_count = 77
+mesh = SubResource("mesh_curb_box")
+buffer = PackedFloat32Array(2.2, 0, 0, -16, 0, 0.24, 0, 0.12, 0, 0, 2.1, -1.6, 2.2, 0, 0, -10, 0, 0.24, 0, 0.12, 0, 0, 2.1, -1.6, 2.2, 0, 0, -3, 0, 0.24, 0, 0.12, 0, 0, 2.1, -1.6, 2.2, 0, 0, 12, 0, 0.24, 0, 0.12, 0, 0, 2.1, -1.6, 2.2, 0, 0, 18, 0, 0.24, 0, 0.12, 0, 0, 2.1, -1.6, 0.95, 0, 0, -20, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -19, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -18, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -17, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -16, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -15, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -14, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -13, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -12, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -11, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -10, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -9, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -8, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -7, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -6, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -5, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -4, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -3, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -2, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -1, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, 0, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, 1, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, 2, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, 8, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, 9, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, 10, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, 11, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, 12, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, 13, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, 14, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, 15, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, 16, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, 17, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, 18, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, 19, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, 20, 0, 0.09, 0, 0.045, 0, 0, 0.2, 0, 0.95, 0, 0, -20, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -19, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -18, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -17, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -16, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -15, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -14, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -13, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -12, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -11, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -10, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -9, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -8, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -7, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -6, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -5, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -4, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -3, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -2, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, -1, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, 0, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, 1, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, 2, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, 8, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, 9, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, 10, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, 11, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, 12, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, 13, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, 14, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, 15, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, 16, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, 17, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, 18, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, 19, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6, 0.95, 0, 0, 20, 0, 0.09, 0, 0.045, 0, 0, 0.2, 6)
+
+[sub_resource type="BoxMesh" id="mesh_metal_box"]
+size = Vector3(1, 1, 1)
+material = ExtResource("metal")
+
+[sub_resource type="MultiMesh" id="batch_metal_box"]
+transform_format = 1
+instance_count = 43
+mesh = SubResource("mesh_metal_box")
+buffer = PackedFloat32Array(0.4, 0, 0, -5.6, 0, 0.8, 0, 0.4, 0, 0, 0.4, -4, 0.4, 0, 0, 1.4, 0, 0.8, 0, 0.4, 0, 0, 0.4, -4, 0.4, 0, 0, 11.4, 0, 0.8, 0, 0.4, 0, 0, 0.4, -4, 0.09, 0, 0, -20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, -5, 0.09, 0, 0, -20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, -4, 0.09, 0, 0, -20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, -3, 0.09, 0, 0, -20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, -2, 0.09, 0, 0, -20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, -1, 0.09, 0, 0, -20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 0, 0.09, 0, 0, -20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 1, 0.09, 0, 0, -20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 2, 0.09, 0, 0, -20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 3, 0.09, 0, 0, -20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 4, 0.09, 0, 0, -20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 5, 0.09, 0, 0, -20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 6, 0.09, 0, 0, -20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 7, 0.09, 0, 0, -20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 8, 0.09, 0, 0, -20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 9, 0.09, 0, 0, -20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 10, 0.09, 0, 0, -20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 11, 0.09, 0, 0, -20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 12, 0.07, 0, 0, -20.5, 0, 0.06, 0, 0.4, 0, 0, 18.4, 3.65, 0.07, 0, 0, -20.5, 0, 0.06, 0, 1.13, 0, 0, 18.4, 3.65, 0.09, 0, 0, 20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, -5, 0.09, 0, 0, 20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, -4, 0.09, 0, 0, 20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, -3, 0.09, 0, 0, 20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, -2, 0.09, 0, 0, 20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, -1, 0.09, 0, 0, 20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 0, 0.09, 0, 0, 20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 1, 0.09, 0, 0, 20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 2, 0.09, 0, 0, 20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 3, 0.09, 0, 0, 20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 4, 0.09, 0, 0, 20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 5, 0.09, 0, 0, 20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 6, 0.09, 0, 0, 20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 7, 0.09, 0, 0, 20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 8, 0.09, 0, 0, 20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 9, 0.09, 0, 0, 20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 10, 0.09, 0, 0, 20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 11, 0.09, 0, 0, 20.5, 0, 1.44, 0, 0.72, 0, 0, 0.09, 12, 0.07, 0, 0, 20.5, 0, 0.06, 0, 0.4, 0, 0, 18.4, 3.65, 0.07, 0, 0, 20.5, 0, 0.06, 0, 1.13, 0, 0, 18.4, 3.65)
+
+[sub_resource type="BoxMesh" id="mesh_plinth_box"]
+size = Vector3(1, 1, 1)
+material = ExtResource("plinth")
+
+[sub_resource type="MultiMesh" id="batch_plinth_box"]
+transform_format = 1
+instance_count = 3
+mesh = SubResource("mesh_plinth_box")
+buffer = PackedFloat32Array(0.46, 0, 0, -5.6, 0, 0.05, 0, 0.82, 0, 0, 0.46, -4, 0.46, 0, 0, 1.4, 0, 0.05, 0, 0.82, 0, 0, 0.46, -4, 0.46, 0, 0, 11.4, 0, 0.05, 0, 0.82, 0, 0, 0.46, -4)
+
+[sub_resource type="BoxMesh" id="mesh_paint_box"]
+size = Vector3(1, 1, 1)
+material = ExtResource("paint")
+
+[sub_resource type="MultiMesh" id="batch_paint_box"]
+transform_format = 1
+instance_count = 15
+mesh = SubResource("mesh_paint_box")
+buffer = PackedFloat32Array(3.1, 0, 0, 5, 0, 0.012, 0, 0.008, 0, 0, 0.43, 0.55, 3.1, 0, 0, 5, 0, 0.012, 0, 0.008, 0, 0, 0.43, 1.6, 3.1, 0, 0, 5, 0, 0.012, 0, 0.008, 0, 0, 0.43, 2.65, 3.1, 0, 0, 5, 0, 0.012, 0, 0.008, 0, 0, 0.43, 3.7, 3.1, 0, 0, 5, 0, 0.012, 0, 0.008, 0, 0, 0.43, 4.75, 3.1, 0, 0, 5, 0, 0.012, 0, 0.008, 0, 0, 0.43, 5.8, 1.6, 0, 0, -19, 0, 0.012, 0, 0.008, 0, 0, 0.085, 3, 1.6, 0, 0, -15, 0, 0.012, 0, 0.008, 0, 0, 0.085, 3, 1.6, 0, 0, -11, 0, 0.012, 0, 0.008, 0, 0, 0.085, 3, 1.6, 0, 0, -7, 0, 0.012, 0, 0.008, 0, 0, 0.085, 3, 1.6, 0, 0, -3, 0, 0.012, 0, 0.008, 0, 0, 0.085, 3, 1.6, 0, 0, 1, 0, 0.012, 0, 0.008, 0, 0, 0.085, 3, 1.6, 0, 0, 9, 0, 0.012, 0, 0.008, 0, 0, 0.085, 3, 1.6, 0, 0, 13, 0, 0.012, 0, 0.008, 0, 0, 0.085, 3, 1.6, 0, 0, 17, 0, 0.012, 0, 0.008, 0, 0, 0.085, 3)
+
+[sub_resource type="BoxMesh" id="mesh_sage_box"]
+size = Vector3(1, 1, 1)
+material = ExtResource("sage")
+
+[sub_resource type="MultiMesh" id="batch_sage_box"]
+transform_format = 1
+instance_count = 2
+mesh = SubResource("mesh_sage_box")
+buffer = PackedFloat32Array(6.8, 0, 0, -17.3, 0, 1.4, 0, 0.7, 0, 0, 0.35, -5, 6.8, 0, 0, 17.3, 0, 1.4, 0, 0.7, 0, 0, 0.35, -5)
+
+[sub_resource type="BoxMesh" id="mesh_ivory_box"]
+size = Vector3(1, 1, 1)
+material = ExtResource("ivory")
+
+[sub_resource type="MultiMesh" id="batch_ivory_box"]
+transform_format = 1
+instance_count = 2
+mesh = SubResource("mesh_ivory_box")
+buffer = PackedFloat32Array(7, 0, 0, -17.3, 0, 0.09, 0, 1.43, 0, 0, 0.46, -5, 7, 0, 0, 17.3, 0, 0.09, 0, 1.43, 0, 0, 0.46, -5)
+
+[sub_resource type="SphereMesh" id="mesh_leaf_dark_sphere"]
+radius = 0.5
+height = 1
+radial_segments = 16
+rings = 8
+material = ExtResource("leaf_dark")
+
+[sub_resource type="MultiMesh" id="batch_leaf_dark_sphere"]
+transform_format = 1
+instance_count = 21
+mesh = SubResource("mesh_leaf_dark_sphere")
+buffer = PackedFloat32Array(2.2, 0, 0, -20, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, -18, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, -16, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, -14, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, -12, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, -10, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, -8, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, -6, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, -4, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, -2, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, 0, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, 2, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, 4, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, 6, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, 8, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, 10, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, 12, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, 14, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, 16, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, 18, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12, 2.2, 0, 0, 20, 0, 1.3, 0, 0.65, 0, 0, 1.4, 12)
+
+[sub_resource type="BoxShape3D" id="collision_0"]
+size = Vector3(42, 0.3, 5)
+
+[sub_resource type="BoxShape3D" id="collision_1"]
+size = Vector3(42, 0.3, 6)
+
+[sub_resource type="BoxShape3D" id="collision_2"]
+size = Vector3(42, 0.3, 3)
+
+[sub_resource type="BoxShape3D" id="collision_3"]
+size = Vector3(42, 0.3, 6)
+
+[sub_resource type="BoxShape3D" id="collision_4"]
+size = Vector3(2.2, 0.24, 2.1)
+
+[sub_resource type="BoxShape3D" id="collision_5"]
+size = Vector3(2.2, 0.24, 2.1)
+
+[sub_resource type="BoxShape3D" id="collision_6"]
+size = Vector3(2.2, 0.24, 2.1)
+
+[sub_resource type="BoxShape3D" id="collision_7"]
+size = Vector3(2.2, 0.24, 2.1)
+
+[sub_resource type="BoxShape3D" id="collision_8"]
+size = Vector3(2.2, 0.24, 2.1)
+
+[sub_resource type="BoxShape3D" id="collision_9"]
+size = Vector3(0.4, 0.8, 0.4)
+
+[sub_resource type="BoxShape3D" id="collision_10"]
+size = Vector3(0.4, 0.8, 0.4)
+
+[sub_resource type="BoxShape3D" id="collision_11"]
+size = Vector3(0.4, 0.8, 0.4)
+
+[sub_resource type="BoxShape3D" id="collision_12"]
+size = Vector3(0.3, 2.8, 18.4)
+
+[sub_resource type="BoxShape3D" id="collision_13"]
+size = Vector3(0.3, 2.8, 18.4)
+
+[sub_resource type="BoxShape3D" id="collision_14"]
+size = Vector3(6.8, 1.4, 0.35)
+
+[sub_resource type="BoxShape3D" id="collision_15"]
+size = Vector3(6.8, 1.4, 0.35)
+
+[sub_resource type="BoxShape3D" id="collision_16"]
+size = Vector3(42, 3, 0.3)
+
+[node name="PollingStationStreet" type="Node3D"]
+physics_interpolation_mode = 2
+
+[node name="soil_box" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("batch_soil_box")
+
+[node name="paving_box" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("batch_paving_box")
+
+[node name="asphalt_box" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("batch_asphalt_box")
+
+[node name="curb_box" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("batch_curb_box")
+
+[node name="metal_box" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("batch_metal_box")
+
+[node name="plinth_box" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("batch_plinth_box")
+
+[node name="paint_box" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("batch_paint_box")
+
+[node name="sage_box" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("batch_sage_box")
+
+[node name="ivory_box" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("batch_ivory_box")
+
+[node name="leaf_dark_sphere" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("batch_leaf_dark_sphere")
+
+[node name="Collision" type="StaticBody3D" parent="."]
+
+[node name="Shape0" type="CollisionShape3D" parent="Collision"]
+position = Vector3(0, -0.15, -2.5)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_0")
+
+[node name="Shape1" type="CollisionShape3D" parent="Collision"]
+position = Vector3(0, -0.15, 3)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_1")
+
+[node name="Shape2" type="CollisionShape3D" parent="Collision"]
+position = Vector3(0, -0.15, 7.5)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_2")
+
+[node name="Shape3" type="CollisionShape3D" parent="Collision"]
+position = Vector3(0, -0.15, 12)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_3")
+
+[node name="Shape4" type="CollisionShape3D" parent="Collision"]
+position = Vector3(-16, 0.12, -1.6)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_4")
+
+[node name="Shape5" type="CollisionShape3D" parent="Collision"]
+position = Vector3(-10, 0.12, -1.6)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_5")
+
+[node name="Shape6" type="CollisionShape3D" parent="Collision"]
+position = Vector3(-3, 0.12, -1.6)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_6")
+
+[node name="Shape7" type="CollisionShape3D" parent="Collision"]
+position = Vector3(12, 0.12, -1.6)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_7")
+
+[node name="Shape8" type="CollisionShape3D" parent="Collision"]
+position = Vector3(18, 0.12, -1.6)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_8")
+
+[node name="Shape9" type="CollisionShape3D" parent="Collision"]
+position = Vector3(-5.6, 0.4, -4)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_9")
+
+[node name="Shape10" type="CollisionShape3D" parent="Collision"]
+position = Vector3(1.4, 0.4, -4)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_10")
+
+[node name="Shape11" type="CollisionShape3D" parent="Collision"]
+position = Vector3(11.4, 0.4, -4)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_11")
+
+[node name="Shape12" type="CollisionShape3D" parent="Collision"]
+position = Vector3(-20.5, 1.4, 3.65)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_12")
+
+[node name="Shape13" type="CollisionShape3D" parent="Collision"]
+position = Vector3(20.5, 1.4, 3.65)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_13")
+
+[node name="Shape14" type="CollisionShape3D" parent="Collision"]
+position = Vector3(-17.3, 0.7, -5)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_14")
+
+[node name="Shape15" type="CollisionShape3D" parent="Collision"]
+position = Vector3(17.3, 0.7, -5)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_15")
+
+[node name="Shape16" type="CollisionShape3D" parent="Collision"]
+position = Vector3(0, 1.5, 12.3)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_16")
+
+[node name="Station" parent="." instance=ExtResource("scene_station_facade")]
+position = Vector3(0, 0, -5)
+rotation_degrees = Vector3(0, 0, 0)
+scale = Vector3(1, 1, 1)
+
+[node name="WestResidence" parent="." instance=ExtResource("scene_apartment_block")]
+position = Vector3(-11, 0, 13.5)
+rotation_degrees = Vector3(0, 180, 0)
+scale = Vector3(1, 1, 1)
+
+[node name="EastResidence" parent="." instance=ExtResource("scene_apartment_block")]
+position = Vector3(10, 0, 14.7)
+rotation_degrees = Vector3(0, 180, 0)
+scale = Vector3(1, 1, 1)
+
+[node name="TreeNear-16" parent="." instance=ExtResource("scene_linden_tree")]
+position = Vector3(-16, 0.27, -1.6)
+rotation_degrees = Vector3(0, -176, 0)
+scale = Vector3(1, 1, 1)
+
+[node name="TreeNear-10" parent="." instance=ExtResource("scene_linden_tree")]
+position = Vector3(-10, 0.27, -1.6)
+rotation_degrees = Vector3(0, -110, 0)
+scale = Vector3(1, 1, 1)
+
+[node name="TreeNear-3" parent="." instance=ExtResource("scene_linden_tree")]
+position = Vector3(-3, 0.27, -1.6)
+rotation_degrees = Vector3(0, -33, 0)
+scale = Vector3(1, 1, 1)
+
+[node name="TreeNear12" parent="." instance=ExtResource("scene_linden_tree")]
+position = Vector3(12, 0.27, -1.6)
+rotation_degrees = Vector3(0, 132, 0)
+scale = Vector3(1, 1, 1)
+
+[node name="TreeNear18" parent="." instance=ExtResource("scene_linden_tree")]
+position = Vector3(18, 0.27, -1.6)
+rotation_degrees = Vector3(0, 198, 0)
+scale = Vector3(1, 1, 1)
+
+[node name="TreeFar-18" parent="." instance=ExtResource("scene_linden_tree")]
+position = Vector3(-18, 0, 10.2)
+rotation_degrees = Vector3(0, -162, 0)
+scale = Vector3(1.15, 1.15, 1.15)
+
+[node name="TreeFar-5" parent="." instance=ExtResource("scene_linden_tree")]
+position = Vector3(-5, 0, 10.2)
+rotation_degrees = Vector3(0, -45, 0)
+scale = Vector3(1.15, 1.15, 1.15)
+
+[node name="TreeFar4" parent="." instance=ExtResource("scene_linden_tree")]
+position = Vector3(4, 0, 10.2)
+rotation_degrees = Vector3(0, 36, 0)
+scale = Vector3(1.15, 1.15, 1.15)
+
+[node name="TreeFar18" parent="." instance=ExtResource("scene_linden_tree")]
+position = Vector3(18, 0, 10.2)
+rotation_degrees = Vector3(0, 162, 0)
+scale = Vector3(1.15, 1.15, 1.15)
+
+[node name="Bench-7" parent="." instance=ExtResource("scene_bench")]
+position = Vector3(-7, 0, -4.1)
+rotation_degrees = Vector3(0, 0, 0)
+scale = Vector3(1, 1, 1)
+
+[node name="Bench0" parent="." instance=ExtResource("scene_bench")]
+position = Vector3(0, 0, -4.1)
+rotation_degrees = Vector3(0, 0, 0)
+scale = Vector3(1, 1, 1)
+
+[node name="Bench10" parent="." instance=ExtResource("scene_bench")]
+position = Vector3(10, 0, -4.1)
+rotation_degrees = Vector3(0, 0, 0)
+scale = Vector3(1, 1, 1)
+
+[node name="Lamp-19" parent="." instance=ExtResource("scene_street_lamp")]
+position = Vector3(-19, 0, 6.7)
+rotation_degrees = Vector3(0, 180, 0)
+scale = Vector3(1, 1, 1)
+
+[node name="Lamp-6" parent="." instance=ExtResource("scene_street_lamp")]
+position = Vector3(-6, 0, 6.7)
+rotation_degrees = Vector3(0, 180, 0)
+scale = Vector3(1, 1, 1)
+
+[node name="Lamp8" parent="." instance=ExtResource("scene_street_lamp")]
+position = Vector3(8, 0, 6.7)
+rotation_degrees = Vector3(0, 180, 0)
+scale = Vector3(1, 1, 1)
+
+[node name="Lamp19" parent="." instance=ExtResource("scene_street_lamp")]
+position = Vector3(19, 0, 6.7)
+rotation_degrees = Vector3(0, 180, 0)
+scale = Vector3(1, 1, 1)
+
+[node name="BoundaryTree-20.5_-2" parent="." instance=ExtResource("scene_linden_tree")]
+position = Vector3(-20.5, 0, -2)
+rotation_degrees = Vector3(0, 30, 0)
+scale = Vector3(1.2, 1.2, 1.2)
+
+[node name="BoundaryTree-20.5_8" parent="." instance=ExtResource("scene_linden_tree")]
+position = Vector3(-20.5, 0, 8)
+rotation_degrees = Vector3(0, 30, 0)
+scale = Vector3(1.2, 1.2, 1.2)
+
+[node name="BoundaryTree20.5_-2" parent="." instance=ExtResource("scene_linden_tree")]
+position = Vector3(20.5, 0, -2)
+rotation_degrees = Vector3(0, 30, 0)
+scale = Vector3(1.2, 1.2, 1.2)
+
+[node name="BoundaryTree20.5_8" parent="." instance=ExtResource("scene_linden_tree")]
+position = Vector3(20.5, 0, 8)
+rotation_degrees = Vector3(0, 30, 0)
+scale = Vector3(1.2, 1.2, 1.2)
+
+[node name="DistantWest" parent="." instance=ExtResource("scene_apartment_block")]
+position = Vector3(-28, 0, 12)
+rotation_degrees = Vector3(0, 120, 0)
+scale = Vector3(1, 1, 1)
+
+[node name="DistantEast" parent="." instance=ExtResource("scene_apartment_block")]
+position = Vector3(29, 0, 16)
+rotation_degrees = Vector3(0, 210, 0)
+scale = Vector3(1, 1, 1)
+
+[node name="EntranceInteraction" parent="." instance=ExtResource("scene_interaction_area")]
+position = Vector3(6, 1.6, -4.8)
+rotation_degrees = Vector3(0, 0, 0)
+scale = Vector3(1, 1, 1)
+interaction_hint = "Войти на участок (E)"
+
+[node name="CollisionShape3D" parent="EntranceInteraction" index="0"]
+scale = Vector3(3, 2, 1)
+
+[node name="ExitSpawn" type="Marker3D" parent="."]
+position = Vector3(6, 0, -3.6)
+rotation_degrees = Vector3(0, 180, 0)
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-42, -32, 0)
+light_color = Color(1, 0.94, 0.82, 1)
+light_energy = 1.15
+shadow_enabled = true
+directional_shadow_max_distance = 65.0
+directional_shadow_mode = 1
+shadow_blur = 1.4

@@ -1,0 +1,80 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/street/materials/metal.tres" id="metal"]
+
+[ext_resource type="Material" path="res://art/street/materials/plinth.tres" id="plinth"]
+
+[ext_resource type="Material" path="res://art/street/materials/lamp.tres" id="lamp"]
+
+[sub_resource type="CylinderMesh" id="mesh_metal_cylinder"]
+top_radius = 0.5
+bottom_radius = 0.5
+height = 1
+radial_segments = 10
+rings = 1
+material = ExtResource("metal")
+
+[sub_resource type="MultiMesh" id="batch_metal_cylinder"]
+transform_format = 1
+instance_count = 1
+mesh = SubResource("mesh_metal_cylinder")
+buffer = PackedFloat32Array(0.085, 0, 0, 0, 0, 4.5, 0, 2.25, 0, 0, 0.085, 0)
+
+[sub_resource type="CylinderMesh" id="mesh_plinth_cylinder"]
+top_radius = 0.5
+bottom_radius = 0.5
+height = 1
+radial_segments = 10
+rings = 1
+material = ExtResource("plinth")
+
+[sub_resource type="MultiMesh" id="batch_plinth_cylinder"]
+transform_format = 1
+instance_count = 1
+mesh = SubResource("mesh_plinth_cylinder")
+buffer = PackedFloat32Array(0.28, 0, 0, 0, 0, 0.26, 0, 0.13, 0, 0, 0.28, 0)
+
+[sub_resource type="BoxMesh" id="mesh_metal_box"]
+size = Vector3(1, 1, 1)
+material = ExtResource("metal")
+
+[sub_resource type="MultiMesh" id="batch_metal_box"]
+transform_format = 1
+instance_count = 2
+mesh = SubResource("mesh_metal_box")
+buffer = PackedFloat32Array(0.12, 0, 0, 0, 0, 0.12, 0, 4.42, 0, 0, 0.75, 0.35, 0.44, 0, 0, 0, 0, 0.15, 0, 4.34, 0, 0, 0.64, 0.68)
+
+[sub_resource type="BoxMesh" id="mesh_lamp_box"]
+size = Vector3(1, 1, 1)
+material = ExtResource("lamp")
+
+[sub_resource type="MultiMesh" id="batch_lamp_box"]
+transform_format = 1
+instance_count = 1
+mesh = SubResource("mesh_lamp_box")
+buffer = PackedFloat32Array(0.35, 0, 0, 0, 0, 0.025, 0, 4.25, 0, 0, 0.52, 0.68)
+
+[sub_resource type="BoxShape3D" id="collision_0"]
+size = Vector3(0.2, 4.5, 0.2)
+
+[node name="StreetLamp" type="Node3D"]
+physics_interpolation_mode = 2
+
+[node name="metal_cylinder" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("batch_metal_cylinder")
+
+[node name="plinth_cylinder" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("batch_plinth_cylinder")
+
+[node name="metal_box" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("batch_metal_box")
+
+[node name="lamp_box" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("batch_lamp_box")
+
+[node name="Collision" type="StaticBody3D" parent="."]
+
+[node name="Shape0" type="CollisionShape3D" parent="Collision"]
+position = Vector3(0, 2.25, 0)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_0")

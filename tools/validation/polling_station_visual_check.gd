@@ -18,11 +18,14 @@ func _check(condition: bool, message: String) -> void:
 
 
 func _walk(target: Vector3) -> void:
+	if not current_scene.get_node("LocationTransition").is_outside:
+		target.y = current_scene.get_node("Environment").position.y
 	for step in 400:
 		var motion := target - _player.position
 		if motion.length() < 0.015:
 			return
 		_player.move_and_collide(motion.limit_length(0.05))
+		_player._sync_camera(false)
 		await physics_frame
 	_check(false, "Route blocked before %s; player at %s" % [target, _player.position])
 
@@ -48,16 +51,33 @@ func _run() -> void:
 	_player = location.get_node("Player")
 	_camera = _player.get_node("Camera3D")
 	_player.set_physics_process(false)
+	_player.set_process(false)
 	var controller: Node = location.get_node("IntroController")
 	var booth: Area3D = location.get_node("VotingBooth/InteractionArea")
 	var urn: Area3D = location.get_node("BallotBox/InteractionArea")
 	var ui: CanvasLayer = location.get_node("UI")
 	var environment: Node3D = location.get_node("Environment")
+	var transition: Node = location.get_node("LocationTransition")
+	var exit_area: Area3D = environment.get_node("ExitInteraction")
+	var entrance: Area3D = location.get_node("Street/EntranceInteraction")
 	_check(environment.get_node("Visual").get_child_count() > 100, "Imported Blender environment is missing")
 	_check(environment.get_node("Collision").get_child_count() >= 20, "Simplified environment collision is incomplete")
 	_check(not location.get_node("VotingBooth").has_node("Visual"), "Legacy booth visual is still active")
 	_check(not location.get_node("BallotBox").has_node("Visual"), "Legacy ballot-box visual is still active")
 	await physics_frame
+	# Leave and return before voting, then repeat with a completed ballot.
+	await _walk(Vector3(4.25, 0, 4.15))
+	_aim(exit_area)
+	exit_area.request_interaction()
+	await transition.transition_finished
+	await physics_frame
+	_check(transition.is_outside and _player.movement_enabled, "Could not leave before voting")
+	await _walk(entrance.global_position + Vector3(0, -1.6, 0.85))
+	_aim(entrance)
+	entrance.request_interaction()
+	await transition.transition_finished
+	await physics_frame
+	_check(not transition.is_outside and controller.state == 0, "Return reset or advanced the intro")
 	urn.request_interaction()
 	_check(controller.state == 0, "Urn accepted an empty ballot")
 	await _walk(Vector3(4.25, 0, 2.6))
@@ -74,6 +94,18 @@ func _run() -> void:
 	ui.confirm_button.pressed.emit()
 	_check(controller.state == 1 and not controller.selected_party_id.is_empty(), "Party selection failed")
 	_check(_player.movement_enabled and not ui.ballot_panel.visible, "Movement was not restored")
+	var selected_party: String = controller.selected_party_id
+	transition._on_exit_requested(exit_area)
+	await transition.transition_finished
+	await physics_frame
+	transition._on_entrance_requested(entrance)
+	await transition.transition_finished
+	await physics_frame
+	_check(controller.state == 1 and controller.selected_party_id == selected_party, "Leaving lost the completed ballot")
+	# Resume the urn route from the return spawn.
+	await _walk(Vector3(4.25, 0, 2.6))
+	await _walk(Vector3(1.0, 0, 1.8))
+	await _walk(Vector3(1.0, 0, -2.55))
 	await _walk(Vector3(2.45, 0, -2.55))
 	await _walk(Vector3(1.2, 0, -1.8))
 	await _walk(Vector3(1.2, 0, 0.5))
@@ -89,11 +121,27 @@ func _run() -> void:
 		[Vector3(4.25, 0, 3.75), Vector3(0, 0, 1.5)],
 		[Vector3(-2.15, 0, 2.8), Vector3(0, 0, 1.3)],
 	]:
-		var start := Transform3D(Basis.IDENTITY, sweep[0])
+		var start := Transform3D(Basis.IDENTITY, sweep[0] + Vector3(0, environment.position.y, 0))
 		_check(_player.test_move(start, sweep[1]), "Missing obstacle collision at %s" % sweep[0])
 	urn.request_interaction()
-	_check(controller.state == 2 and ui.completion_panel.visible, "Existing completion screen failed")
-	_check(not _player.movement_enabled, "Movement remains enabled on completion")
+	_check(controller.state == 2 and not ui.completion_panel.visible, "Vote did not complete without a blocking panel")
+	_check(_player.movement_enabled, "Cannot walk to the exit after voting")
+	await _walk(Vector3(1.2, 0, 0.5))
+	await _walk(Vector3(1.2, 0, 2.6))
+	await _walk(Vector3(4.25, 0, 2.6))
+	await _walk(Vector3(4.25, 0, 4.15))
+	_aim(exit_area)
+	exit_area.request_interaction()
+	await transition.transition_finished
+	await physics_frame
+	_check(transition.is_outside and _camera.environment != null, "Street transition failed after voting")
+	await _walk(entrance.global_position + Vector3(0, -1.6, 0.85))
+	_aim(entrance)
+	entrance.request_interaction()
+	await transition.transition_finished
+	await physics_frame
+	_check(not transition.is_outside and _camera.environment == null, "Interior environment did not return")
+	_check(controller.state == 2 and controller.selected_party_id == selected_party, "Return lost the submitted vote")
 	for argument in OS.get_cmdline_user_args():
 		if argument.begins_with("--capture-dir="):
 			await _capture(location, argument.trim_prefix("--capture-dir="))

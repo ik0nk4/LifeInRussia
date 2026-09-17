@@ -1,5 +1,5 @@
 extends WorldEnvironment
-## Location-only experimental rendering. Restore the viewport when leaving.
+## Modest location quality preset; restore the viewport when leaving.
 
 var _viewport: Viewport
 var _previous_msaa: Viewport.MSAA
@@ -13,8 +13,8 @@ func _ready() -> void:
 	_previous_taa = _viewport.use_taa
 	_previous_shadow_atlas_size = _viewport.positional_shadow_atlas_size
 	_viewport.msaa_3d = Viewport.MSAA_4X
-	_viewport.use_taa = true
-	_viewport.positional_shadow_atlas_size = 4096
+	_viewport.use_taa = false
+	_viewport.positional_shadow_atlas_size = 2048
 
 
 func _exit_tree() -> void:

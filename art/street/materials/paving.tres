@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://3xsg067kgh8"]
+
+[ext_resource type="Shader" uid="uid://bqht0jpgd3v8w" path="res://art/street/materials/ground.gdshader" id="shader"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("shader")
+shader_parameter/base_color = Color(0.6, 0.59, 0.53, 1)
+shader_parameter/tile_strength = 0.12

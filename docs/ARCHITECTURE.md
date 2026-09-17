@@ -97,3 +97,24 @@ The polling-station introduction uses a location controller for the local sequen
 a reusable interaction-area component, a player scene, and a dedicated UI scene.
 Party names and identifiers live in `data/intro/parties.json`; the controller keeps
 only the selected identifier and current introduction state.
+
+`polling_station_transition.gd` owns the introductory indoor/outdoor transition.
+The small street is a separate scene instanced in the same gameplay root, away
+from the interior. Door interactions defer teleporting the shared player to named
+spawn markers, switch visible environments, and apply the outdoor environment to
+the player's camera. The intro controller and UI stay alive, preserving ballot
+selection and submission without a global state singleton. New Game creates a
+fresh session. Returning indoors uses the interior marker's global transform,
+including any placement offset of the environment scene.
+
+Door transitions lock player input during a 0.3-second fade and call
+`PlayerController.teleport_to()`, which resets interpolation history. The camera
+is top-level: its position follows the interpolated physics body every rendered
+frame, while mouse look updates immediately. `physics/common/physics_interpolation`
+is enabled in project settings; static street geometry explicitly opts out.
+
+The street is composed from reusable scenes in `scenes/props/street/`. Static
+details of each module are grouped into MultiMeshes by material. The Python
+authoring tool `tools/art/build_street.py` rebuilds these scenes offline with no
+dependencies; gameplay does not run a procedural builder. Ground slabs meet at
+their edges, and background ground is below them, avoiding coplanar surfaces.

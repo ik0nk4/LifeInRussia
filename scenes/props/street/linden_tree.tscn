@@ -1,0 +1,87 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/street/materials/bark.tres" id="bark"]
+
+[ext_resource type="Material" path="res://art/street/materials/leaf.tres" id="leaf"]
+
+[ext_resource type="Material" path="res://art/street/materials/leaf_light.tres" id="leaf_light"]
+
+[ext_resource type="Material" path="res://art/street/materials/leaf_dark.tres" id="leaf_dark"]
+
+[sub_resource type="CylinderMesh" id="mesh_bark_cylinder"]
+top_radius = 0.5
+bottom_radius = 0.5
+height = 1
+radial_segments = 10
+rings = 1
+material = ExtResource("bark")
+
+[sub_resource type="MultiMesh" id="batch_bark_cylinder"]
+transform_format = 1
+instance_count = 1
+mesh = SubResource("mesh_bark_cylinder")
+buffer = PackedFloat32Array(0.2, 0, 0, 0, 0, 3.8, 0, 1.9, 0, 0, 0.2, 0)
+
+[sub_resource type="SphereMesh" id="mesh_leaf_sphere"]
+radius = 0.5
+height = 1
+radial_segments = 16
+rings = 8
+material = ExtResource("leaf")
+
+[sub_resource type="MultiMesh" id="batch_leaf_sphere"]
+transform_format = 1
+instance_count = 9
+mesh = SubResource("mesh_leaf_sphere")
+buffer = PackedFloat32Array(1.11477, 0, 0, 0.38084, 0, 1.39346, 0, 4.66207, 0, 0, 0.94755, 0, 0.90215, 0, 0.94695, 0.42336, 0, 1.79191, 0, 3.98199, -1.11406, 0, 0.76683, 0.55232, -0.26625, 0, 1.06472, -0.16906, 0, 1.60074, 0, 3.40106, -1.25261, 0, -0.22631, 0.62834, -1.31322, 0, 0.56875, -0.35975, 0, 1.84232, 0, 3.32854, -0.66912, 0, -1.11623, 0.14836, -1.23846, 0, -0.46869, -0.38892, 0, 1.69458, 0, 5.15885, 0.5514, 0, -1.05269, -0.22562, -0.37057, 0, -1.17553, -0.11657, 0, 1.7897, 0, 3.55032, 1.38298, 0, -0.31498, -0.90344, 0.64714, 0, -0.75711, 0.7982, 0, 1.37623, 0, 4.35914, 0.89072, 0, 0.55007, -0.79326, 1.1057, 0, -0.04926, 0.82398, 0, 1.38403, 0, 3.37566, 0.05795, 0, 0.93985, 0.11151, 0.70335, 0, 0.66397, 0.34971, 0, 1.31392, 0, 3.27975, -0.78114, 0, 0.59784, 0.61153)
+
+[sub_resource type="SphereMesh" id="mesh_leaf_light_sphere"]
+radius = 0.5
+height = 1
+radial_segments = 16
+rings = 8
+material = ExtResource("leaf_light")
+
+[sub_resource type="MultiMesh" id="batch_leaf_light_sphere"]
+transform_format = 1
+instance_count = 8
+mesh = SubResource("mesh_leaf_light_sphere")
+buffer = PackedFloat32Array(1.34536, 0, 0.34962, -0.53094, 0, 1.75854, 0, 4.61046, -0.41132, 0, 1.14355, 0.48635, 0.46651, 0, 0.98145, -0.77553, 0, 1.55666, 0, 4.78617, -1.15465, 0, 0.39653, -0.1373, -0.63934, 0, 0.98039, -0.18921, 0, 1.64843, 0, 4.82183, -1.1534, 0, -0.54344, -0.36455, -1.42791, 0, 0.21401, 0.4332, 0, 1.81242, 0, 3.82194, -0.25178, 0, -1.21372, -0.92485, -1.05969, 0, -0.783, 0.4154, 0, 1.75512, 0, 4.50777, 0.92117, 0, -0.90073, -0.09112, 0.04593, 0, -1.11803, 0.74493, 0, 1.64517, 0, 3.3052, 1.31533, 0, 0.03904, 0.62858, 1.18186, 0, -0.75701, -0.01924, 0, 1.84982, 0, 4.83618, 0.8906, 0, 1.00458, 0.40982, 1.0861, 0, 0.23018, -0.34412, 0, 1.39918, 0, 4.59609, -0.27079, 0, 0.92318, 0.23902)
+
+[sub_resource type="SphereMesh" id="mesh_leaf_dark_sphere"]
+radius = 0.5
+height = 1
+radial_segments = 16
+rings = 8
+material = ExtResource("leaf_dark")
+
+[sub_resource type="MultiMesh" id="batch_leaf_dark_sphere"]
+transform_format = 1
+instance_count = 8
+mesh = SubResource("mesh_leaf_dark_sphere")
+buffer = PackedFloat32Array(0.87764, 0, 0.50318, 0.06235, 0, 1.32328, 0, 4.24637, -0.59197, 0, 0.74599, -0.70982, 0.12368, 0, 1.20164, 0.22786, 0, 1.77387, 0, 4.98684, -1.4137, 0, 0.10513, -0.14489, -0.87732, 0, 0.72013, 0.70943, 0, 1.52452, 0, 4.40783, -0.84722, 0, -0.74572, 0.25932, -1.42436, 0, -0.14866, 0.22949, 0, 1.79382, 0, 3.41639, 0.17489, 0, -1.21071, 0.7327, -0.68254, 0, -0.92844, -0.61534, 0, 1.61, 0, 3.89568, 1.09229, 0, -0.58016, 0.8743, 0.43041, 0, -1.06249, -0.64391, 0, 1.65252, 0, 3.59062, 1.24999, 0, 0.36585, 0.02622, 1.3954, 0, -0.4317, -0.5903, 0, 1.85619, 0, 3.28682, 0.50788, 0, 1.18609, -0.70844, 1.10646, 0, 0.5651, 0.21942, 0, 1.61354, 0, 3.42878, -0.66483, 0, 0.94049, -0.9715)
+
+[sub_resource type="BoxShape3D" id="collision_0"]
+size = Vector3(0.35, 3, 0.35)
+
+[node name="LindenTree" type="Node3D"]
+physics_interpolation_mode = 2
+
+[node name="bark_cylinder" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("batch_bark_cylinder")
+
+[node name="leaf_sphere" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("batch_leaf_sphere")
+
+[node name="leaf_light_sphere" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("batch_leaf_light_sphere")
+
+[node name="leaf_dark_sphere" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("batch_leaf_dark_sphere")
+
+[node name="Collision" type="StaticBody3D" parent="."]
+
+[node name="Shape0" type="CollisionShape3D" parent="Collision"]
+position = Vector3(0, 1.5, 0)
+rotation_degrees = Vector3(0, 0, 0)
+shape = SubResource("collision_0")

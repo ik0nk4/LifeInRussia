@@ -59,8 +59,8 @@ func _on_ballot_box_interacted(_area: InteractionArea) -> void:
 		return
 
 	state = IntroState.FINISHED
-	player.set_movement_enabled(false)
-	ui.show_completion()
+	ballot_box.interaction_hint = "Голос принят. Можно выйти на улицу."
+	player.refresh_interaction_hint()
 
 
 func _load_parties() -> Array:

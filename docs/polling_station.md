@@ -63,6 +63,51 @@ Rendered review views can be captured with a non-headless run and
 7. Inspect window transparency, booth task light, shadows and performance on the
    target machine.
 
-The current repository still ends the introduction with the existing completion
-panel. There is no Day 1 scene, fade controller or next-scene path in the project,
-so this integration does not invent a transition destination.
+## Street and return
+
+Look at the entrance doors from inside and press E to go outside. The small
+`polling_station_street.tscn` courtyard contains a tiled pavement, road, crossing,
+apartment facades, trees, lamps, benches and a signed entrance. Look at that entrance and press
+E to return. Both transitions are available before and after voting.
+
+Submitting a vote keeps movement enabled and changes the ballot-box hint to
+confirm acceptance. It no longer opens the blocking completion panel. Leaving
+and returning preserves the selected party and prevents voting a second time.
+This is the beginning of exploration; there is still no day progression.
+
+The automated check also exercises round trips before selecting a party, with a
+completed ballot, and after submission, including door ray detection and camera
+environment restoration. For a manual check, repeat these trips, use Escape to
+pause outside, then start a new game to verify that the ballot state resets.
+
+## Rendering and movement revision
+
+- Walkable surfaces meet at y=0 with disjoint footprints. The distant ground is
+  lower; road paint is slightly raised. This removes the former ground/road/
+  pavement z-fighting. The visible fences and garden walls bound the small area.
+- Street placement is offset 100 m from the interior, keeping even background
+  building collision away from the polling room.
+- Location rendering uses MSAA 4x without TAA. SDFGI and SSIL are disabled; indoor
+  ambient fill is tuned for the existing local lights, with SSAO retained.
+- Player position is interpolated between physics ticks and camera mouse rotation
+  is not delayed by interpolation. Teleporting clears the old interpolation state.
+- The door fade pauses with the game and restores movement after completion.
+
+Additional validation:
+
+```powershell
+godot --headless --path . --script res://tools/validation/street_movement_check.gd
+godot --path . --script res://tools/validation/street_render_review.gd
+```
+
+The movement check uses actual movement and E actions, checks the walkable crossing,
+boundary collision, outdoor pause and return spawn. The rendered review writes
+views and frame/GPU timings to `.godot/street_review/` and samples the live camera
+at render cadence. It expects at least 90 moving frames out of 100, no backward
+steps, and no position jump above 15 cm in these unobstructed paths. Frame timings
+depend on hardware and VSync; this is not a universal FPS guarantee.
+
+Rebuild the modular street with `python tools/art/build_street.py`. Edit that
+source for persistent layout changes; rebuilding overwrites generated street
+scenes and palette materials. The ground shader and environment resource are
+hand-authored and are not overwritten.
