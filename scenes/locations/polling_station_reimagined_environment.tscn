@@ -53,22 +53,26 @@ size = Vector3(1.15, 1.3, 0.65)
 
 [sub_resource type="Environment" id="environment"]
 background_mode = 1
-background_color = Color(0.32, 0.38, 0.4, 1)
+background_color = Color(0.22, 0.28, 0.34, 1)
 ambient_light_source = 2
-ambient_light_color = Color(0.76, 0.84, 0.9, 1)
-ambient_light_energy = 0.48
+ambient_light_color = Color(0.72, 0.82, 0.94, 1)
+ambient_light_energy = 0.84
 reflected_light_source = 1
 tonemap_mode = 2
 ssao_enabled = true
-ssao_radius = 0.45
-ssao_intensity = 1.25
+ssao_radius = 0.65
+ssao_intensity = 1.05
 ssil_enabled = true
-ssil_intensity = 0.48
+ssil_intensity = 0.28
 sdfgi_enabled = true
 sdfgi_read_sky_light = false
-sdfgi_energy = 0.62
+sdfgi_energy = 0.78
 glow_enabled = true
-glow_bloom = 0.015
+glow_bloom = 0.035
+adjustment_enabled = true
+adjustment_brightness = 1.04
+adjustment_contrast = 1.02
+adjustment_saturation = 0.94
 
 [node name="PollingStationReimaginedEnvironment" type="Node3D" unique_id=2013223103]
 
@@ -137,7 +141,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.88, 0.45, -4.55)
 shape = SubResource("commission_storage_shape")
 
 [node name="InformationPanel" type="StaticBody3D" parent="Collision" unique_id=2096230777]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.15, 1.28, 3.4)
+transform = Transform3D(0.96874696, 0, 0, 0, 1, 0, 0, 0, 1, -2.15, 1.28, 4.5399337)
 
 [node name="Shape" type="CollisionShape3D" parent="Collision/InformationPanel" unique_id=268652533]
 shape = SubResource("info_panel_shape")
@@ -220,106 +224,53 @@ script = ExtResource("2_quality")
 
 [node name="Lighting" type="Node3D" parent="." unique_id=710837979]
 
-[node name="CeilingLightWestSouth" type="OmniLight3D" parent="Lighting" unique_id=820590640]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 3.35, 1.6)
-light_color = Color(1, 0.91, 0.78, 1)
-light_energy = 0.36
-light_indirect_energy = 0.7
-light_size = 0.8
-light_specular = 0.18
-shadow_blur = 1.5
-omni_range = 5.2
-
-[node name="CeilingLightCenterSouth" type="OmniLight3D" parent="Lighting" unique_id=1858977879]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.35, 1.6)
-light_color = Color(1, 0.91, 0.78, 1)
-light_energy = 0.36
-light_indirect_energy = 0.7
-light_size = 0.8
-light_specular = 0.18
-shadow_blur = 1.5
-omni_range = 5.2
-
-[node name="CeilingLightEastSouth" type="OmniLight3D" parent="Lighting" unique_id=17344980]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 3.35, 1.6)
-light_color = Color(1, 0.91, 0.78, 1)
-light_energy = 0.36
-light_indirect_energy = 0.7
-light_size = 0.8
-light_specular = 0.18
-shadow_blur = 1.5
-omni_range = 5.2
-
-[node name="CeilingLightWestNorth" type="OmniLight3D" parent="Lighting" unique_id=162102512]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 3.35, -1.45)
-light_color = Color(1, 0.91, 0.78, 1)
-light_energy = 0.36
-light_indirect_energy = 0.7
-light_size = 0.8
-light_specular = 0.18
-shadow_blur = 1.5
-omni_range = 5.2
-
-[node name="CeilingLightCenterNorth" type="OmniLight3D" parent="Lighting" unique_id=135582243]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.35, -1.45)
-light_color = Color(1, 0.91, 0.78, 1)
-light_energy = 0.36
-light_indirect_energy = 0.7
-light_size = 0.8
-light_specular = 0.18
-shadow_blur = 1.5
-omni_range = 5.2
-
-[node name="CeilingLightEastNorth" type="OmniLight3D" parent="Lighting" unique_id=1174464329]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 3.35, -1.45)
-light_color = Color(1, 0.91, 0.78, 1)
-light_energy = 0.36
-light_indirect_energy = 0.7
-light_size = 0.8
-light_specular = 0.18
-shadow_blur = 1.5
-omni_range = 5.2
-
-[node name="CommissionAccent" type="OmniLight3D" parent="Lighting" unique_id=1734565609]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4, 2.65, -3.2)
-light_color = Color(1, 0.82, 0.61, 1)
-light_energy = 0.28
+[node name="CeilingDiffuse" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+light_color = Color(1, 0.93, 0.82, 1)
+light_energy = 0.3
 light_indirect_energy = 0.55
-light_size = 0.7
-light_specular = 0.15
-shadow_blur = 1.6
-omni_range = 3.8
+light_specular = 0.12
+
+[node name="WallFillCool" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.7071068, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, 0.7071068, 0, 0, 0)
+light_color = Color(0.78, 0.86, 1, 1)
+light_energy = 0.12
+light_indirect_energy = 0.25
+light_specular = 0.02
+
+[node name="WallFillWarm" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(-0.7071068, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, -0.7071068, 0, 0, 0)
+light_color = Color(1, 0.88, 0.74, 1)
+light_energy = 0.1
+light_indirect_energy = 0.25
+light_specular = 0.02
 
 [node name="WindowDaylight" type="DirectionalLight3D" parent="Lighting" unique_id=1486323084]
 transform = Transform3D(0.37460664, 0.68903196, -0.62040704, 0, 0.66913056, 0.74314487, 0.92718387, -0.278387, 0.25066075, 0, 0, 0)
 light_color = Color(0.76, 0.86, 1, 1)
-light_energy = 0.5
-light_indirect_energy = 0.85
-light_specular = 0.22
+light_energy = 0.72
+light_indirect_energy = 0.95
+light_specular = 0.18
 shadow_enabled = true
+shadow_blur = 1.8
 directional_shadow_fade_start = 0.75
 directional_shadow_max_distance = 20.0
 
-[node name="BoothTaskLight1" type="SpotLight3D" parent="Lighting" unique_id=913667585]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.45, 1.68, -4.22)
-light_color = Color(1, 0.9, 0.73, 1)
-light_energy = 0.8
-light_indirect_energy = 0.45
-light_size = 0.35
-light_specular = 0.15
-spot_range = 1.55
-spot_attenuation = 0.45
-spot_angle = 28.0
-spot_angle_attenuation = 0.6
+[node name="CeilingBounce" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+light_color = Color(0.74, 0.82, 0.95, 1)
+light_energy = 0.08
+light_indirect_energy = 0.25
+light_specular = 0.0
 
-[node name="BoothTaskLight2" type="SpotLight3D" parent="Lighting" unique_id=1386369789]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.65, 1.68, -4.22)
-light_color = Color(1, 0.9, 0.73, 1)
-light_energy = 0.8
-light_indirect_energy = 0.45
-light_size = 0.35
-light_specular = 0.15
-spot_range = 1.55
-spot_attenuation = 0.45
-spot_angle = 28.0
-spot_angle_attenuation = 0.6
+[node name="BallotBoxAccent" type="SpotLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.55, 3.1, -0.38)
+light_color = Color(1, 0.84, 0.65, 1)
+light_energy = 0.3
+light_indirect_energy = 0.35
+light_size = 0.5
+light_specular = 0.14
+spot_range = 2.25
+spot_attenuation = 0.72
+spot_angle = 27.0
+spot_angle_attenuation = 0.78
